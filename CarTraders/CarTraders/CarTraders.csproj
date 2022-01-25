@@ -6,4 +6,16 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Update="AdminMenu - Copy.Designer.cs">
+      <DependentUpon>AdminMenu.Designer.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AdminMenu - Copy.resx">
+      <DependentUpon>AdminMenu.resx</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>
