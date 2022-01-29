@@ -30,7 +30,6 @@ namespace CarTraders
         private void InitializeComponent()
         {
             this.adminMenuBtn1 = new System.Windows.Forms.Button();
-            this.title = new System.Windows.Forms.Label();
             this.adminMenuBtn2 = new System.Windows.Forms.Button();
             this.adminMenuBtn4 = new System.Windows.Forms.Button();
             this.adminMenuBtn3 = new System.Windows.Forms.Button();
@@ -46,16 +45,7 @@ namespace CarTraders
             this.adminMenuBtn1.TabIndex = 8;
             this.adminMenuBtn1.Text = "View Dashboard";
             this.adminMenuBtn1.UseVisualStyleBackColor = true;
-            // 
-            // title
-            // 
-            this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.title.Location = new System.Drawing.Point(274, 56);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(254, 54);
-            this.title.TabIndex = 7;
-            this.title.Text = "Admin Menu";
+            
             // 
             // adminMenuBtn2
             // 
@@ -109,7 +99,6 @@ namespace CarTraders
             this.Controls.Add(this.adminMenuBtn4);
             this.Controls.Add(this.adminMenuBtn2);
             this.Controls.Add(this.adminMenuBtn1);
-            this.Controls.Add(this.title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -122,7 +111,6 @@ namespace CarTraders
         #endregion
 
         private System.Windows.Forms.Button adminMenuBtn1;
-        private System.Windows.Forms.Label title;
         private System.Windows.Forms.Button adminMenuBtn2;
         private System.Windows.Forms.Button adminMenuBtn4;
         private System.Windows.Forms.Button adminMenuBtn3;

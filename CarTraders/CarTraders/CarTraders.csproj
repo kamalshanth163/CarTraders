@@ -7,15 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="AdminMenu - Copy.Designer.cs">
-      <DependentUpon>AdminMenu.Designer.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="AdminMenu - Copy.resx">
-      <DependentUpon>AdminMenu.resx</DependentUpon>
-    </EmbeddedResource>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
 </Project>

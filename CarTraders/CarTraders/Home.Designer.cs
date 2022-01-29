@@ -31,8 +31,8 @@ namespace CarTraders
         {
             this.title = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -56,16 +56,6 @@ namespace CarTraders
             this.label1.TabIndex = 1;
             this.label1.Text = "ABC Car Traders";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(344, 215);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 37);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Login as";
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -75,6 +65,16 @@ namespace CarTraders
             this.button1.TabIndex = 3;
             this.button1.Text = "Admin";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(344, 215);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 37);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Login as";
             // 
             // button2
             // 
@@ -110,8 +110,8 @@ namespace CarTraders
 
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
     }
 }
