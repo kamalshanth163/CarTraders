@@ -1,13 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarTraders
@@ -24,15 +16,13 @@ namespace CarTraders
         {
             if (user_type.Text == "" || user_name.Text == "" || user_address.Text == "" || user_phone.Text == "" || user_email.Text == "" || user_password.Text == "")
             {
-                MessageBox.Show("All the field are required");
+                MessageBox.Show($"All fields are required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 try
                 {
-                    var appSettings = System.Configuration.ConfigurationManager.AppSettings;
-                    var connectionString = appSettings["ConnectionString"];
-
+                    var connectionString = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
                     SqlConnection con = new SqlConnection(connectionString);
 
                     con.Open();
@@ -43,10 +33,19 @@ namespace CarTraders
                     MessageBox.Show("User successfully added");
                     con.Close();
 
+                    if(user_type.Text == "Admin")
+                    {
+                        new AdminMenu().ShowDialog();
+                    }
+                    else
+                    {
+                        new CustomerMenu().ShowDialog();
+                    }
+                    this.Hide();
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show($"{ex}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -64,6 +63,12 @@ namespace CarTraders
             user_phone.Text = "";
             user_email.Text = "";
             user_password.Text = "";
+        }
+
+        private void loginLink_Click(object sender, EventArgs e)
+        {
+            new Login().ShowDialog();
+            this.Hide();
         }
     }
 }
