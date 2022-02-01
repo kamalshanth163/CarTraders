@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CarTraders.BLL;
+using CarTraders.DAL;
+using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -14,39 +16,35 @@ namespace CarTraders
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
+
             if (user_type.Text == "" || user_name.Text == "" || user_address.Text == "" || user_phone.Text == "" || user_email.Text == "" || user_password.Text == "")
             {
                 MessageBox.Show($"All fields are required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                try
+                User user = new User();
+                user.Id = Guid.NewGuid();
+                user.Type = user_type.Text;
+                user.Name = user_name.Text;
+                user.Address = user_address.Text;
+                user.Phone = user_phone.Text;
+                user.Email = user_email.Text;
+                user.Password = user_password.Text;
+
+                var createdUser = UsersBLL.AddUser(user);
+
+                if (createdUser == null) MessageBox.Show($"Failed to create user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);          
+
+                if ( createdUser.Type == "Admin")
                 {
-                    var connectionString = System.Configuration.ConfigurationManager.AppSettings["ConnectionString"];
-                    SqlConnection con = new SqlConnection(connectionString);
-
-                    con.Open();
-                    string query = $"INSERT INTO Users (Id, Type, Name, Address, Phone, Email, Password) VALUES ('{Guid.NewGuid()}','{user_type.Text}','{user_name.Text}','{user_address.Text}','{user_phone.Text}','{user_email.Text}','{user_password.Text}')";
-
-                    SqlCommand command = new SqlCommand(query, con);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("User successfully added");
-                    con.Close();
-
-                    if(user_type.Text == "Admin")
-                    {
-                        new AdminMenu().ShowDialog();
-                    }
-                    else
-                    {
-                        new CustomerMenu().ShowDialog();
-                    }
-                    this.Hide();
+                    new AdminMenu().ShowDialog();
                 }
-                catch(Exception ex)
+                else
                 {
-                    MessageBox.Show($"{ex}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    new CustomerMenu().ShowDialog();
                 }
+                this.Hide();
             }
         }
 

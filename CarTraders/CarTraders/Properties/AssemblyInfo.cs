@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CarTraders.DAL")]
+[assembly: AssemblyTitle("CarTraders")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CarTraders.DAL")]
+[assembly: AssemblyProduct("CarTraders")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9e0452dc-0bf7-449c-81b7-10fad724fb5f")]
+[assembly: Guid("383f90ec-d619-4355-a3a5-ee4ed692969e")]
 
 // Version information for an assembly consists of the following four values:
 //

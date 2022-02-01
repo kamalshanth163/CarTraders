@@ -31,9 +31,7 @@ namespace CarTraders
         {
             this.title = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_getStarted = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // title
@@ -56,35 +54,16 @@ namespace CarTraders
             this.label1.TabIndex = 1;
             this.label1.Text = "ABC Car Traders";
             // 
-            // button1
+            // btn_getStarted
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(248, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 56);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Admin";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(344, 215);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 37);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Login as";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(442, 316);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 56);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Customer";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_getStarted.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_getStarted.Location = new System.Drawing.Point(310, 259);
+            this.btn_getStarted.Name = "btn_getStarted";
+            this.btn_getStarted.Size = new System.Drawing.Size(178, 56);
+            this.btn_getStarted.TabIndex = 3;
+            this.btn_getStarted.Text = "Get Started";
+            this.btn_getStarted.UseVisualStyleBackColor = true;
+            this.btn_getStarted.Click += new System.EventHandler(this.btn_getStarted_Click);
             // 
             // Home
             // 
@@ -92,9 +71,7 @@ namespace CarTraders
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_getStarted);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -110,9 +87,7 @@ namespace CarTraders
 
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_getStarted;
     }
 }
 
