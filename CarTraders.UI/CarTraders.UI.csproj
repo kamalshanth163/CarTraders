@@ -52,7 +52,6 @@
     <Compile Include="AdminMenu.designer.cs">
       <DependentUpon>AdminMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="CustomerMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +120,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarTraders.BLL\CarTraders.BLL.csproj">
+      <Project>{b0181d74-f2a9-4017-9f9d-e5d27a13d9fc}</Project>
+      <Name>CarTraders.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarTraders.DAL\CarTraders.DAL.csproj">
+      <Project>{70895351-0ac5-478f-8ae7-41a1167a10ca}</Project>
+      <Name>CarTraders.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

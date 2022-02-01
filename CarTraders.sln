@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTraders.UI", "CarTraders
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTraders.BLL", "CarTraders.BLL\CarTraders.BLL.csproj", "{B0181D74-F2A9-4017-9F9D-E5D27A13D9FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTraders.DAL", "CarTraders.DAL\CarTraders.DAL.csproj", "{70895351-0AC5-478F-8AE7-41A1167A10CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B0181D74-F2A9-4017-9F9D-E5D27A13D9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0181D74-F2A9-4017-9F9D-E5D27A13D9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0181D74-F2A9-4017-9F9D-E5D27A13D9FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70895351-0AC5-478F-8AE7-41A1167A10CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70895351-0AC5-478F-8AE7-41A1167A10CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70895351-0AC5-478F-8AE7-41A1167A10CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70895351-0AC5-478F-8AE7-41A1167A10CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

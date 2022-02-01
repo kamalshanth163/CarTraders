@@ -19,8 +19,8 @@ namespace CarTraders
 
         private void btn_getStarted_Click(object sender, EventArgs e)
         {
-            new Login().ShowDialog();
             this.Hide();
+            new Login().ShowDialog();
         }
     }
 }
