@@ -33,18 +33,26 @@ namespace CarTraders
                 user.Password = user_password.Text;
                 user.CreatedAt = DateTime.Now;
 
-                var createdUser = UsersBLL.AddUser(user);
+                User createdUser = UsersBLL.AddUser(user);
 
-                if (createdUser == null) MessageBox.Show($"Failed to create user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);          
-
-                this.Hide();
-                if ( createdUser.Type == "Admin")
+                if (createdUser == null)
                 {
-                    new AdminMenu().ShowDialog();
+                    MessageBox.Show($"Failed to create user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    new CustomerMenu().ShowDialog();
+                    this.Hide();
+                    switch (createdUser.Type)
+                    {
+                        case "Admin":
+                            new AdminMenu().ShowDialog();
+                            break;
+                        case "Customer":
+                            new CustomerMenu().ShowDialog();
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         }
@@ -66,8 +74,8 @@ namespace CarTraders
 
         private void loginLink_Click(object sender, EventArgs e)
         {
-            new Login().ShowDialog();
             this.Hide();
+            new Login().ShowDialog();
         }
     }
 }

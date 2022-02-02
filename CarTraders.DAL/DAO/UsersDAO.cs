@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace CarTraders.DAL.DAO
 {
@@ -12,7 +13,20 @@ namespace CarTraders.DAL.DAO
                 db.SubmitChanges();
                 return user;
             }
-            catch (Exception ex)
+            catch
+            {
+                return null;
+            }
+        }
+
+        public static User GetUserByEmailAndPassword(string type, string email, string password)
+        {
+            try
+            {
+                var user = db.Users.FirstOrDefault(u => u.Type == type && u.Email == email && u.Password == password);
+                return user;
+            }
+            catch
             {
                 return null;
             }

@@ -10,5 +10,10 @@ namespace CarTraders.BLL
         {
             return UsersDAO.AddUser(user);
         }
+
+        public static User LoginUser(string type, string email, string password)
+        {
+            return UsersDAO.GetUserByEmailAndPassword(type, email, password);
+        }
     }
 }

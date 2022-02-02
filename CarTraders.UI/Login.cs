@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CarTraders.BLL;
+using CarTraders.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,14 +28,31 @@ namespace CarTraders
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            if (user_email.Text == "" || user_password.Text == "")
+            if (user_type.Text == "" || user_email.Text == "" || user_password.Text == "")
             {
                 MessageBox.Show($"All fields are required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                
-               
+                User loggedUser = UsersBLL.LoginUser(user_type.Text, user_email.Text, user_password.Text);
+                if (loggedUser == null) {
+                    MessageBox.Show($"Failed to login user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    this.Hide();
+                    switch (loggedUser.Type)
+                    {
+                        case "Admin":
+                            new AdminMenu().ShowDialog();
+                            break;
+                        case "Customer":
+                            new CustomerMenu().ShowDialog();
+                            break;
+                        default:
+                            break;
+                    }
+                }
             }
         }
 
