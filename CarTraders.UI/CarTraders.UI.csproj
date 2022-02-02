@@ -52,6 +52,12 @@
     <Compile Include="AdminMenu.designer.cs">
       <DependentUpon>AdminMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\ManageCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageCars.Designer.cs">
+      <DependentUpon>ManageCars.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </Compile>
     <EmbeddedResource Include="AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPages\ManageCars.resx">
+      <DependentUpon>ManageCars.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerMenu.resx">
       <DependentUpon>CustomerMenu.cs</DependentUpon>

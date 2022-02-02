@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarTraders.UI.AdminPages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,15 +18,10 @@ namespace CarTraders
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_cars_Click(object sender, EventArgs e)
         {
-
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
+            this.Hide();
+            new ManageCars().ShowDialog();
         }
     }
 }

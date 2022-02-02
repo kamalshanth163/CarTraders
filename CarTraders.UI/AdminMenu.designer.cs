@@ -29,76 +29,98 @@ namespace CarTraders
         /// </summary>
         private void InitializeComponent()
         {
-            this.adminMenuBtn1 = new System.Windows.Forms.Button();
-            this.adminMenuBtn2 = new System.Windows.Forms.Button();
-            this.adminMenuBtn4 = new System.Windows.Forms.Button();
-            this.adminMenuBtn3 = new System.Windows.Forms.Button();
-            this.adminMenuBtn5 = new System.Windows.Forms.Button();
+            this.btn_dashboard = new System.Windows.Forms.Button();
+            this.btn_cars = new System.Windows.Forms.Button();
+            this.btn_customers = new System.Windows.Forms.Button();
+            this.btn_carParts = new System.Windows.Forms.Button();
+            this.btn_reports = new System.Windows.Forms.Button();
+            this.title = new System.Windows.Forms.Label();
+            this.btn_orders = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // adminMenuBtn1
+            // btn_dashboard
             // 
-            this.adminMenuBtn1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.adminMenuBtn1.Location = new System.Drawing.Point(290, 150);
-            this.adminMenuBtn1.Name = "adminMenuBtn1";
-            this.adminMenuBtn1.Size = new System.Drawing.Size(218, 46);
-            this.adminMenuBtn1.TabIndex = 8;
-            this.adminMenuBtn1.Text = "View Dashboard";
-            this.adminMenuBtn1.UseVisualStyleBackColor = true;
-            
+            this.btn_dashboard.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn_dashboard.Location = new System.Drawing.Point(249, 93);
+            this.btn_dashboard.Name = "btn_dashboard";
+            this.btn_dashboard.Size = new System.Drawing.Size(187, 40);
+            this.btn_dashboard.TabIndex = 8;
+            this.btn_dashboard.Text = "View Dashboard";
+            this.btn_dashboard.UseVisualStyleBackColor = true;
             // 
-            // adminMenuBtn2
+            // btn_cars
             // 
-            this.adminMenuBtn2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.adminMenuBtn2.Location = new System.Drawing.Point(302, 202);
-            this.adminMenuBtn2.Name = "adminMenuBtn2";
-            this.adminMenuBtn2.Size = new System.Drawing.Size(193, 46);
-            this.adminMenuBtn2.TabIndex = 9;
-            this.adminMenuBtn2.Text = "Manage Cars";
-            this.adminMenuBtn2.UseVisualStyleBackColor = true;
+            this.btn_cars.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn_cars.Location = new System.Drawing.Point(259, 137);
+            this.btn_cars.Name = "btn_cars";
+            this.btn_cars.Size = new System.Drawing.Size(165, 40);
+            this.btn_cars.TabIndex = 9;
+            this.btn_cars.Text = "Manage Cars";
+            this.btn_cars.UseVisualStyleBackColor = true;
+            this.btn_cars.Click += new System.EventHandler(this.btn_cars_Click);
             // 
-            // adminMenuBtn4
+            // btn_customers
             // 
-            this.adminMenuBtn4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.adminMenuBtn4.Location = new System.Drawing.Point(231, 306);
-            this.adminMenuBtn4.Name = "adminMenuBtn4";
-            this.adminMenuBtn4.Size = new System.Drawing.Size(338, 46);
-            this.adminMenuBtn4.TabIndex = 10;
-            this.adminMenuBtn4.Text = "Manage Customers and Orders";
-            this.adminMenuBtn4.UseVisualStyleBackColor = true;
-            this.adminMenuBtn4.Click += new System.EventHandler(this.button2_Click);
+            this.btn_customers.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn_customers.Location = new System.Drawing.Point(198, 226);
+            this.btn_customers.Name = "btn_customers";
+            this.btn_customers.Size = new System.Drawing.Size(290, 40);
+            this.btn_customers.TabIndex = 10;
+            this.btn_customers.Text = "Manage Customers";
+            this.btn_customers.UseVisualStyleBackColor = true;
             // 
-            // adminMenuBtn3
+            // btn_carParts
             // 
-            this.adminMenuBtn3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.adminMenuBtn3.Location = new System.Drawing.Point(267, 254);
-            this.adminMenuBtn3.Name = "adminMenuBtn3";
-            this.adminMenuBtn3.Size = new System.Drawing.Size(261, 46);
-            this.adminMenuBtn3.TabIndex = 11;
-            this.adminMenuBtn3.Text = "Manage Car Parts";
-            this.adminMenuBtn3.UseVisualStyleBackColor = true;
+            this.btn_carParts.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn_carParts.Location = new System.Drawing.Point(229, 182);
+            this.btn_carParts.Name = "btn_carParts";
+            this.btn_carParts.Size = new System.Drawing.Size(224, 40);
+            this.btn_carParts.TabIndex = 11;
+            this.btn_carParts.Text = "Manage Car Parts";
+            this.btn_carParts.UseVisualStyleBackColor = true;
             // 
-            // adminMenuBtn5
+            // btn_reports
             // 
-            this.adminMenuBtn5.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.adminMenuBtn5.Location = new System.Drawing.Point(288, 358);
-            this.adminMenuBtn5.Name = "adminMenuBtn5";
-            this.adminMenuBtn5.Size = new System.Drawing.Size(220, 46);
-            this.adminMenuBtn5.TabIndex = 13;
-            this.adminMenuBtn5.Text = "Generate Reports";
-            this.adminMenuBtn5.UseVisualStyleBackColor = true;
-            this.adminMenuBtn5.Click += new System.EventHandler(this.button5_Click);
+            this.btn_reports.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn_reports.Location = new System.Drawing.Point(247, 315);
+            this.btn_reports.Name = "btn_reports";
+            this.btn_reports.Size = new System.Drawing.Size(189, 40);
+            this.btn_reports.TabIndex = 13;
+            this.btn_reports.Text = "Generate Reports";
+            this.btn_reports.UseVisualStyleBackColor = true;
+            // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Segoe UI", 30F);
+            this.title.Location = new System.Drawing.Point(220, 29);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(254, 54);
+            this.title.TabIndex = 15;
+            this.title.Text = "Admin Menu";
+            // 
+            // btn_orders
+            // 
+            this.btn_orders.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn_orders.Location = new System.Drawing.Point(198, 271);
+            this.btn_orders.Name = "btn_orders";
+            this.btn_orders.Size = new System.Drawing.Size(290, 40);
+            this.btn_orders.TabIndex = 16;
+            this.btn_orders.Text = "Manage Orders";
+            this.btn_orders.UseVisualStyleBackColor = true;
             // 
             // AdminMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.adminMenuBtn5);
-            this.Controls.Add(this.adminMenuBtn3);
-            this.Controls.Add(this.adminMenuBtn4);
-            this.Controls.Add(this.adminMenuBtn2);
-            this.Controls.Add(this.adminMenuBtn1);
+            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.btn_orders);
+            this.Controls.Add(this.title);
+            this.Controls.Add(this.btn_reports);
+            this.Controls.Add(this.btn_carParts);
+            this.Controls.Add(this.btn_customers);
+            this.Controls.Add(this.btn_cars);
+            this.Controls.Add(this.btn_dashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -110,10 +132,12 @@ namespace CarTraders
 
         #endregion
 
-        private System.Windows.Forms.Button adminMenuBtn1;
-        private System.Windows.Forms.Button adminMenuBtn2;
-        private System.Windows.Forms.Button adminMenuBtn4;
-        private System.Windows.Forms.Button adminMenuBtn3;
-        private System.Windows.Forms.Button adminMenuBtn5;
+        private System.Windows.Forms.Button btn_dashboard;
+        private System.Windows.Forms.Button btn_cars;
+        private System.Windows.Forms.Button btn_customers;
+        private System.Windows.Forms.Button btn_carParts;
+        private System.Windows.Forms.Button btn_reports;
+        private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Button btn_orders;
     }
 }

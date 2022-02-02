@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\DbContext.cs" />
+    <Compile Include="DAO\CarsDAO.cs" />
     <Compile Include="DAO\UsersDAO.cs" />
     <Compile Include="DataClasses.designer.cs">
       <AutoGen>True</AutoGen>
