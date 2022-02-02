@@ -44,6 +44,8 @@ namespace CarTraders.UI.AdminPages
             this.carsDataView = new System.Windows.Forms.DataGridView();
             this.menuBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.label_id = new System.Windows.Forms.Label();
+            this.car_id = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.carsDataView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,6 +148,7 @@ namespace CarTraders.UI.AdminPages
             this.updateBtn.TabIndex = 25;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // deleteBtn
             // 
@@ -164,6 +167,7 @@ namespace CarTraders.UI.AdminPages
             this.carsDataView.Name = "carsDataView";
             this.carsDataView.Size = new System.Drawing.Size(453, 291);
             this.carsDataView.TabIndex = 27;
+            this.carsDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.carsDataView_CellContentClick);
             // 
             // menuBtn
             // 
@@ -189,11 +193,30 @@ namespace CarTraders.UI.AdminPages
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
+            // label_id
+            // 
+            this.label_id.AutoSize = true;
+            this.label_id.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label_id.Location = new System.Drawing.Point(36, 70);
+            this.label_id.Name = "label_id";
+            this.label_id.Size = new System.Drawing.Size(21, 19);
+            this.label_id.TabIndex = 31;
+            this.label_id.Text = "Id";
+            // 
+            // car_id
+            // 
+            this.car_id.Location = new System.Drawing.Point(40, 92);
+            this.car_id.Name = "car_id";
+            this.car_id.Size = new System.Drawing.Size(219, 20);
+            this.car_id.TabIndex = 30;
+            // 
             // ManageCars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label_id);
+            this.Controls.Add(this.car_id);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.menuBtn);
             this.Controls.Add(this.carsDataView);
@@ -237,5 +260,7 @@ namespace CarTraders.UI.AdminPages
         private System.Windows.Forms.DataGridView carsDataView;
         private System.Windows.Forms.Button menuBtn;
         private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Label label_id;
+        private System.Windows.Forms.TextBox car_id;
     }
 }

@@ -9,9 +9,12 @@ namespace CarTraders.DAL.DAO
         {
             try
             {
+                user.CreatedAt = DateTime.Now;
                 db.Users.InsertOnSubmit(user);
                 db.SubmitChanges();
-                return user;
+
+                User userFromDb = db.Users.FirstOrDefault(u => u.Id == user.Id);
+                return userFromDb;
             }
             catch
             {

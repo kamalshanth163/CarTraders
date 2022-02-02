@@ -31,7 +31,6 @@ namespace CarTraders
                 user.Phone = user_phone.Text;
                 user.Email = user_email.Text;
                 user.Password = user_password.Text;
-                user.CreatedAt = DateTime.Now;
 
                 User createdObj = UsersBLL.AddUser(user);
 
