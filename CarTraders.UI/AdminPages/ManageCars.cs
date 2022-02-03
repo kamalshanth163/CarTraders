@@ -32,14 +32,18 @@ namespace CarTraders.UI.AdminPages
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            AddOrUpdate("Add");
+            ManageOperation("Add");
         }
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            AddOrUpdate("Update");
+            ManageOperation("Update");
+        }
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            ManageOperation("Delete");
         }
 
-        private void AddOrUpdate(string operation)
+        private void ManageOperation(string operation)
         {
             if (car_name.Text == "" || car_brand.Text == "" || car_price.Text == "" || car_description.Text == "")
             {
@@ -64,10 +68,6 @@ namespace CarTraders.UI.AdminPages
                     else
                     {
                         MessageBox.Show($"Car added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        carList = CarsBLL.GetCars();
-                        carsDataView.DataSource = carList;
-                        car_name.Clear();
-                        car_name.Focus();
                     }
                 }
                 else if (operation == "Update")
@@ -81,12 +81,28 @@ namespace CarTraders.UI.AdminPages
                     else
                     {
                         MessageBox.Show($"Car updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        carList = CarsBLL.GetCars();
-                        carsDataView.DataSource = carList;
-                        car_name.Clear();
-                        car_name.Focus();
                     }
                 }
+                else if (operation == "Delete")
+                {
+                    car.Id = Guid.Parse(car_id.Text);
+                    bool isDeleted = CarsBLL.DeleteCar(car);
+                    if (!isDeleted)
+                    {
+                        MessageBox.Show($"Failed to delete car", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Car deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                carList = CarsBLL.GetCars();
+                carsDataView.DataSource = carList;
+                car_name.Clear();
+                car_brand.Clear();
+                car_price.Clear();
+                car_description.Clear();
+                car_name.Focus();
             }
         }
 

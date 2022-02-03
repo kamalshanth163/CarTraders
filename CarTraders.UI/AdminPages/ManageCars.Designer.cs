@@ -159,6 +159,7 @@ namespace CarTraders.UI.AdminPages
             this.deleteBtn.TabIndex = 26;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // carsDataView
             // 

@@ -21,5 +21,9 @@ namespace CarTraders.BLL
         {
             return CarsDAO.UpdateCar(car);
         }
+        public static bool DeleteCar(Car car)
+        {
+            return CarsDAO.DeleteCar(car);
+        }
     }
 }

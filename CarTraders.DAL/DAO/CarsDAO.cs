@@ -36,9 +36,29 @@ namespace CarTraders.DAL.DAO
 
                 return carFromDb;
             }
-            catch
+            catch (Exception ex)
             {
                 return null;
+                throw ex;
+            }
+        }
+
+        public static bool DeleteCar(Car car)
+        {
+            try
+            {              
+                Car carFromDb = db.Cars.FirstOrDefault(c => c.Id == car.Id);
+                db.Cars.DeleteOnSubmit(carFromDb);
+                db.SubmitChanges();
+
+                Car carFromDbAfterDelete = db.Cars.FirstOrDefault(c => c.Id == car.Id);
+                var isDeleted = carFromDbAfterDelete == null;
+                return isDeleted;               
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
             }
         }
 
@@ -48,9 +68,10 @@ namespace CarTraders.DAL.DAO
             {
                 return db.Cars.OrderBy(x => x.CreatedAt).ToList();
             }
-            catch
+            catch (Exception ex)
             {
                 return null;
+                throw ex;
             }
         }
     }

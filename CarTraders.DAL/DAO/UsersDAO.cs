@@ -16,9 +16,10 @@ namespace CarTraders.DAL.DAO
                 User userFromDb = db.Users.FirstOrDefault(u => u.Id == user.Id);
                 return userFromDb;
             }
-            catch
+            catch (Exception ex)
             {
                 return null;
+                throw ex;
             }
         }
 
@@ -29,9 +30,10 @@ namespace CarTraders.DAL.DAO
                 var user = db.Users.FirstOrDefault(u => u.Type == type && u.Email == email && u.Password == password);
                 return user;
             }
-            catch
+            catch (Exception ex)
             {
                 return null;
+                throw ex;
             }
         }
     }
