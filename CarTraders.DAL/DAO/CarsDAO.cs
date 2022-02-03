@@ -15,9 +15,10 @@ namespace CarTraders.DAL.DAO
                 db.SubmitChanges();
                 return car;
             }
-            catch
+            catch (Exception ex)
             {
                 return null;
+                throw ex;
             }
         }
 
