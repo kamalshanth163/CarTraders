@@ -31,6 +31,8 @@ namespace CarTraders.DAL.DAO
                 carFromDb.Brand = car.Brand;
                 carFromDb.Price = car.Price;
                 carFromDb.Description = car.Description;
+                carFromDb.Image = car.Image;
+                carFromDb.ImagePath = car.ImagePath;
                 carFromDb.UpdatedAt = DateTime.Now;
 
                 db.SubmitChanges();

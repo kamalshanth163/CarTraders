@@ -46,12 +46,16 @@ namespace CarTraders.UI.AdminPages
             this.exitBtn = new System.Windows.Forms.Button();
             this.label_id = new System.Windows.Forms.Label();
             this.car_id = new System.Windows.Forms.TextBox();
+            this.car_image = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.imageUploadBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.carsDataView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car_image)).BeginInit();
             this.SuspendLayout();
             // 
             // car_name
             // 
-            this.car_name.Location = new System.Drawing.Point(39, 135);
+            this.car_name.Location = new System.Drawing.Point(34, 99);
             this.car_name.Name = "car_name";
             this.car_name.Size = new System.Drawing.Size(219, 20);
             this.car_name.TabIndex = 0;
@@ -60,7 +64,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.title.Location = new System.Drawing.Point(312, 27);
+            this.title.Location = new System.Drawing.Point(286, 20);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(172, 37);
             this.title.TabIndex = 15;
@@ -70,7 +74,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label1.Location = new System.Drawing.Point(35, 113);
+            this.label1.Location = new System.Drawing.Point(30, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 19);
             this.label1.TabIndex = 16;
@@ -80,7 +84,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.Location = new System.Drawing.Point(35, 158);
+            this.label2.Location = new System.Drawing.Point(30, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 19);
             this.label2.TabIndex = 18;
@@ -88,7 +92,7 @@ namespace CarTraders.UI.AdminPages
             // 
             // car_brand
             // 
-            this.car_brand.Location = new System.Drawing.Point(39, 180);
+            this.car_brand.Location = new System.Drawing.Point(34, 144);
             this.car_brand.Name = "car_brand";
             this.car_brand.Size = new System.Drawing.Size(219, 20);
             this.car_brand.TabIndex = 17;
@@ -97,7 +101,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.Location = new System.Drawing.Point(35, 248);
+            this.label3.Location = new System.Drawing.Point(30, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 19);
             this.label3.TabIndex = 22;
@@ -107,7 +111,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label4.Location = new System.Drawing.Point(35, 203);
+            this.label4.Location = new System.Drawing.Point(30, 167);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 19);
             this.label4.TabIndex = 20;
@@ -115,23 +119,23 @@ namespace CarTraders.UI.AdminPages
             // 
             // car_price
             // 
-            this.car_price.Location = new System.Drawing.Point(39, 225);
+            this.car_price.Location = new System.Drawing.Point(34, 189);
             this.car_price.Name = "car_price";
             this.car_price.Size = new System.Drawing.Size(219, 20);
             this.car_price.TabIndex = 19;
             // 
             // car_description
             // 
-            this.car_description.Location = new System.Drawing.Point(39, 270);
+            this.car_description.Location = new System.Drawing.Point(34, 234);
             this.car_description.Name = "car_description";
-            this.car_description.Size = new System.Drawing.Size(219, 60);
+            this.car_description.Size = new System.Drawing.Size(219, 41);
             this.car_description.TabIndex = 23;
             this.car_description.Text = "";
             // 
             // addBtn
             // 
             this.addBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.addBtn.Location = new System.Drawing.Point(41, 348);
+            this.addBtn.Location = new System.Drawing.Point(36, 391);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(61, 29);
             this.addBtn.TabIndex = 24;
@@ -142,7 +146,7 @@ namespace CarTraders.UI.AdminPages
             // updateBtn
             // 
             this.updateBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.updateBtn.Location = new System.Drawing.Point(108, 348);
+            this.updateBtn.Location = new System.Drawing.Point(103, 391);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(76, 29);
             this.updateBtn.TabIndex = 25;
@@ -153,7 +157,7 @@ namespace CarTraders.UI.AdminPages
             // deleteBtn
             // 
             this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.deleteBtn.Location = new System.Drawing.Point(190, 348);
+            this.deleteBtn.Location = new System.Drawing.Point(185, 391);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(68, 29);
             this.deleteBtn.TabIndex = 26;
@@ -164,16 +168,17 @@ namespace CarTraders.UI.AdminPages
             // carsDataView
             // 
             this.carsDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.carsDataView.Location = new System.Drawing.Point(301, 104);
+            this.carsDataView.Location = new System.Drawing.Point(293, 77);
             this.carsDataView.Name = "carsDataView";
-            this.carsDataView.Size = new System.Drawing.Size(453, 291);
+            this.carsDataView.RowTemplate.Height = 60;
+            this.carsDataView.Size = new System.Drawing.Size(461, 343);
             this.carsDataView.TabIndex = 27;
             this.carsDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.carsDataView_CellContentClick);
             // 
             // menuBtn
             // 
             this.menuBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.menuBtn.Location = new System.Drawing.Point(39, 33);
+            this.menuBtn.Location = new System.Drawing.Point(620, 25);
             this.menuBtn.Name = "menuBtn";
             this.menuBtn.Size = new System.Drawing.Size(105, 29);
             this.menuBtn.TabIndex = 28;
@@ -198,7 +203,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.label_id.AutoSize = true;
             this.label_id.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label_id.Location = new System.Drawing.Point(36, 70);
+            this.label_id.Location = new System.Drawing.Point(31, 34);
             this.label_id.Name = "label_id";
             this.label_id.Size = new System.Drawing.Size(21, 19);
             this.label_id.TabIndex = 31;
@@ -206,16 +211,50 @@ namespace CarTraders.UI.AdminPages
             // 
             // car_id
             // 
-            this.car_id.Location = new System.Drawing.Point(40, 92);
+            this.car_id.Location = new System.Drawing.Point(35, 56);
             this.car_id.Name = "car_id";
             this.car_id.Size = new System.Drawing.Size(219, 20);
             this.car_id.TabIndex = 30;
+            // 
+            // car_image
+            // 
+            this.car_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.car_image.Location = new System.Drawing.Point(36, 302);
+            this.car_image.Name = "car_image";
+            this.car_image.Size = new System.Drawing.Size(150, 83);
+            this.car_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.car_image.TabIndex = 32;
+            this.car_image.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label5.Location = new System.Drawing.Point(31, 279);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 19);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Image";
+            // 
+            // imageUploadBtn
+            // 
+            this.imageUploadBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.imageUploadBtn.Location = new System.Drawing.Point(192, 302);
+            this.imageUploadBtn.Name = "imageUploadBtn";
+            this.imageUploadBtn.Size = new System.Drawing.Size(61, 29);
+            this.imageUploadBtn.TabIndex = 34;
+            this.imageUploadBtn.Text = "Upload";
+            this.imageUploadBtn.UseVisualStyleBackColor = true;
+            this.imageUploadBtn.Click += new System.EventHandler(this.imageUploadBtn_Click);
             // 
             // ManageCars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.imageUploadBtn);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.car_image);
             this.Controls.Add(this.label_id);
             this.Controls.Add(this.car_id);
             this.Controls.Add(this.exitBtn);
@@ -239,6 +278,7 @@ namespace CarTraders.UI.AdminPages
             this.Text = "ManageCars";
             this.Load += new System.EventHandler(this.ManageCars_Load);
             ((System.ComponentModel.ISupportInitialize)(this.carsDataView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car_image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +303,8 @@ namespace CarTraders.UI.AdminPages
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Label label_id;
         private System.Windows.Forms.TextBox car_id;
+        private System.Windows.Forms.PictureBox car_image;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button imageUploadBtn;
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace CarTraders.UI.AdminPages
     {
         List<Car> carList = new List<Car>();
         int rowIndex;
-        string operation;
+        string imageFileName;
 
         public ManageCars()
         {
@@ -28,6 +29,8 @@ namespace CarTraders.UI.AdminPages
         {
             carList = CarsBLL.GetCars();
             carsDataView.DataSource = carList;
+            carsDataView.Columns[7].Visible = false;
+            carsDataView.Columns[8].Visible = false;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -51,15 +54,23 @@ namespace CarTraders.UI.AdminPages
             }
             else
             {
+                var newGuid = Guid.NewGuid();
+
                 Car car = new Car();
+                car.Id = car_id.Text == "" ? newGuid : Guid.Parse(car_id.Text);
                 car.Name = car_name.Text;
                 car.Brand = car_brand.Text;
                 car.Price = car_price.Text;
                 car.Description = car_description.Text;
 
+                if(operation != "Delete")
+                {
+                    car.Image = ConvertImageToBytes(car_image.Image);
+                    car.ImagePath = SaveImage(car_id.Text == "" ? newGuid.ToString() : car_id.Text);
+                }
+
                 if (operation == "Add")
                 {
-                    car.Id = Guid.NewGuid();
                     Car createdObj = CarsBLL.AddCar(car);
                     if (createdObj == null)
                     {
@@ -72,7 +83,6 @@ namespace CarTraders.UI.AdminPages
                 }
                 else if (operation == "Update")
                 {
-                    car.Id = Guid.Parse(car_id.Text);
                     Car updatedObj = CarsBLL.UpdateCar(car);
                     if (updatedObj == null)
                     {
@@ -85,7 +95,6 @@ namespace CarTraders.UI.AdminPages
                 }
                 else if (operation == "Delete")
                 {
-                    car.Id = Guid.Parse(car_id.Text);
                     bool isDeleted = CarsBLL.DeleteCar(car);
                     if (!isDeleted)
                     {
@@ -102,6 +111,7 @@ namespace CarTraders.UI.AdminPages
                 car_brand.Clear();
                 car_price.Clear();
                 car_description.Clear();
+                car_image.Image = null;
                 car_name.Focus();
             }
         }
@@ -126,6 +136,43 @@ namespace CarTraders.UI.AdminPages
             car_brand.Text = row.Cells[2].Value.ToString();
             car_price.Text = row.Cells[3].Value.ToString();
             car_description.Text = row.Cells[4].Value.ToString();
+        }
+
+        private byte[] ConvertImageToBytes(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, image.RawFormat);
+                return ms.ToArray();
+            }
+        }
+
+        private Image ConvertBytesToImage(byte[] image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private void imageUploadBtn_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dialog = new OpenFileDialog() { Filter = "jpg files(.*jpg)|*.jpg| PNG files(.*png)|*.png| All Files(*.*)|*.*", Multiselect = false })
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    car_image.Image = Image.FromFile(dialog.FileName);
+                    imageFileName = dialog.FileName;
+                }
+            }
+        }
+
+        private string SaveImage(string uniqueName)
+        {
+            string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+            string fileName = $"{uniqueName}_{DateTime.Now.ToString("yyyy_MM_dd_mm_ss")}{Path.GetExtension(imageFileName)}";
+            File.Copy(imageFileName, $"{path}\\Images\\{fileName}");
+            return fileName;
         }
     }
 }
