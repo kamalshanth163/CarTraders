@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarTraders.UI.AdminPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace CarTraders.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            Application.Run(new ManageCars());
         }
     }
 }

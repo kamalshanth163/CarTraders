@@ -34,7 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +53,17 @@
     </Compile>
     <Compile Include="AdminMenu.designer.cs">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\ManageCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageCars.Designer.cs">
+      <DependentUpon>ManageCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarTradersDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarTradersDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="CustomerMenu.cs">
       <SubType>Form</SubType>
@@ -81,6 +94,9 @@
     <EmbeddedResource Include="AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminPages\ManageCars.resx">
+      <DependentUpon>ManageCars.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerMenu.resx">
       <DependentUpon>CustomerMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +118,17 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CarTradersDBDataSet.xsc">
+      <DependentUpon>CarTradersDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CarTradersDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CarTradersDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CarTradersDBDataSet.xss">
+      <DependentUpon>CarTradersDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -124,6 +151,9 @@
       <Project>{70895351-0ac5-478f-8ae7-41a1167a10ca}</Project>
       <Name>CarTraders.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Cars\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

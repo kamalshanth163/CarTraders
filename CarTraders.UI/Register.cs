@@ -31,18 +31,19 @@ namespace CarTraders
                 user.Phone = user_phone.Text;
                 user.Email = user_email.Text;
                 user.Password = user_password.Text;
-                user.CreatedAt = DateTime.Now;
 
-                User createdUser = UsersBLL.AddUser(user);
+                User createdObj = UsersBLL.AddUser(user);
 
-                if (createdUser == null)
+                if (createdObj == null)
                 {
                     MessageBox.Show($"Failed to create user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
+                    MessageBox.Show($"User registered successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     this.Hide();
-                    switch (createdUser.Type)
+                    switch (createdObj.Type)
                     {
                         case "Admin":
                             new AdminMenu().ShowDialog();
