@@ -49,6 +49,7 @@ namespace CarTraders.UI.AdminPages
             this.car_image = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.imageUploadBtn = new System.Windows.Forms.Button();
+            this.imageRemoveBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.carsDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.car_image)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +58,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.car_name.Location = new System.Drawing.Point(34, 99);
             this.car_name.Name = "car_name";
-            this.car_name.Size = new System.Drawing.Size(219, 20);
+            this.car_name.Size = new System.Drawing.Size(227, 20);
             this.car_name.TabIndex = 0;
             // 
             // title
@@ -94,7 +95,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.car_brand.Location = new System.Drawing.Point(34, 144);
             this.car_brand.Name = "car_brand";
-            this.car_brand.Size = new System.Drawing.Size(219, 20);
+            this.car_brand.Size = new System.Drawing.Size(227, 20);
             this.car_brand.TabIndex = 17;
             // 
             // label3
@@ -121,14 +122,14 @@ namespace CarTraders.UI.AdminPages
             // 
             this.car_price.Location = new System.Drawing.Point(34, 189);
             this.car_price.Name = "car_price";
-            this.car_price.Size = new System.Drawing.Size(219, 20);
+            this.car_price.Size = new System.Drawing.Size(227, 20);
             this.car_price.TabIndex = 19;
             // 
             // car_description
             // 
             this.car_description.Location = new System.Drawing.Point(34, 234);
             this.car_description.Name = "car_description";
-            this.car_description.Size = new System.Drawing.Size(219, 41);
+            this.car_description.Size = new System.Drawing.Size(227, 41);
             this.car_description.TabIndex = 23;
             this.car_description.Text = "";
             // 
@@ -146,7 +147,7 @@ namespace CarTraders.UI.AdminPages
             // updateBtn
             // 
             this.updateBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.updateBtn.Location = new System.Drawing.Point(103, 391);
+            this.updateBtn.Location = new System.Drawing.Point(108, 391);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(76, 29);
             this.updateBtn.TabIndex = 25;
@@ -157,7 +158,7 @@ namespace CarTraders.UI.AdminPages
             // deleteBtn
             // 
             this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.deleteBtn.Location = new System.Drawing.Point(185, 391);
+            this.deleteBtn.Location = new System.Drawing.Point(194, 391);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(68, 29);
             this.deleteBtn.TabIndex = 26;
@@ -213,7 +214,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.car_id.Location = new System.Drawing.Point(35, 56);
             this.car_id.Name = "car_id";
-            this.car_id.Size = new System.Drawing.Size(219, 20);
+            this.car_id.Size = new System.Drawing.Size(227, 20);
             this.car_id.TabIndex = 30;
             // 
             // car_image
@@ -241,17 +242,29 @@ namespace CarTraders.UI.AdminPages
             this.imageUploadBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.imageUploadBtn.Location = new System.Drawing.Point(192, 302);
             this.imageUploadBtn.Name = "imageUploadBtn";
-            this.imageUploadBtn.Size = new System.Drawing.Size(61, 29);
+            this.imageUploadBtn.Size = new System.Drawing.Size(70, 29);
             this.imageUploadBtn.TabIndex = 34;
             this.imageUploadBtn.Text = "Upload";
             this.imageUploadBtn.UseVisualStyleBackColor = true;
             this.imageUploadBtn.Click += new System.EventHandler(this.imageUploadBtn_Click);
+            // 
+            // imageRemoveBtn
+            // 
+            this.imageRemoveBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.imageRemoveBtn.Location = new System.Drawing.Point(192, 337);
+            this.imageRemoveBtn.Name = "imageRemoveBtn";
+            this.imageRemoveBtn.Size = new System.Drawing.Size(70, 29);
+            this.imageRemoveBtn.TabIndex = 35;
+            this.imageRemoveBtn.Text = "Remove";
+            this.imageRemoveBtn.UseVisualStyleBackColor = true;
+            this.imageRemoveBtn.Click += new System.EventHandler(this.imageRemoveBtn_Click);
             // 
             // ManageCars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.imageRemoveBtn);
             this.Controls.Add(this.imageUploadBtn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.car_image);
@@ -306,5 +319,6 @@ namespace CarTraders.UI.AdminPages
         private System.Windows.Forms.PictureBox car_image;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button imageUploadBtn;
+        private System.Windows.Forms.Button imageRemoveBtn;
     }
 }

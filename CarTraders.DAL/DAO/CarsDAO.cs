@@ -32,7 +32,7 @@ namespace CarTraders.DAL.DAO
                 carFromDb.Price = car.Price;
                 carFromDb.Description = car.Description;
                 carFromDb.Image = car.Image;
-                carFromDb.ImagePath = car.ImagePath;
+                carFromDb.ImageName = car.ImageName;
                 carFromDb.UpdatedAt = DateTime.Now;
 
                 db.SubmitChanges();

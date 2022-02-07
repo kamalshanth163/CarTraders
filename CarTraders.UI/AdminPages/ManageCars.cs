@@ -2,13 +2,8 @@
 using CarTraders.DAL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarTraders.UI.AdminPages
@@ -17,13 +12,16 @@ namespace CarTraders.UI.AdminPages
     {
         List<Car> carList = new List<Car>();
         int rowIndex;
-        string imageFileName;
+        string uploadFilePath;
+        string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+        bool isUpload = false;
 
         public ManageCars()
         {
             InitializeComponent();
             label_id.Visible = false;
             car_id.Visible = false;
+            car_image.Image = Image.FromFile($"{path}\\Images\\empty.jpg");
         }
         private void ManageCars_Load(object sender, EventArgs e)
         {
@@ -66,7 +64,9 @@ namespace CarTraders.UI.AdminPages
                 if(operation != "Delete")
                 {
                     car.Image = ConvertImageToBytes(car_image.Image);
-                    car.ImagePath = SaveImage(car_id.Text == "" ? newGuid.ToString() : car_id.Text);
+                    car.ImageName = isUpload 
+                        ? SaveImage(car_id.Text == "" ? newGuid.ToString() : car_id.Text)
+                        : "empty.jpg";
                 }
 
                 if (operation == "Add")
@@ -111,7 +111,7 @@ namespace CarTraders.UI.AdminPages
                 car_brand.Clear();
                 car_price.Clear();
                 car_description.Clear();
-                car_image.Image = null;
+                car_image.Image = Image.FromFile($"{path}\\Images\\empty.jpg");
                 car_name.Focus();
             }
         }
@@ -136,6 +136,8 @@ namespace CarTraders.UI.AdminPages
             car_brand.Text = row.Cells[2].Value.ToString();
             car_price.Text = row.Cells[3].Value.ToString();
             car_description.Text = row.Cells[4].Value.ToString();
+
+            car_image.Image = Image.FromFile($"{path}\\Images\\{row.Cells[8].Value ?? "empty.jpg"}");
         }
 
         private byte[] ConvertImageToBytes(Image image)
@@ -161,18 +163,23 @@ namespace CarTraders.UI.AdminPages
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
+                    isUpload = true;
                     car_image.Image = Image.FromFile(dialog.FileName);
-                    imageFileName = dialog.FileName;
+                    uploadFilePath = dialog.FileName;
                 }
             }
         }
 
         private string SaveImage(string uniqueName)
         {
-            string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-            string fileName = $"{uniqueName}_{DateTime.Now.ToString("yyyy_MM_dd_mm_ss")}{Path.GetExtension(imageFileName)}";
-            File.Copy(imageFileName, $"{path}\\Images\\{fileName}");
+            string fileName = $"{uniqueName}_{DateTime.Now.ToString("yyyy_MM_dd_mm_ss")}{Path.GetExtension(uploadFilePath)}";
+            File.Copy(uploadFilePath, $"{path}\\Images\\{fileName}");
             return fileName;
+        }
+
+        private void imageRemoveBtn_Click(object sender, EventArgs e)
+        {
+            car_image.Image = Image.FromFile($"{path}\\Images\\empty.jpg");
         }
     }
 }

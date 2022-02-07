@@ -613,7 +613,7 @@ namespace CarTraders.DAL
 		
 		private System.Data.Linq.Binary _Image;
 		
-		private string _ImagePath;
+		private string _ImageName;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -635,8 +635,8 @@ namespace CarTraders.DAL
     partial void OnUpdatedAtChanged();
     partial void OnImageChanging(System.Data.Linq.Binary value);
     partial void OnImageChanged();
-    partial void OnImagePathChanging(string value);
-    partial void OnImagePathChanged();
+    partial void OnImageNameChanging(string value);
+    partial void OnImageNameChanged();
     #endregion
 		
 		public CarPart()
@@ -804,22 +804,22 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(MAX)")]
-		public string ImagePath
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageName", DbType="NVarChar(MAX)")]
+		public string ImageName
 		{
 			get
 			{
-				return this._ImagePath;
+				return this._ImageName;
 			}
 			set
 			{
-				if ((this._ImagePath != value))
+				if ((this._ImageName != value))
 				{
-					this.OnImagePathChanging(value);
+					this.OnImageNameChanging(value);
 					this.SendPropertyChanging();
-					this._ImagePath = value;
-					this.SendPropertyChanged("ImagePath");
-					this.OnImagePathChanged();
+					this._ImageName = value;
+					this.SendPropertyChanged("ImageName");
+					this.OnImageNameChanged();
 				}
 			}
 		}
@@ -867,7 +867,7 @@ namespace CarTraders.DAL
 		
 		private System.Data.Linq.Binary _Image;
 		
-		private string _ImagePath;
+		private string _ImageName;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -889,8 +889,8 @@ namespace CarTraders.DAL
     partial void OnUpdatedAtChanged();
     partial void OnImageChanging(System.Data.Linq.Binary value);
     partial void OnImageChanged();
-    partial void OnImagePathChanging(string value);
-    partial void OnImagePathChanged();
+    partial void OnImageNameChanging(string value);
+    partial void OnImageNameChanged();
     #endregion
 		
 		public Car()
@@ -1058,22 +1058,22 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(MAX)")]
-		public string ImagePath
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageName", DbType="NVarChar(MAX)")]
+		public string ImageName
 		{
 			get
 			{
-				return this._ImagePath;
+				return this._ImageName;
 			}
 			set
 			{
-				if ((this._ImagePath != value))
+				if ((this._ImageName != value))
 				{
-					this.OnImagePathChanging(value);
+					this.OnImageNameChanging(value);
 					this.SendPropertyChanging();
-					this._ImagePath = value;
-					this.SendPropertyChanged("ImagePath");
-					this.OnImagePathChanged();
+					this._ImageName = value;
+					this.SendPropertyChanged("ImageName");
+					this.OnImageNameChanged();
 				}
 			}
 		}
