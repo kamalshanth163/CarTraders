@@ -22,6 +22,8 @@ namespace CarTraders.UI.AdminPages
             label_id.Visible = false;
             car_id.Visible = false;
             car_image.Image = null;
+            updateBtn.Enabled = false;
+            deleteBtn.Enabled = false;
         }
         private void ManageCars_Load(object sender, EventArgs e)
         {
@@ -142,6 +144,9 @@ namespace CarTraders.UI.AdminPages
 
         private void carsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            updateBtn.Enabled = true;
+            deleteBtn.Enabled = true;
+
             rowIndex = e.RowIndex;
             DataGridViewRow row = carsDataView.Rows[rowIndex];
             car_id.Text = row.Cells[0].Value.ToString();
