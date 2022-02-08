@@ -18,6 +18,12 @@ namespace CarTraders
             InitializeComponent();
         }
 
+        private void btn_carParts_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ManageCarParts().ShowDialog();
+        }
+
         private void btn_cars_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -8,27 +8,27 @@ using System.Windows.Forms;
 
 namespace CarTraders.UI.AdminPages
 {
-    public partial class ManageCars : Form
+    public partial class ManageCarParts : Form
     {
-        List<Car> carList = new List<Car>();
+        List<CarPart> carPartList = new List<CarPart>();
         int rowIndex;
         string uploadFilePath;
         string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
         string currentImageName;
 
-        public ManageCars()
+        public ManageCarParts()
         {
             InitializeComponent();
             label_id.Visible = false;
-            car_id.Visible = false;
-            car_image.Image = null;
+            carPart_id.Visible = false;
+            carPart_image.Image = null;
         }
-        private void ManageCars_Load(object sender, EventArgs e)
+        private void ManageCarParts_Load(object sender, EventArgs e)
         {
-            carList = CarsBLL.GetCars();
-            carsDataView.DataSource = carList;
-            carsDataView.Columns[7].Visible = false;
-            carsDataView.Columns[8].Visible = false;
+            carPartList = CarPartsBLL.GetCarParts();
+            carPartsDataView.DataSource = carPartList;
+            carPartsDataView.Columns[7].Visible = false;
+            carPartsDataView.Columns[8].Visible = false;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace CarTraders.UI.AdminPages
 
         private void ManageOperation(string operation)
         {
-            if (car_name.Text == "" || car_brand.Text == "" || car_price.Text == "" || car_description.Text == "")
+            if (carPart_name.Text == "" || carPart_brand.Text == "" || carPart_price.Text == "" || carPart_description.Text == "")
             {
                 MessageBox.Show($"All fields are required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -54,77 +54,77 @@ namespace CarTraders.UI.AdminPages
             {
                 var newGuid = Guid.NewGuid();
 
-                Car car = new Car();
-                car.Id = car_id.Text == "" ? newGuid : Guid.Parse(car_id.Text);
-                car.Name = car_name.Text;
-                car.Brand = car_brand.Text;
-                car.Price = car_price.Text;
-                car.Description = car_description.Text;
+                CarPart carPart = new CarPart();
+                carPart.Id = carPart_id.Text == "" ? newGuid : Guid.Parse(carPart_id.Text);
+                carPart.Name = carPart_name.Text;
+                carPart.Brand = carPart_brand.Text;
+                carPart.Price = carPart_price.Text;
+                carPart.Description = carPart_description.Text;
 
                 // Add ImageName on different scenarios
                 if (uploadFilePath == null)
                 {
-                    if (car_image.Image == null)
+                    if(carPart_image.Image == null)
                     {
-                        car.Image = ConvertImageToBytes(Image.FromFile($"{path}\\Images\\Cars\\empty.jpg"));
-                        car.ImageName = "empty.jpg";
+                        carPart.Image = ConvertImageToBytes(Image.FromFile($"{path}\\Images\\CarParts\\empty.jpg"));
+                        carPart.ImageName = "empty.jpg";
                     }
                     else
                     {
-                        car.Image = ConvertImageToBytes(car_image.Image);
-                        car.ImageName = currentImageName;
+                        carPart.Image = ConvertImageToBytes(carPart_image.Image);
+                        carPart.ImageName = currentImageName;
                     }
                 }
                 else
                 {
-                    car.Image = ConvertImageToBytes(car_image.Image);
-                    car.ImageName = SaveImage(car_id.Text == "" ? newGuid.ToString() : car_id.Text);
+                    carPart.Image = ConvertImageToBytes(carPart_image.Image);
+                    carPart.ImageName = SaveImage(carPart_id.Text == "" ? newGuid.ToString() : carPart_id.Text);
                 }
 
                 if (operation == "Add")
                 {
-                    Car createdObj = CarsBLL.AddCar(car);
+                    CarPart createdObj = CarPartsBLL.AddCarPart(carPart);
                     if (createdObj == null)
                     {
-                        MessageBox.Show($"Failed to add car", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Failed to add car part", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show($"Car added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Car Part added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else if (operation == "Update")
                 {
-                    Car updatedObj = CarsBLL.UpdateCar(car);
+                    CarPart updatedObj = CarPartsBLL.UpdateCarPart(carPart);
                     if (updatedObj == null)
                     {
-                        MessageBox.Show($"Failed to update car", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Failed to update car part", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show($"Car updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Car Part updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else if (operation == "Delete")
                 {
-                    bool isDeleted = CarsBLL.DeleteCar(car);
+                    bool isDeleted = CarPartsBLL.DeleteCarPart(carPart);
                     if (!isDeleted)
                     {
-                        MessageBox.Show($"Failed to delete car", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Failed to delete car part", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show($"Car deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Car Part deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                carList = CarsBLL.GetCars();
-                carsDataView.DataSource = carList;
-                car_name.Clear();
-                car_brand.Clear();
-                car_price.Clear();
-                car_description.Clear();
-                car_image.Image = null;
-                car_name.Focus();
+                carPartList = CarPartsBLL.GetCarParts();
+                carPartsDataView.DataSource = carPartList;
+                carPart_name.Clear();
+                carPart_brand.Clear();
+                carPart_price.Clear();
+                carPart_description.Clear();
+                carPart_image.Image = null;
+                carPart_name.Focus();
                 uploadFilePath = null;
             }
         }
@@ -140,17 +140,17 @@ namespace CarTraders.UI.AdminPages
             new AdminMenu().ShowDialog();
         }
 
-        private void carsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void carPartsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             rowIndex = e.RowIndex;
-            DataGridViewRow row = carsDataView.Rows[rowIndex];
-            car_id.Text = row.Cells[0].Value.ToString();
-            car_name.Text = row.Cells[1].Value.ToString();
-            car_brand.Text = row.Cells[2].Value.ToString();
-            car_price.Text = row.Cells[3].Value.ToString();
-            car_description.Text = row.Cells[4].Value.ToString();
+            DataGridViewRow row = carPartsDataView.Rows[rowIndex];
+            carPart_id.Text = row.Cells[0].Value.ToString();
+            carPart_name.Text = row.Cells[1].Value.ToString();
+            carPart_brand.Text = row.Cells[2].Value.ToString();
+            carPart_price.Text = row.Cells[3].Value.ToString();
+            carPart_description.Text = row.Cells[4].Value.ToString();
 
-            car_image.Image = Image.FromFile($"{path}\\Images\\Cars\\{row.Cells[8].Value ?? "empty.jpg"}");
+            carPart_image.Image = Image.FromFile($"{path}\\Images\\CarParts\\{row.Cells[8].Value ?? "empty.jpg"}");
 
             currentImageName = row.Cells[8].Value.ToString();
         }
@@ -178,7 +178,7 @@ namespace CarTraders.UI.AdminPages
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    car_image.Image = Image.FromFile(dialog.FileName);
+                    carPart_image.Image = Image.FromFile(dialog.FileName);
                     uploadFilePath = dialog.FileName;
                 }
             }
@@ -187,13 +187,13 @@ namespace CarTraders.UI.AdminPages
         private string SaveImage(string uniqueName)
         {
             string fileName = $"{uniqueName}_{DateTime.Now.ToString("yyyy_MM_dd_mm_ss")}{Path.GetExtension(uploadFilePath)}";
-            File.Copy(uploadFilePath, $"{path}\\Images\\Cars\\{fileName}");
+            File.Copy(uploadFilePath, $"{path}\\Images\\CarParts\\{fileName}");
             return fileName;
         }
 
         private void imageRemoveBtn_Click(object sender, EventArgs e)
         {
-            car_image.Image = Image.FromFile($"{path}\\Images\\Cars\\empty.jpg");
+            carPart_image.Image = Image.FromFile($"{path}\\Images\\CarParts\\empty.jpg");
             currentImageName = "empty.jpg";
         }
     }
