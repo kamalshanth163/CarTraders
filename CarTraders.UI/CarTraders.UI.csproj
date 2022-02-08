@@ -54,6 +54,12 @@
     <Compile Include="AdminMenu.designer.cs">
       <DependentUpon>AdminMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\ManageCarParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageCarParts.Designer.cs">
+      <DependentUpon>ManageCarParts.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\ManageCars.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </Compile>
     <EmbeddedResource Include="AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPages\ManageCarParts.resx">
+      <DependentUpon>ManageCarParts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPages\ManageCars.resx">
       <DependentUpon>ManageCars.cs</DependentUpon>
@@ -153,6 +162,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Images\CarParts\" />
     <Folder Include="Images\Cars\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

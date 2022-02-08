@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\CarPartsDAO.cs" />
     <Compile Include="DAO\DbContext.cs" />
     <Compile Include="DAO\CarsDAO.cs" />
     <Compile Include="DAO\UsersDAO.cs" />
