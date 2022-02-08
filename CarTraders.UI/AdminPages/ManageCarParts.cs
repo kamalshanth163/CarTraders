@@ -22,6 +22,8 @@ namespace CarTraders.UI.AdminPages
             label_id.Visible = false;
             carPart_id.Visible = false;
             carPart_image.Image = null;
+            updateBtn.Enabled = false;
+            deleteBtn.Enabled = false;
         }
         private void ManageCarParts_Load(object sender, EventArgs e)
         {
@@ -142,6 +144,9 @@ namespace CarTraders.UI.AdminPages
 
         private void carPartsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            updateBtn.Enabled = true;
+            deleteBtn.Enabled = true;
+
             rowIndex = e.RowIndex;
             DataGridViewRow row = carPartsDataView.Rows[rowIndex];
             carPart_id.Text = row.Cells[0].Value.ToString();
