@@ -56,5 +56,10 @@ namespace CarTraders.BLL
         {
             return OrdersDAO.AddOrder(order);
         }
+
+        public static void UpdateOrderItemsOrderId(List<Guid> orderItemIds, Guid orderId)
+        {
+            OrdersDAO.UpdateOrderItemsOrderId(orderItemIds, orderId);
+        }
     }
 }

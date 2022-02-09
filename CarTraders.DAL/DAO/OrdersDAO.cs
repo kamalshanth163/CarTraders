@@ -72,5 +72,25 @@ namespace OrderTraders.DAL.DAO
                 throw ex;
             }
         }
+
+        public static bool UpdateOrderItemsOrderId(List<Guid> orderItemIds, Guid orderId)
+        {
+            try
+            {
+                foreach (Guid id in orderItemIds)
+                {
+                    OrderItem orderItemFromDb = db.OrderItems.FirstOrDefault(i => i.Id == id);
+                    orderItemFromDb.OrderId = orderId;
+                    orderItemFromDb.UpdatedAt = DateTime.Now;
+                }
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+        }
     }
 }

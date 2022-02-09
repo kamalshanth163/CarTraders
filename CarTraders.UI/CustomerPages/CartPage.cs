@@ -69,10 +69,13 @@ namespace CarTraders.UI.CustomerPages
             else
             {
                 MessageBox.Show($"Order added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var orderItemIds = orderItemList.Select(i => i.Id).ToList();
+                OrdersBLL.UpdateOrderItemsOrderId(orderItemIds, createdObj.Id);
             }
 
             this.Hide();
             new CarStore().ShowDialog();
+
         }
     }
 }
