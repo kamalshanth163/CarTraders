@@ -51,5 +51,28 @@ namespace CarTraders.UI.CustomerPages
             this.Hide();
             new CarStore().ShowDialog();
         }
+
+        private void checkoutBtn_Click(object sender, EventArgs e)
+        {
+            Order order = new Order();
+            order.Id = Guid.NewGuid();
+            order.UserId = UserData.UserId;
+            order.Price = totalAmount;
+            order.Status = "Pending";
+
+            Order createdObj = OrdersBLL.AddOrder(order);
+
+            if (createdObj == null)
+            {
+                MessageBox.Show($"Failed to add order", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show($"Order added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            this.Hide();
+            new CarStore().ShowDialog();
+        }
     }
 }

@@ -51,5 +51,10 @@ namespace CarTraders.BLL
         {
             return OrdersDAO.DeleteOrderItem(id);
         }
+
+        public static Order AddOrder(Order order)
+        {
+            return OrdersDAO.AddOrder(order);
+        }
     }
 }

@@ -56,5 +56,21 @@ namespace OrderTraders.DAL.DAO
                 throw ex;
             }
         }
+
+        public static Order AddOrder(Order order)
+        {
+            try
+            {
+                order.CreatedAt = DateTime.Now;
+                db.Orders.InsertOnSubmit(order);
+                db.SubmitChanges();
+                return order;
+            }
+            catch (Exception ex)
+            {
+                return null;
+                throw ex;
+            }
+        }
     }
 }

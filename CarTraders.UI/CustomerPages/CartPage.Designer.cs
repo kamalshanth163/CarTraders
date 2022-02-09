@@ -35,7 +35,7 @@ namespace CarTraders.UI.CustomerPages
             this.cart_list = new System.Windows.Forms.FlowLayoutPanel();
             this.total_price = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.checkoutBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -106,15 +106,16 @@ namespace CarTraders.UI.CustomerPages
             this.label2.TabIndex = 55;
             this.label2.Text = "Total Amount (LKR)";
             // 
-            // button1
+            // checkoutBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.button1.Location = new System.Drawing.Point(554, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 41);
-            this.button1.TabIndex = 56;
-            this.button1.Text = "Checkout";
-            this.button1.UseVisualStyleBackColor = true;
+            this.checkoutBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.checkoutBtn.Location = new System.Drawing.Point(554, 386);
+            this.checkoutBtn.Name = "checkoutBtn";
+            this.checkoutBtn.Size = new System.Drawing.Size(194, 41);
+            this.checkoutBtn.TabIndex = 56;
+            this.checkoutBtn.Text = "Checkout";
+            this.checkoutBtn.UseVisualStyleBackColor = true;
+            this.checkoutBtn.Click += new System.EventHandler(this.checkoutBtn_Click);
             // 
             // label1
             // 
@@ -171,7 +172,7 @@ namespace CarTraders.UI.CustomerPages
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkoutBtn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -201,7 +202,7 @@ namespace CarTraders.UI.CustomerPages
         private System.Windows.Forms.FlowLayoutPanel cart_list;
         private System.Windows.Forms.Label total_price;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button checkoutBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

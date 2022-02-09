@@ -33,18 +33,18 @@ namespace CarTraders.DAL
     partial void InsertCarPart(CarPart instance);
     partial void UpdateCarPart(CarPart instance);
     partial void DeleteCarPart(CarPart instance);
-    partial void InsertUser(User instance);
-    partial void UpdateUser(User instance);
-    partial void DeleteUser(User instance);
+    partial void InsertOrder(Order instance);
+    partial void UpdateOrder(Order instance);
+    partial void DeleteOrder(Order instance);
     partial void InsertCar(Car instance);
     partial void UpdateCar(Car instance);
     partial void DeleteCar(Car instance);
     partial void InsertOrderItem(OrderItem instance);
     partial void UpdateOrderItem(OrderItem instance);
     partial void DeleteOrderItem(OrderItem instance);
-    partial void InsertOrder(Order instance);
-    partial void UpdateOrder(Order instance);
-    partial void DeleteOrder(Order instance);
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
     #endregion
 		
 		public DataClassesDataContext() : 
@@ -85,11 +85,11 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<User> Users
+		public System.Data.Linq.Table<Order> Orders
 		{
 			get
 			{
-				return this.GetTable<User>();
+				return this.GetTable<Order>();
 			}
 		}
 		
@@ -109,11 +109,11 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<Order> Orders
+		public System.Data.Linq.Table<User> Users
 		{
 			get
 			{
-				return this.GetTable<Order>();
+				return this.GetTable<User>();
 			}
 		}
 	}
@@ -372,29 +372,23 @@ namespace CarTraders.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Orders")]
+	public partial class Order : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private System.Guid _Id;
 		
-		private string _Type;
+		private System.Guid _UserId;
 		
-		private string _Name;
-		
-		private string _Address;
-		
-		private string _Phone;
-		
-		private string _Email;
-		
-		private string _Password;
+		private decimal _Price;
 		
 		private System.DateTime _CreatedAt;
 		
 		private System.Nullable<System.DateTime> _UpdatedAt;
+		
+		private string _Status;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -402,25 +396,19 @@ namespace CarTraders.DAL
     partial void OnCreated();
     partial void OnIdChanging(System.Guid value);
     partial void OnIdChanged();
-    partial void OnTypeChanging(string value);
-    partial void OnTypeChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    partial void OnPhoneChanging(string value);
-    partial void OnPhoneChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
+    partial void OnUserIdChanging(System.Guid value);
+    partial void OnUserIdChanged();
+    partial void OnPriceChanging(decimal value);
+    partial void OnPriceChanged();
     partial void OnCreatedAtChanging(System.DateTime value);
     partial void OnCreatedAtChanged();
     partial void OnUpdatedAtChanging(System.Nullable<System.DateTime> value);
     partial void OnUpdatedAtChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
     #endregion
 		
-		public User()
+		public Order()
 		{
 			OnCreated();
 		}
@@ -445,122 +433,42 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Type
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid UserId
 		{
 			get
 			{
-				return this._Type;
+				return this._UserId;
 			}
 			set
 			{
-				if ((this._Type != value))
+				if ((this._UserId != value))
 				{
-					this.OnTypeChanging(value);
+					this.OnUserIdChanging(value);
 					this.SendPropertyChanging();
-					this._Type = value;
-					this.SendPropertyChanged("Type");
-					this.OnTypeChanged();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Price
 		{
 			get
 			{
-				return this._Name;
+				return this._Price;
 			}
 			set
 			{
-				if ((this._Name != value))
+				if ((this._Price != value))
 				{
-					this.OnNameChanging(value);
+					this.OnPriceChanging(value);
 					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(50)")]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(50)")]
-		public string Phone
-		{
-			get
-			{
-				return this._Phone;
-			}
-			set
-			{
-				if ((this._Phone != value))
-				{
-					this.OnPhoneChanging(value);
-					this.SendPropertyChanging();
-					this._Phone = value;
-					this.SendPropertyChanged("Phone");
-					this.OnPhoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
 				}
 			}
 		}
@@ -601,6 +509,26 @@ namespace CarTraders.DAL
 					this._UpdatedAt = value;
 					this.SendPropertyChanged("UpdatedAt");
 					this.OnUpdatedAtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
 				}
 			}
 		}
@@ -1134,23 +1062,29 @@ namespace CarTraders.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Orders")]
-	public partial class Order : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private System.Guid _Id;
 		
-		private System.Guid _UserId;
+		private string _Type;
 		
-		private decimal _Price;
+		private string _Name;
+		
+		private string _Address;
+		
+		private string _Phone;
+		
+		private string _Email;
+		
+		private string _Password;
 		
 		private System.DateTime _CreatedAt;
 		
 		private System.Nullable<System.DateTime> _UpdatedAt;
-		
-		private System.Data.Linq.Binary _Status;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1158,19 +1092,25 @@ namespace CarTraders.DAL
     partial void OnCreated();
     partial void OnIdChanging(System.Guid value);
     partial void OnIdChanged();
-    partial void OnUserIdChanging(System.Guid value);
-    partial void OnUserIdChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
     partial void OnCreatedAtChanging(System.DateTime value);
     partial void OnCreatedAtChanged();
     partial void OnUpdatedAtChanging(System.Nullable<System.DateTime> value);
     partial void OnUpdatedAtChanged();
-    partial void OnStatusChanging(System.Data.Linq.Binary value);
-    partial void OnStatusChanged();
     #endregion
 		
-		public Order()
+		public User()
 		{
 			OnCreated();
 		}
@@ -1195,42 +1135,122 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="UniqueIdentifier NOT NULL")]
-		public System.Guid UserId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Type
 		{
 			get
 			{
-				return this._UserId;
+				return this._Type;
 			}
 			set
 			{
-				if ((this._UserId != value))
+				if ((this._Type != value))
 				{
-					this.OnUserIdChanging(value);
+					this.OnTypeChanging(value);
 					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(18,0) NOT NULL")]
-		public decimal Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
 		{
 			get
 			{
-				return this._Price;
+				return this._Name;
 			}
 			set
 			{
-				if ((this._Price != value))
+				if ((this._Name != value))
 				{
-					this.OnPriceChanging(value);
+					this.OnNameChanging(value);
 					this.SendPropertyChanging();
-					this._Price = value;
-					this.SendPropertyChanged("Price");
-					this.OnPriceChanged();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(50)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(50)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this.OnPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
 				}
 			}
 		}
@@ -1271,26 +1291,6 @@ namespace CarTraders.DAL
 					this._UpdatedAt = value;
 					this.SendPropertyChanged("UpdatedAt");
 					this.OnUpdatedAtChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarBinary(50) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
 				}
 			}
 		}
