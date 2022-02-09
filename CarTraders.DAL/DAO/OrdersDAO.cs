@@ -37,5 +37,24 @@ namespace OrderTraders.DAL.DAO
                 throw ex;
             }
         }
+
+        public static bool DeleteOrderItem(Guid id)
+        {
+            try
+            {
+                OrderItem orderItemFromDb = db.OrderItems.FirstOrDefault(i => i.Id == id);
+                db.OrderItems.DeleteOnSubmit(orderItemFromDb);
+                db.SubmitChanges();
+
+                Car orderItemFromDbAfterDelete = db.Cars.FirstOrDefault(c => c.Id == id);
+                var isDeleted = orderItemFromDbAfterDelete == null;
+                return isDeleted;
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+        }
     }
 }

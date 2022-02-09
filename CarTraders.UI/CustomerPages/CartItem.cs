@@ -1,5 +1,8 @@
-﻿using CarTraders.DAL.DTO;
+﻿using CarTraders.BLL;
+using CarTraders.DAL.Data;
+using CarTraders.DAL.DTO;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CarTraders.UI.CustomerPages
@@ -34,7 +37,25 @@ namespace CarTraders.UI.CustomerPages
             product_name.Text = ProductName;
             product_price.Text = Price.ToString();
             product_type.Text = ProductType;
-            product_quantity.Value = Quantity;
+            product_quantity.Text = Quantity.ToString();
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            bool isDeleted = OrdersBLL.DeleteOrderItem(Id);
+            if (!isDeleted)
+            {
+                MessageBox.Show($"Failed to delete item", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show($"Item deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                foreach (var f in Application.OpenForms.OfType<CartPage>().ToList())
+                {
+                    f.Hide();
+                }
+                new CartPage().ShowDialog();
+            }
         }
     }
 }

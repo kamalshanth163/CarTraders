@@ -46,5 +46,10 @@ namespace CarTraders.BLL
 
             return orderItemsDtos;
         }
+
+        public static bool DeleteOrderItem(Guid id)
+        {
+            return OrdersDAO.DeleteOrderItem(id);
+        }
     }
 }

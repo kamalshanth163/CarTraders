@@ -130,7 +130,7 @@ namespace CarTraders.UI.CustomerPages
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label3.Location = new System.Drawing.Point(474, 79);
+            this.label3.Location = new System.Drawing.Point(436, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 21);
             this.label3.TabIndex = 58;
@@ -140,7 +140,7 @@ namespace CarTraders.UI.CustomerPages
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label4.Location = new System.Drawing.Point(379, 79);
+            this.label4.Location = new System.Drawing.Point(350, 79);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 21);
             this.label4.TabIndex = 59;
@@ -160,7 +160,7 @@ namespace CarTraders.UI.CustomerPages
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label6.Location = new System.Drawing.Point(562, 79);
+            this.label6.Location = new System.Drawing.Point(533, 79);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 21);
             this.label6.TabIndex = 61;

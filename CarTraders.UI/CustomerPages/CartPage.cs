@@ -16,7 +16,7 @@ namespace CarTraders.UI.CustomerPages
             InitializeComponent();
         }
 
-        private void CartPage_Load(object sender, EventArgs e)
+        public void CartPage_Load(object sender, EventArgs e)
         {
             orderItemList = OrdersBLL.GetCartItemsOfUser(UserData.UserId);
             LoadOrderItems(orderItemList);
