@@ -3,7 +3,6 @@ using CarTraders.DAL;
 using CarTraders.DAL.DTO;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace CarTraders.UI.CustomerPages
@@ -13,6 +12,8 @@ namespace CarTraders.UI.CustomerPages
         string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
         List<Car> carList = new List<Car>();
         List<CarPart> carPartList = new List<CarPart>();
+        string carSearchTerm;
+        string carPartSearchTerm;
 
         public CarStore()
         {
@@ -23,15 +24,17 @@ namespace CarTraders.UI.CustomerPages
         {
             carList = CarsBLL.GetCars();
             carPartList = CarPartsBLL.GetCarParts();
-            LoadCarsData();
-            LoadCarPartsData();
+            LoadCarsData(carList);
+            LoadCarPartsData(carPartList);
         }
 
-        public void LoadCarsData()
+        public void LoadCarsData(List<Car> cars)
         {
             cars_listing.Controls.Clear();
 
-            foreach(Car car in carList)
+            var list = carSearchTerm == "" ? carList : cars;
+
+            foreach (Car car in list)
             {
                 ProductCardDto productCardDto = new ProductCardDto();
                 productCardDto.ImageName = car.ImageName;
@@ -48,11 +51,13 @@ namespace CarTraders.UI.CustomerPages
             }
         }
 
-        public void LoadCarPartsData()
+        public void LoadCarPartsData(List<CarPart> carParts)
         {
             carParts_listing.Controls.Clear();
 
-            foreach (CarPart carPart in carPartList)
+            var list = carPartSearchTerm == "" ? carPartList : carParts;
+
+            foreach (CarPart carPart in list)
             {
                 ProductCardDto productCardDto = new ProductCardDto();
                 productCardDto.ImageName = carPart.ImageName;
@@ -78,6 +83,20 @@ namespace CarTraders.UI.CustomerPages
         private void exitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void cars_searchBox_TextChanged(object sender, EventArgs e)
+        {
+            carSearchTerm = cars_searchBox.Text;
+            var filter = carList.FindAll(c => c.Name.ToLower().Contains(cars_searchBox.Text.ToLower()));
+            LoadCarsData(filter);
+        }
+
+        private void carParts_searchBox_TextChanged(object sender, EventArgs e)
+        {
+            carPartSearchTerm = carParts_searchBox.Text;
+            var filter = carPartList.FindAll(c => c.Name.ToLower().Contains(carParts_searchBox.Text.ToLower()));
+            LoadCarPartsData(filter);
         }
     }
 }

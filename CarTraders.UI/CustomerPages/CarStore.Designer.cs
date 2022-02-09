@@ -35,10 +35,8 @@ namespace CarTraders.UI.CustomerPages
             this.menuBtn = new System.Windows.Forms.Button();
             this.store_tabs = new System.Windows.Forms.TabControl();
             this.cars_tabPage = new System.Windows.Forms.TabPage();
-            this.carParts_tabPage = new System.Windows.Forms.TabPage();
             this.cars_searchBox = new System.Windows.Forms.TextBox();
-            this.cars_searchBtn = new System.Windows.Forms.Button();
-            this.carParts_searchBtn = new System.Windows.Forms.Button();
+            this.carParts_tabPage = new System.Windows.Forms.TabPage();
             this.carParts_searchBox = new System.Windows.Forms.TextBox();
             this.carParts_listing = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
@@ -102,7 +100,6 @@ namespace CarTraders.UI.CustomerPages
             // 
             // cars_tabPage
             // 
-            this.cars_tabPage.Controls.Add(this.cars_searchBtn);
             this.cars_tabPage.Controls.Add(this.cars_searchBox);
             this.cars_tabPage.Controls.Add(this.cars_listing);
             this.cars_tabPage.Location = new System.Drawing.Point(4, 22);
@@ -113,9 +110,16 @@ namespace CarTraders.UI.CustomerPages
             this.cars_tabPage.Text = "Cars";
             this.cars_tabPage.UseVisualStyleBackColor = true;
             // 
+            // cars_searchBox
+            // 
+            this.cars_searchBox.Location = new System.Drawing.Point(238, 17);
+            this.cars_searchBox.Name = "cars_searchBox";
+            this.cars_searchBox.Size = new System.Drawing.Size(259, 20);
+            this.cars_searchBox.TabIndex = 40;
+            this.cars_searchBox.TextChanged += new System.EventHandler(this.cars_searchBox_TextChanged);
+            // 
             // carParts_tabPage
             // 
-            this.carParts_tabPage.Controls.Add(this.carParts_searchBtn);
             this.carParts_tabPage.Controls.Add(this.carParts_searchBox);
             this.carParts_tabPage.Controls.Add(this.carParts_listing);
             this.carParts_tabPage.Location = new System.Drawing.Point(4, 22);
@@ -126,39 +130,13 @@ namespace CarTraders.UI.CustomerPages
             this.carParts_tabPage.Text = "Car Parts";
             this.carParts_tabPage.UseVisualStyleBackColor = true;
             // 
-            // cars_searchBox
-            // 
-            this.cars_searchBox.Location = new System.Drawing.Point(197, 19);
-            this.cars_searchBox.Name = "cars_searchBox";
-            this.cars_searchBox.Size = new System.Drawing.Size(259, 20);
-            this.cars_searchBox.TabIndex = 40;
-            // 
-            // cars_searchBtn
-            // 
-            this.cars_searchBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cars_searchBtn.Location = new System.Drawing.Point(462, 14);
-            this.cars_searchBtn.Name = "cars_searchBtn";
-            this.cars_searchBtn.Size = new System.Drawing.Size(105, 29);
-            this.cars_searchBtn.TabIndex = 44;
-            this.cars_searchBtn.Text = "Search";
-            this.cars_searchBtn.UseVisualStyleBackColor = true;
-            // 
-            // carParts_searchBtn
-            // 
-            this.carParts_searchBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.carParts_searchBtn.Location = new System.Drawing.Point(462, 14);
-            this.carParts_searchBtn.Name = "carParts_searchBtn";
-            this.carParts_searchBtn.Size = new System.Drawing.Size(105, 29);
-            this.carParts_searchBtn.TabIndex = 47;
-            this.carParts_searchBtn.Text = "Search";
-            this.carParts_searchBtn.UseVisualStyleBackColor = true;
-            // 
             // carParts_searchBox
             // 
-            this.carParts_searchBox.Location = new System.Drawing.Point(197, 19);
+            this.carParts_searchBox.Location = new System.Drawing.Point(238, 17);
             this.carParts_searchBox.Name = "carParts_searchBox";
             this.carParts_searchBox.Size = new System.Drawing.Size(259, 20);
             this.carParts_searchBox.TabIndex = 46;
+            this.carParts_searchBox.TextChanged += new System.EventHandler(this.carParts_searchBox_TextChanged);
             // 
             // carParts_listing
             // 
@@ -212,9 +190,7 @@ namespace CarTraders.UI.CustomerPages
         private System.Windows.Forms.TabControl store_tabs;
         private System.Windows.Forms.TabPage cars_tabPage;
         private System.Windows.Forms.TabPage carParts_tabPage;
-        private System.Windows.Forms.Button cars_searchBtn;
         private System.Windows.Forms.TextBox cars_searchBox;
-        private System.Windows.Forms.Button carParts_searchBtn;
         private System.Windows.Forms.TextBox carParts_searchBox;
         private System.Windows.Forms.FlowLayoutPanel carParts_listing;
         private System.Windows.Forms.Button button1;
