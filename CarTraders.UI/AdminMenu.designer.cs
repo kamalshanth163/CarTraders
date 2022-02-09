@@ -68,7 +68,6 @@ namespace CarTraders
             this.btn_customers.TabIndex = 10;
             this.btn_customers.Text = "Manage Customers";
             this.btn_customers.UseVisualStyleBackColor = true;
-            this.btn_customers.Click += new System.EventHandler(this.btn_customers_Click);
             // 
             // btn_carParts
             // 

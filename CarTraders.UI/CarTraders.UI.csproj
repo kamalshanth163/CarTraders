@@ -83,6 +83,24 @@
     <Compile Include="CustomerMenu.designer.cs">
       <DependentUpon>CustomerMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerPages\CarStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\CarStore.Designer.cs">
+      <DependentUpon>CarStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPages\ProductCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\ProductCard.Designer.cs">
+      <DependentUpon>ProductCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPages\ProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\ProductView.Designer.cs">
+      <DependentUpon>ProductView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +135,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerMenu.resx">
       <DependentUpon>CustomerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\CarStore.resx">
+      <DependentUpon>CarStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\ProductCard.resx">
+      <DependentUpon>ProductCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\ProductView.resx">
+      <DependentUpon>ProductView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

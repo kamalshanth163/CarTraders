@@ -1,4 +1,5 @@
 ﻿using CarTraders.UI.AdminPages;
+using CarTraders.UI.CustomerPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace CarTraders.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManageCustomers());
+            Application.Run(new CarStore());
         }
     }
 }
