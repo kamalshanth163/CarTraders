@@ -4,6 +4,7 @@ using CarTraders.DAL.Data;
 using CarTraders.DAL.DTO;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CarTraders.UI.CustomerPages
@@ -11,6 +12,8 @@ namespace CarTraders.UI.CustomerPages
     public partial class CartPage : Form
     {
         List<OrderItemDto> orderItemList = new List<OrderItemDto>();
+        decimal totalAmount;
+
         public CartPage()
         {
             InitializeComponent();
@@ -20,6 +23,9 @@ namespace CarTraders.UI.CustomerPages
         {
             orderItemList = OrdersBLL.GetCartItemsOfUser(UserData.UserId);
             LoadOrderItems(orderItemList);
+
+            totalAmount = orderItemList.Sum(i => i.Price);
+            total_price.Text = totalAmount.ToString();
         }
 
         public void LoadOrderItems(List<OrderItemDto> items)

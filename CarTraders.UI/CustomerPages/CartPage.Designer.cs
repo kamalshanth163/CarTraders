@@ -92,9 +92,9 @@ namespace CarTraders.UI.CustomerPages
             this.total_price.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.total_price.Location = new System.Drawing.Point(220, 388);
             this.total_price.Name = "total_price";
-            this.total_price.Size = new System.Drawing.Size(77, 37);
+            this.total_price.Size = new System.Drawing.Size(32, 37);
             this.total_price.TabIndex = 54;
-            this.total_price.Text = "1250";
+            this.total_price.Text = "0";
             // 
             // label2
             // 
