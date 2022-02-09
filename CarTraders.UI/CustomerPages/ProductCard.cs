@@ -17,7 +17,7 @@ namespace CarTraders.UI.CustomerPages
         public string Brand { get; set; }
         public string Description { get; set; }
         public string Price { get; set; }
-        public string ProductType { get; set; } = "Car";
+        public string ProductType { get; set; }
 
         public ProductCard(ProductCardDto model)
         {
@@ -31,6 +31,7 @@ namespace CarTraders.UI.CustomerPages
             Brand = model.Brand;
             Description = model.Description;
             Price = model.Price;
+            ProductType = model.ProductType;
         }
         private void ProductCard_Load(object sender, EventArgs e)
         {

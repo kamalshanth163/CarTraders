@@ -30,29 +30,41 @@ namespace CarTraders.UI.CustomerPages
         private void InitializeComponent()
         {
             this.title = new System.Windows.Forms.Label();
-            this.products_listing = new System.Windows.Forms.FlowLayoutPanel();
+            this.cars_listing = new System.Windows.Forms.FlowLayoutPanel();
             this.exitBtn = new System.Windows.Forms.Button();
             this.menuBtn = new System.Windows.Forms.Button();
+            this.store_tabs = new System.Windows.Forms.TabControl();
+            this.cars_tabPage = new System.Windows.Forms.TabPage();
+            this.carParts_tabPage = new System.Windows.Forms.TabPage();
+            this.cars_searchBox = new System.Windows.Forms.TextBox();
+            this.cars_searchBtn = new System.Windows.Forms.Button();
+            this.carParts_searchBtn = new System.Windows.Forms.Button();
+            this.carParts_searchBox = new System.Windows.Forms.TextBox();
+            this.carParts_listing = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.store_tabs.SuspendLayout();
+            this.cars_tabPage.SuspendLayout();
+            this.carParts_tabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // title
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.title.Location = new System.Drawing.Point(23, 9);
+            this.title.Location = new System.Drawing.Point(309, 14);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(136, 37);
+            this.title.Size = new System.Drawing.Size(125, 37);
             this.title.TabIndex = 38;
-            this.title.Text = "Cars Store";
+            this.title.Text = "Car Store";
             // 
-            // products_listing
+            // cars_listing
             // 
-            this.products_listing.AutoScroll = true;
-            this.products_listing.BackColor = System.Drawing.Color.Transparent;
-            this.products_listing.Location = new System.Drawing.Point(50, 100);
-            this.products_listing.Name = "products_listing";
-            this.products_listing.Size = new System.Drawing.Size(688, 338);
-            this.products_listing.TabIndex = 39;
+            this.cars_listing.AutoScroll = true;
+            this.cars_listing.BackColor = System.Drawing.Color.Transparent;
+            this.cars_listing.Location = new System.Drawing.Point(6, 52);
+            this.cars_listing.Name = "cars_listing";
+            this.cars_listing.Size = new System.Drawing.Size(767, 303);
+            this.cars_listing.TabIndex = 39;
             // 
             // exitBtn
             // 
@@ -78,20 +90,115 @@ namespace CarTraders.UI.CustomerPages
             this.menuBtn.UseVisualStyleBackColor = true;
             this.menuBtn.Click += new System.EventHandler(this.menuBtn_Click);
             // 
+            // store_tabs
+            // 
+            this.store_tabs.Controls.Add(this.cars_tabPage);
+            this.store_tabs.Controls.Add(this.carParts_tabPage);
+            this.store_tabs.Location = new System.Drawing.Point(31, 54);
+            this.store_tabs.Name = "store_tabs";
+            this.store_tabs.SelectedIndex = 0;
+            this.store_tabs.Size = new System.Drawing.Size(739, 387);
+            this.store_tabs.TabIndex = 43;
+            // 
+            // cars_tabPage
+            // 
+            this.cars_tabPage.Controls.Add(this.cars_searchBtn);
+            this.cars_tabPage.Controls.Add(this.cars_searchBox);
+            this.cars_tabPage.Controls.Add(this.cars_listing);
+            this.cars_tabPage.Location = new System.Drawing.Point(4, 22);
+            this.cars_tabPage.Name = "cars_tabPage";
+            this.cars_tabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.cars_tabPage.Size = new System.Drawing.Size(731, 361);
+            this.cars_tabPage.TabIndex = 0;
+            this.cars_tabPage.Text = "Cars";
+            this.cars_tabPage.UseVisualStyleBackColor = true;
+            // 
+            // carParts_tabPage
+            // 
+            this.carParts_tabPage.Controls.Add(this.carParts_searchBtn);
+            this.carParts_tabPage.Controls.Add(this.carParts_searchBox);
+            this.carParts_tabPage.Controls.Add(this.carParts_listing);
+            this.carParts_tabPage.Location = new System.Drawing.Point(4, 22);
+            this.carParts_tabPage.Name = "carParts_tabPage";
+            this.carParts_tabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.carParts_tabPage.Size = new System.Drawing.Size(731, 361);
+            this.carParts_tabPage.TabIndex = 1;
+            this.carParts_tabPage.Text = "Car Parts";
+            this.carParts_tabPage.UseVisualStyleBackColor = true;
+            // 
+            // cars_searchBox
+            // 
+            this.cars_searchBox.Location = new System.Drawing.Point(197, 19);
+            this.cars_searchBox.Name = "cars_searchBox";
+            this.cars_searchBox.Size = new System.Drawing.Size(259, 20);
+            this.cars_searchBox.TabIndex = 40;
+            // 
+            // cars_searchBtn
+            // 
+            this.cars_searchBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cars_searchBtn.Location = new System.Drawing.Point(462, 14);
+            this.cars_searchBtn.Name = "cars_searchBtn";
+            this.cars_searchBtn.Size = new System.Drawing.Size(105, 29);
+            this.cars_searchBtn.TabIndex = 44;
+            this.cars_searchBtn.Text = "Search";
+            this.cars_searchBtn.UseVisualStyleBackColor = true;
+            // 
+            // carParts_searchBtn
+            // 
+            this.carParts_searchBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.carParts_searchBtn.Location = new System.Drawing.Point(462, 14);
+            this.carParts_searchBtn.Name = "carParts_searchBtn";
+            this.carParts_searchBtn.Size = new System.Drawing.Size(105, 29);
+            this.carParts_searchBtn.TabIndex = 47;
+            this.carParts_searchBtn.Text = "Search";
+            this.carParts_searchBtn.UseVisualStyleBackColor = true;
+            // 
+            // carParts_searchBox
+            // 
+            this.carParts_searchBox.Location = new System.Drawing.Point(197, 19);
+            this.carParts_searchBox.Name = "carParts_searchBox";
+            this.carParts_searchBox.Size = new System.Drawing.Size(259, 20);
+            this.carParts_searchBox.TabIndex = 46;
+            // 
+            // carParts_listing
+            // 
+            this.carParts_listing.AutoScroll = true;
+            this.carParts_listing.BackColor = System.Drawing.Color.Transparent;
+            this.carParts_listing.Location = new System.Drawing.Point(6, 52);
+            this.carParts_listing.Name = "carParts_listing";
+            this.carParts_listing.Size = new System.Drawing.Size(719, 303);
+            this.carParts_listing.TabIndex = 45;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button1.Location = new System.Drawing.Point(440, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(53, 29);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "Cart";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // CarStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.store_tabs);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.menuBtn);
-            this.Controls.Add(this.products_listing);
             this.Controls.Add(this.title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CarStore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CarStore";
             this.Load += new System.EventHandler(this.CarStore_Load);
+            this.store_tabs.ResumeLayout(false);
+            this.cars_tabPage.ResumeLayout(false);
+            this.cars_tabPage.PerformLayout();
+            this.carParts_tabPage.ResumeLayout(false);
+            this.carParts_tabPage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,8 +206,17 @@ namespace CarTraders.UI.CustomerPages
 
         #endregion
         private System.Windows.Forms.Label title;
-        private System.Windows.Forms.FlowLayoutPanel products_listing;
+        private System.Windows.Forms.FlowLayoutPanel cars_listing;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button menuBtn;
+        private System.Windows.Forms.TabControl store_tabs;
+        private System.Windows.Forms.TabPage cars_tabPage;
+        private System.Windows.Forms.TabPage carParts_tabPage;
+        private System.Windows.Forms.Button cars_searchBtn;
+        private System.Windows.Forms.TextBox cars_searchBox;
+        private System.Windows.Forms.Button carParts_searchBtn;
+        private System.Windows.Forms.TextBox carParts_searchBox;
+        private System.Windows.Forms.FlowLayoutPanel carParts_listing;
+        private System.Windows.Forms.Button button1;
     }
 }

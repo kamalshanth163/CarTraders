@@ -12,6 +12,7 @@ namespace CarTraders.UI.CustomerPages
     {
         string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
         List<Car> carList = new List<Car>();
+        List<CarPart> carPartList = new List<CarPart>();
 
         public CarStore()
         {
@@ -21,12 +22,14 @@ namespace CarTraders.UI.CustomerPages
         private void CarStore_Load(object sender, EventArgs e)
         {
             carList = CarsBLL.GetCars();
-            LoadData();
+            carPartList = CarPartsBLL.GetCarParts();
+            LoadCarsData();
+            LoadCarPartsData();
         }
 
-        public void LoadData()
+        public void LoadCarsData()
         {
-            products_listing.Controls.Clear();
+            cars_listing.Controls.Clear();
 
             foreach(Car car in carList)
             {
@@ -41,7 +44,28 @@ namespace CarTraders.UI.CustomerPages
 
                 var productCard = new ProductCard(productCardDto);
 
-                products_listing.Controls.Add(productCard);
+                cars_listing.Controls.Add(productCard);
+            }
+        }
+
+        public void LoadCarPartsData()
+        {
+            carParts_listing.Controls.Clear();
+
+            foreach (CarPart carPart in carPartList)
+            {
+                ProductCardDto productCardDto = new ProductCardDto();
+                productCardDto.ImageName = carPart.ImageName;
+                productCardDto.Id = carPart.Id;
+                productCardDto.Name = carPart.Name;
+                productCardDto.Brand = carPart.Brand;
+                productCardDto.Description = carPart.Description;
+                productCardDto.Price = carPart.Price.ToString();
+                productCardDto.ProductType = "CarPart";
+
+                var productCard = new ProductCard(productCardDto);
+
+                carParts_listing.Controls.Add(productCard);
             }
         }
 
