@@ -48,6 +48,8 @@
       <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
       <Column Name="OrderId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Orders" Member="Orders">

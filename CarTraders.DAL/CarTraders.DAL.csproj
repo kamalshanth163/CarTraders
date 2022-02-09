@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\CarPartsDAO.cs" />
+    <Compile Include="DAO\OrdersDAO.cs" />
     <Compile Include="DAO\DbContext.cs" />
     <Compile Include="DAO\CarsDAO.cs" />
     <Compile Include="DAO\UsersDAO.cs" />

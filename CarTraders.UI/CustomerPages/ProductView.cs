@@ -1,4 +1,6 @@
-﻿using CarTraders.DAL.DTO;
+﻿using CarTraders.BLL;
+using CarTraders.DAL;
+using CarTraders.DAL.DTO;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -37,6 +39,27 @@ namespace CarTraders.UI.CustomerPages
         {
             var totalPricePerItem = double.Parse(product_price.Text) * (double)product_quantity.Value;
 
+            OrderItem orderItem = new OrderItem();
+            orderItem.Id = Guid.NewGuid();
+            orderItem.OrderId = null;
+            orderItem.UserId = userId;
+            orderItem.ProductId = productId;
+            orderItem.ProductType = productType;
+            orderItem.Price = totalPricePerItem;
+            orderItem.Quantity = (int)product_quantity.Value;
+
+            OrderItem createdObj = OrdersBLL.AddOrderItem(orderItem);
+
+            if (createdObj == null)
+            {
+                MessageBox.Show($"Failed to add order item", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show($"Order Item added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            this.Close();
         }
     }
 }
