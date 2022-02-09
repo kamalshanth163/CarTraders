@@ -1,4 +1,5 @@
-﻿using CarTraders.DAL.DTO;
+﻿using CarTraders.DAL.Data;
+using CarTraders.DAL.DTO;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -11,8 +12,10 @@ namespace CarTraders.UI.CustomerPages
 
         public Image Image { get; set; }
         public string ImageName { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Brand { get; set; }
+        public string Description { get; set; }
         public string Price { get; set; }
         public string ProductType { get; set; } = "Car";
 
@@ -23,8 +26,10 @@ namespace CarTraders.UI.CustomerPages
             var imageFolder = model.ProductType == "Car" ? "Cars" : "CarParts";
             Image = Image.FromFile($"{path}\\Images\\{imageFolder}\\{model.ImageName}");
             ImageName = model.ImageName;
+            Id = model.Id;
             Name = model.Name;
             Brand = model.Brand;
+            Description = model.Description;
             Price = model.Price;
         }
         private void ProductCard_Load(object sender, EventArgs e)
@@ -39,11 +44,13 @@ namespace CarTraders.UI.CustomerPages
         {
             ProductViewDto productViewDto = new ProductViewDto();
             productViewDto.ImageName = ImageName;
+            productViewDto.Id = Id;
             productViewDto.Name = Name;
             productViewDto.Brand = Brand;
-            productViewDto.Description = "DESC";
+            productViewDto.Description = Description;
             productViewDto.Price = Price;
             productViewDto.ProductType = ProductType;
+            productViewDto.UserId = UserData.UserId;
 
             new ProductView(productViewDto).ShowDialog();
         }

@@ -30,7 +30,7 @@ namespace CarTraders.UI.CustomerPages
         private void InitializeComponent()
         {
             this.product_description = new System.Windows.Forms.Label();
-            this.product_qty = new System.Windows.Forms.NumericUpDown();
+            this.product_quantity = new System.Windows.Forms.NumericUpDown();
             this.addToCartBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.product_price = new System.Windows.Forms.Label();
@@ -38,7 +38,7 @@ namespace CarTraders.UI.CustomerPages
             this.product_name = new System.Windows.Forms.Label();
             this.product_image = new System.Windows.Forms.PictureBox();
             this.exitBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.product_qty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.product_quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.product_image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,13 +52,23 @@ namespace CarTraders.UI.CustomerPages
             this.product_description.TabIndex = 52;
             this.product_description.Text = "Product Description";
             // 
-            // product_qty
+            // product_quantity
             // 
-            this.product_qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product_qty.Location = new System.Drawing.Point(136, 413);
-            this.product_qty.Name = "product_qty";
-            this.product_qty.Size = new System.Drawing.Size(69, 26);
-            this.product_qty.TabIndex = 51;
+            this.product_quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product_quantity.Location = new System.Drawing.Point(136, 413);
+            this.product_quantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.product_quantity.Name = "product_quantity";
+            this.product_quantity.Size = new System.Drawing.Size(69, 26);
+            this.product_quantity.TabIndex = 51;
+            this.product_quantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // addToCartBtn
             // 
@@ -69,6 +79,7 @@ namespace CarTraders.UI.CustomerPages
             this.addToCartBtn.TabIndex = 50;
             this.addToCartBtn.Text = "Add to cart";
             this.addToCartBtn.UseVisualStyleBackColor = true;
+            this.addToCartBtn.Click += new System.EventHandler(this.addToCartBtn_Click);
             // 
             // label1
             // 
@@ -144,7 +155,7 @@ namespace CarTraders.UI.CustomerPages
             this.ClientSize = new System.Drawing.Size(342, 469);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.product_description);
-            this.Controls.Add(this.product_qty);
+            this.Controls.Add(this.product_quantity);
             this.Controls.Add(this.addToCartBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.product_price);
@@ -155,7 +166,7 @@ namespace CarTraders.UI.CustomerPages
             this.Name = "ProductView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductView";
-            ((System.ComponentModel.ISupportInitialize)(this.product_qty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.product_quantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.product_image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,7 +176,7 @@ namespace CarTraders.UI.CustomerPages
         #endregion
 
         private System.Windows.Forms.Label product_description;
-        private System.Windows.Forms.NumericUpDown product_qty;
+        private System.Windows.Forms.NumericUpDown product_quantity;
         private System.Windows.Forms.Button addToCartBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label product_price;

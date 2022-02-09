@@ -30,12 +30,13 @@ namespace CarTraders.UI.CustomerPages
 
             foreach(Car car in carList)
             {
-
                 ProductCardDto productCardDto = new ProductCardDto();
                 productCardDto.ImageName = car.ImageName;
+                productCardDto.Id = car.Id;
                 productCardDto.Name = car.Name;
                 productCardDto.Brand = car.Brand;
-                productCardDto.Price = car.Price;
+                productCardDto.Description = car.Description;
+                productCardDto.Price = car.Price.ToString();
                 productCardDto.ProductType = "Car";
 
                 var productCard = new ProductCard(productCardDto);

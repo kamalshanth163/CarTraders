@@ -51,6 +51,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Data\UserData.cs" />
     <Compile Include="DTO\ProductCardDto.cs" />
     <Compile Include="DTO\ProductViewDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

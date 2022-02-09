@@ -60,7 +60,7 @@ namespace CarTraders.UI.AdminPages
                 carPart.Id = carPart_id.Text == "" ? newGuid : Guid.Parse(carPart_id.Text);
                 carPart.Name = carPart_name.Text;
                 carPart.Brand = carPart_brand.Text;
-                carPart.Price = carPart_price.Text;
+                carPart.Price = double.Parse(carPart_price.Text);
                 carPart.Description = carPart_description.Text;
 
                 // Add ImageName on different scenarios

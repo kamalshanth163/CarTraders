@@ -8,6 +8,10 @@ namespace CarTraders.UI.CustomerPages
     public partial class ProductView : Form
     {
         string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+        Guid userId;
+        Guid productId;
+        string productType;
+
         public ProductView(ProductViewDto model)
         {
             InitializeComponent();
@@ -19,11 +23,20 @@ namespace CarTraders.UI.CustomerPages
             product_description.Text = model.Description;
             product_price.Text = model.Price;
 
+            productId = model.Id;
+            userId = model.UserId;
+            productType = model.ProductType;
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void addToCartBtn_Click(object sender, EventArgs e)
+        {
+            var totalPricePerItem = double.Parse(product_price.Text) * (double)product_quantity.Value;
+
         }
     }
 }
