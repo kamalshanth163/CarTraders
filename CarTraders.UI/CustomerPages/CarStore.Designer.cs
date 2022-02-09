@@ -156,6 +156,7 @@ namespace CarTraders.UI.CustomerPages
             this.cartBtn.TabIndex = 44;
             this.cartBtn.Text = "Cart";
             this.cartBtn.UseVisualStyleBackColor = true;
+            this.cartBtn.Click += new System.EventHandler(this.cartBtn_Click);
             // 
             // CarStore
             // 

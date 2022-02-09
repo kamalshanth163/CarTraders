@@ -42,7 +42,7 @@ namespace CarTraders.UI.CustomerPages
                 productCardDto.Name = car.Name;
                 productCardDto.Brand = car.Brand;
                 productCardDto.Description = car.Description;
-                productCardDto.Price = car.Price.ToString();
+                productCardDto.Price = car.Price;
                 productCardDto.ProductType = "Car";
 
                 var productCard = new ProductCard(productCardDto);
@@ -65,7 +65,7 @@ namespace CarTraders.UI.CustomerPages
                 productCardDto.Name = carPart.Name;
                 productCardDto.Brand = carPart.Brand;
                 productCardDto.Description = carPart.Description;
-                productCardDto.Price = carPart.Price.ToString();
+                productCardDto.Price = carPart.Price;
                 productCardDto.ProductType = "CarPart";
 
                 var productCard = new ProductCard(productCardDto);
@@ -97,6 +97,12 @@ namespace CarTraders.UI.CustomerPages
             carPartSearchTerm = carParts_searchBox.Text;
             var filter = carPartList.FindAll(c => c.Name.ToLower().Contains(carParts_searchBox.Text.ToLower()));
             LoadCarPartsData(filter);
+        }
+
+        private void cartBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new CartPage().ShowDialog();
         }
     }
 }

@@ -23,5 +23,19 @@ namespace OrderTraders.DAL.DAO
                 throw ex;
             }
         }
+
+        // Gets all the saved cart items which are not ordered for the user
+        public static List<OrderItem> GetCartItemsOfUser(Guid userId)
+        {
+            try
+            {
+                return db.OrderItems.Where(i => i.UserId == userId && i.OrderId == null).OrderBy(x => x.CreatedAt).ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+                throw ex;
+            }
+        }
     }
 }

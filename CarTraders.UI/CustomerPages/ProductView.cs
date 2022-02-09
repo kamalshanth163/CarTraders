@@ -23,7 +23,7 @@ namespace CarTraders.UI.CustomerPages
             product_name.Text = model.Name;
             product_brand.Text = model.Brand;
             product_description.Text = model.Description;
-            product_price.Text = model.Price;
+            product_price.Text = model.Price.ToString();
 
             productId = model.Id;
             userId = model.UserId;

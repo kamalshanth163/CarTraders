@@ -89,6 +89,18 @@
     <Compile Include="CustomerPages\CarStore.Designer.cs">
       <DependentUpon>CarStore.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerPages\CartItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\CartItem.Designer.cs">
+      <DependentUpon>CartItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPages\CartPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\CartPage.Designer.cs">
+      <DependentUpon>CartPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerPages\ProductCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\CarStore.resx">
       <DependentUpon>CarStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\CartItem.resx">
+      <DependentUpon>CartItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\CartPage.resx">
+      <DependentUpon>CartPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\ProductCard.resx">
       <DependentUpon>ProductCard.cs</DependentUpon>
