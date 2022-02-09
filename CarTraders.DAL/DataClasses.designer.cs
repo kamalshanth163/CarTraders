@@ -130,7 +130,7 @@ namespace CarTraders.DAL
 		
 		private string _Brand;
 		
-		private double _Price;
+		private decimal _Price;
 		
 		private string _Description;
 		
@@ -152,7 +152,7 @@ namespace CarTraders.DAL
     partial void OnNameChanged();
     partial void OnBrandChanging(string value);
     partial void OnBrandChanged();
-    partial void OnPriceChanging(double value);
+    partial void OnPriceChanging(decimal value);
     partial void OnPriceChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
@@ -231,8 +231,8 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Float NOT NULL")]
-		public double Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Price
 		{
 			get
 			{
@@ -311,7 +311,7 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -638,7 +638,7 @@ namespace CarTraders.DAL
 		
 		private string _Brand;
 		
-		private double _Price;
+		private decimal _Price;
 		
 		private string _Description;
 		
@@ -660,7 +660,7 @@ namespace CarTraders.DAL
     partial void OnNameChanged();
     partial void OnBrandChanging(string value);
     partial void OnBrandChanged();
-    partial void OnPriceChanging(double value);
+    partial void OnPriceChanging(decimal value);
     partial void OnPriceChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
@@ -739,8 +739,8 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Float NOT NULL")]
-		public double Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Price
 		{
 			get
 			{
@@ -819,7 +819,7 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -892,7 +892,7 @@ namespace CarTraders.DAL
 		
 		private string _ProductType;
 		
-		private double _Price;
+		private decimal _Price;
 		
 		private int _Quantity;
 		
@@ -914,7 +914,7 @@ namespace CarTraders.DAL
     partial void OnProductIdChanged();
     partial void OnProductTypeChanging(string value);
     partial void OnProductTypeChanged();
-    partial void OnPriceChanging(double value);
+    partial void OnPriceChanging(decimal value);
     partial void OnPriceChanged();
     partial void OnQuantityChanging(int value);
     partial void OnQuantityChanged();
@@ -993,8 +993,8 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Float NOT NULL")]
-		public double Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Price
 		{
 			get
 			{
@@ -1144,7 +1144,7 @@ namespace CarTraders.DAL
 		
 		private System.Guid _UserId;
 		
-		private double _Price;
+		private decimal _Price;
 		
 		private System.DateTime _CreatedAt;
 		
@@ -1160,7 +1160,7 @@ namespace CarTraders.DAL
     partial void OnIdChanged();
     partial void OnUserIdChanging(System.Guid value);
     partial void OnUserIdChanged();
-    partial void OnPriceChanging(double value);
+    partial void OnPriceChanging(decimal value);
     partial void OnPriceChanged();
     partial void OnCreatedAtChanging(System.DateTime value);
     partial void OnCreatedAtChanged();
@@ -1215,8 +1215,8 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Float NOT NULL")]
-		public double Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Price
 		{
 			get
 			{

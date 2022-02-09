@@ -37,7 +37,7 @@ namespace CarTraders.UI.CustomerPages
 
         private void addToCartBtn_Click(object sender, EventArgs e)
         {
-            var totalPricePerItem = double.Parse(product_price.Text) * (double)product_quantity.Value;
+            var totalPricePerItem = decimal.Parse(product_price.Text) * product_quantity.Value;
 
             OrderItem orderItem = new OrderItem();
             orderItem.Id = Guid.NewGuid();

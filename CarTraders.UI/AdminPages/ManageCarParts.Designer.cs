@@ -44,14 +44,15 @@ namespace CarTraders.UI.AdminPages
             this.carPart_description = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.carPart_price = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.carPart_brand = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
             this.carPart_name = new System.Windows.Forms.TextBox();
+            this.carPart_price = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.carPart_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carPartsDataView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carPart_price)).BeginInit();
             this.SuspendLayout();
             // 
             // imageRemoveBtn
@@ -185,7 +186,7 @@ namespace CarTraders.UI.AdminPages
             this.carPart_description.Location = new System.Drawing.Point(34, 239);
             this.carPart_description.Name = "carPart_description";
             this.carPart_description.Size = new System.Drawing.Size(227, 41);
-            this.carPart_description.TabIndex = 44;
+            this.carPart_description.TabIndex = 4;
             this.carPart_description.Text = "";
             // 
             // label3
@@ -208,13 +209,6 @@ namespace CarTraders.UI.AdminPages
             this.label4.TabIndex = 42;
             this.label4.Text = "Price (LKR)";
             // 
-            // carPart_price
-            // 
-            this.carPart_price.Location = new System.Drawing.Point(34, 194);
-            this.carPart_price.Name = "carPart_price";
-            this.carPart_price.Size = new System.Drawing.Size(227, 20);
-            this.carPart_price.TabIndex = 41;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -230,7 +224,7 @@ namespace CarTraders.UI.AdminPages
             this.carPart_brand.Location = new System.Drawing.Point(34, 149);
             this.carPart_brand.Name = "carPart_brand";
             this.carPart_brand.Size = new System.Drawing.Size(227, 20);
-            this.carPart_brand.TabIndex = 39;
+            this.carPart_brand.TabIndex = 2;
             // 
             // label1
             // 
@@ -257,13 +251,21 @@ namespace CarTraders.UI.AdminPages
             this.carPart_name.Location = new System.Drawing.Point(34, 104);
             this.carPart_name.Name = "carPart_name";
             this.carPart_name.Size = new System.Drawing.Size(227, 20);
-            this.carPart_name.TabIndex = 36;
+            this.carPart_name.TabIndex = 1;
+            // 
+            // carPart_price
+            // 
+            this.carPart_price.Location = new System.Drawing.Point(34, 194);
+            this.carPart_price.Name = "carPart_price";
+            this.carPart_price.Size = new System.Drawing.Size(227, 20);
+            this.carPart_price.TabIndex = 3;
             // 
             // ManageCarParts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.carPart_price);
             this.Controls.Add(this.imageRemoveBtn);
             this.Controls.Add(this.imageUploadBtn);
             this.Controls.Add(this.label5);
@@ -279,7 +281,6 @@ namespace CarTraders.UI.AdminPages
             this.Controls.Add(this.carPart_description);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.carPart_price);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.carPart_brand);
             this.Controls.Add(this.label1);
@@ -292,6 +293,7 @@ namespace CarTraders.UI.AdminPages
             this.Load += new System.EventHandler(this.ManageCarParts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.carPart_image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carPartsDataView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carPart_price)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,11 +316,11 @@ namespace CarTraders.UI.AdminPages
         private System.Windows.Forms.RichTextBox carPart_description;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox carPart_price;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox carPart_brand;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.TextBox carPart_name;
+        private System.Windows.Forms.NumericUpDown carPart_price;
     }
 }

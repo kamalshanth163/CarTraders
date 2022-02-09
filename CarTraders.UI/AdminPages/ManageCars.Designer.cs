@@ -36,7 +36,6 @@ namespace CarTraders.UI.AdminPages
             this.car_brand = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.car_price = new System.Windows.Forms.TextBox();
             this.car_description = new System.Windows.Forms.RichTextBox();
             this.addBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
@@ -50,8 +49,10 @@ namespace CarTraders.UI.AdminPages
             this.label5 = new System.Windows.Forms.Label();
             this.imageUploadBtn = new System.Windows.Forms.Button();
             this.imageRemoveBtn = new System.Windows.Forms.Button();
+            this.car_price = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.carsDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.car_image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car_price)).BeginInit();
             this.SuspendLayout();
             // 
             // car_name
@@ -59,7 +60,7 @@ namespace CarTraders.UI.AdminPages
             this.car_name.Location = new System.Drawing.Point(34, 99);
             this.car_name.Name = "car_name";
             this.car_name.Size = new System.Drawing.Size(227, 20);
-            this.car_name.TabIndex = 0;
+            this.car_name.TabIndex = 1;
             // 
             // title
             // 
@@ -96,7 +97,7 @@ namespace CarTraders.UI.AdminPages
             this.car_brand.Location = new System.Drawing.Point(34, 144);
             this.car_brand.Name = "car_brand";
             this.car_brand.Size = new System.Drawing.Size(227, 20);
-            this.car_brand.TabIndex = 17;
+            this.car_brand.TabIndex = 2;
             // 
             // label3
             // 
@@ -118,19 +119,12 @@ namespace CarTraders.UI.AdminPages
             this.label4.TabIndex = 20;
             this.label4.Text = "Price (LKR)";
             // 
-            // car_price
-            // 
-            this.car_price.Location = new System.Drawing.Point(34, 189);
-            this.car_price.Name = "car_price";
-            this.car_price.Size = new System.Drawing.Size(227, 20);
-            this.car_price.TabIndex = 19;
-            // 
             // car_description
             // 
             this.car_description.Location = new System.Drawing.Point(34, 234);
             this.car_description.Name = "car_description";
             this.car_description.Size = new System.Drawing.Size(227, 41);
-            this.car_description.TabIndex = 23;
+            this.car_description.TabIndex = 4;
             this.car_description.Text = "";
             // 
             // addBtn
@@ -259,11 +253,19 @@ namespace CarTraders.UI.AdminPages
             this.imageRemoveBtn.UseVisualStyleBackColor = true;
             this.imageRemoveBtn.Click += new System.EventHandler(this.imageRemoveBtn_Click);
             // 
+            // car_price
+            // 
+            this.car_price.Location = new System.Drawing.Point(34, 189);
+            this.car_price.Name = "car_price";
+            this.car_price.Size = new System.Drawing.Size(227, 20);
+            this.car_price.TabIndex = 3;
+            // 
             // ManageCars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.car_price);
             this.Controls.Add(this.imageRemoveBtn);
             this.Controls.Add(this.imageUploadBtn);
             this.Controls.Add(this.label5);
@@ -279,7 +281,6 @@ namespace CarTraders.UI.AdminPages
             this.Controls.Add(this.car_description);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.car_price);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.car_brand);
             this.Controls.Add(this.label1);
@@ -292,6 +293,7 @@ namespace CarTraders.UI.AdminPages
             this.Load += new System.EventHandler(this.ManageCars_Load);
             ((System.ComponentModel.ISupportInitialize)(this.carsDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.car_image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car_price)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,7 +308,6 @@ namespace CarTraders.UI.AdminPages
         private System.Windows.Forms.TextBox car_brand;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox car_price;
         private System.Windows.Forms.RichTextBox car_description;
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button updateBtn;
@@ -320,5 +321,6 @@ namespace CarTraders.UI.AdminPages
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button imageUploadBtn;
         private System.Windows.Forms.Button imageRemoveBtn;
+        private System.Windows.Forms.NumericUpDown car_price;
     }
 }

@@ -21,6 +21,8 @@ namespace CarTraders.UI.AdminPages
             InitializeComponent();
             label_id.Visible = false;
             carPart_id.Visible = false;
+            carPart_price.Value = 0;
+            carPart_price.Maximum = decimal.MaxValue;
             carPart_image.Image = null;
             updateBtn.Enabled = false;
             deleteBtn.Enabled = false;
@@ -60,7 +62,7 @@ namespace CarTraders.UI.AdminPages
                 carPart.Id = carPart_id.Text == "" ? newGuid : Guid.Parse(carPart_id.Text);
                 carPart.Name = carPart_name.Text;
                 carPart.Brand = carPart_brand.Text;
-                carPart.Price = double.Parse(carPart_price.Text);
+                carPart.Price = decimal.Parse(carPart_price.Text);
                 carPart.Description = carPart_description.Text;
 
                 // Add ImageName on different scenarios
@@ -123,7 +125,7 @@ namespace CarTraders.UI.AdminPages
                 carPartsDataView.DataSource = carPartList;
                 carPart_name.Clear();
                 carPart_brand.Clear();
-                carPart_price.Clear();
+                carPart_price.Value = 0;
                 carPart_description.Clear();
                 carPart_image.Image = null;
                 carPart_name.Focus();
@@ -152,7 +154,7 @@ namespace CarTraders.UI.AdminPages
             carPart_id.Text = row.Cells[0].Value.ToString();
             carPart_name.Text = row.Cells[1].Value.ToString();
             carPart_brand.Text = row.Cells[2].Value.ToString();
-            carPart_price.Text = row.Cells[3].Value.ToString();
+            carPart_price.Value = decimal.Parse(row.Cells[3].Value.ToString());
             carPart_description.Text = row.Cells[4].Value.ToString();
 
             carPart_image.Image = Image.FromFile($"{path}\\Images\\CarParts\\{row.Cells[8].Value ?? "empty.jpg"}");

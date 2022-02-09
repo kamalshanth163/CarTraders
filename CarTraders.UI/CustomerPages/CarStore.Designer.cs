@@ -39,7 +39,7 @@ namespace CarTraders.UI.CustomerPages
             this.carParts_tabPage = new System.Windows.Forms.TabPage();
             this.carParts_searchBox = new System.Windows.Forms.TextBox();
             this.carParts_listing = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cartBtn = new System.Windows.Forms.Button();
             this.store_tabs.SuspendLayout();
             this.cars_tabPage.SuspendLayout();
             this.carParts_tabPage.SuspendLayout();
@@ -59,9 +59,9 @@ namespace CarTraders.UI.CustomerPages
             // 
             this.cars_listing.AutoScroll = true;
             this.cars_listing.BackColor = System.Drawing.Color.Transparent;
-            this.cars_listing.Location = new System.Drawing.Point(6, 52);
+            this.cars_listing.Location = new System.Drawing.Point(16, 52);
             this.cars_listing.Name = "cars_listing";
-            this.cars_listing.Size = new System.Drawing.Size(767, 303);
+            this.cars_listing.Size = new System.Drawing.Size(700, 303);
             this.cars_listing.TabIndex = 39;
             // 
             // exitBtn
@@ -142,27 +142,27 @@ namespace CarTraders.UI.CustomerPages
             // 
             this.carParts_listing.AutoScroll = true;
             this.carParts_listing.BackColor = System.Drawing.Color.Transparent;
-            this.carParts_listing.Location = new System.Drawing.Point(6, 52);
+            this.carParts_listing.Location = new System.Drawing.Point(16, 52);
             this.carParts_listing.Name = "carParts_listing";
-            this.carParts_listing.Size = new System.Drawing.Size(719, 303);
+            this.carParts_listing.Size = new System.Drawing.Size(700, 303);
             this.carParts_listing.TabIndex = 45;
             // 
-            // button1
+            // cartBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.button1.Location = new System.Drawing.Point(440, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 29);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Cart";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cartBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cartBtn.Location = new System.Drawing.Point(440, 22);
+            this.cartBtn.Name = "cartBtn";
+            this.cartBtn.Size = new System.Drawing.Size(53, 29);
+            this.cartBtn.TabIndex = 44;
+            this.cartBtn.Text = "Cart";
+            this.cartBtn.UseVisualStyleBackColor = true;
             // 
             // CarStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cartBtn);
             this.Controls.Add(this.store_tabs);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.menuBtn);
@@ -193,6 +193,6 @@ namespace CarTraders.UI.CustomerPages
         private System.Windows.Forms.TextBox cars_searchBox;
         private System.Windows.Forms.TextBox carParts_searchBox;
         private System.Windows.Forms.FlowLayoutPanel carParts_listing;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cartBtn;
     }
 }
