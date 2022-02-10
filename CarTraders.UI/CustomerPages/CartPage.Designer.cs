@@ -113,7 +113,7 @@ namespace CarTraders.UI.CustomerPages
             this.checkoutBtn.Name = "checkoutBtn";
             this.checkoutBtn.Size = new System.Drawing.Size(194, 41);
             this.checkoutBtn.TabIndex = 56;
-            this.checkoutBtn.Text = "Checkout";
+            this.checkoutBtn.Text = "Order";
             this.checkoutBtn.UseVisualStyleBackColor = true;
             this.checkoutBtn.Click += new System.EventHandler(this.checkoutBtn_Click);
             // 
