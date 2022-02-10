@@ -70,5 +70,11 @@ namespace CarTraders
             this.Hide();
             new Register().ShowDialog();
         }
+
+        private void homeBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Home().ShowDialog();
+        }
     }
 }

@@ -86,6 +86,7 @@ namespace CarTraders.UI.CustomerPages
             this.Controls.Add(this.order_index);
             this.Name = "OrderCard";
             this.Size = new System.Drawing.Size(452, 73);
+            this.Click += new System.EventHandler(this.OnClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 

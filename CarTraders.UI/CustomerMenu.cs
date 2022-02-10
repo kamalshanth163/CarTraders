@@ -1,4 +1,5 @@
-﻿using CarTraders.UI.CustomerPages;
+﻿using CarTraders.DAL.Data;
+using CarTraders.UI.CustomerPages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,12 +32,19 @@ namespace CarTraders
 
         private void ordersBtn_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            new CustomerOrders().ShowDialog();
         }
 
         private void profileBtn_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            UserData.UserId = Guid.Empty;
+            new Home().ShowDialog();
         }
     }
 }

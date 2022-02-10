@@ -34,6 +34,7 @@ namespace CarTraders
             this.title = new System.Windows.Forms.Label();
             this.exitBtn = new System.Windows.Forms.Button();
             this.profileBtn = new System.Windows.Forms.Button();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ordersBtn
@@ -92,11 +93,23 @@ namespace CarTraders
             this.profileBtn.UseVisualStyleBackColor = true;
             this.profileBtn.Click += new System.EventHandler(this.profileBtn_Click);
             // 
+            // logoutBtn
+            // 
+            this.logoutBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.logoutBtn.Location = new System.Drawing.Point(524, 13);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(105, 29);
+            this.logoutBtn.TabIndex = 36;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
             // CustomerMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.profileBtn);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.ordersBtn);
@@ -118,5 +131,6 @@ namespace CarTraders
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button profileBtn;
+        private System.Windows.Forms.Button logoutBtn;
     }
 }

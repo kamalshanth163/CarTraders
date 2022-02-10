@@ -57,6 +57,19 @@ namespace OrderTraders.DAL.DAO
             }
         }
 
+        public static List<Order> GetOrdersByUserId(Guid userId)
+        {
+            try
+            {
+                return db.Orders.Where(o => o.UserId == userId).OrderBy(x => x.CreatedAt).ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+                throw ex;
+            }
+        }
+
         public static List<Order> GetOrders()
         {
             try

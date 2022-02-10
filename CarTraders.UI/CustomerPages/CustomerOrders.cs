@@ -1,13 +1,9 @@
 ﻿using CarTraders.BLL;
 using CarTraders.DAL;
+using CarTraders.DAL.Data;
+using CarTraders.DAL.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarTraders.UI.CustomerPages
@@ -20,7 +16,7 @@ namespace CarTraders.UI.CustomerPages
         public CustomerOrders()
         {
             InitializeComponent();
-            orderList = OrdersBLL.GetOrders();
+            orderList = OrdersBLL.GetOrdersByUserId(UserData.UserId);
         }
 
         private void menuBtn_Click(object sender, EventArgs e)
@@ -37,10 +33,13 @@ namespace CarTraders.UI.CustomerPages
         private void CustomerOrders_Load(object sender, EventArgs e)
         {
             LoadOrdersData(orderList);
+            //LoadOrderItemsData(orderItemList);
         }
 
         public void LoadOrdersData(List<Order> orders)
         {
+            //LoadOrderItemsData(new List<OrderItemDto>());
+
             orders_listing.Controls.Clear();
 
             for (var i=0; i<orders.Count; i++)
@@ -49,7 +48,8 @@ namespace CarTraders.UI.CustomerPages
                     i+1,
                     orders[i].CreatedAt,
                     orders[i].Price,
-                    orders[i].Status
+                    orders[i].Status,
+                    orders[i].Id
                 );
 
                 orders_listing.Controls.Add(orderCard);

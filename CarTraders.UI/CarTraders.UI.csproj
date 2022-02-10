@@ -125,6 +125,12 @@
     <Compile Include="CustomerPages\OrderItemCard.Designer.cs">
       <DependentUpon>OrderItemCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerPages\OrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\OrderView.Designer.cs">
+      <DependentUpon>OrderView.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerPages\ProductCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\OrderItemCard.resx">
       <DependentUpon>OrderItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\OrderView.resx">
+      <DependentUpon>OrderView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\ProductCard.resx">
       <DependentUpon>ProductCard.cs</DependentUpon>

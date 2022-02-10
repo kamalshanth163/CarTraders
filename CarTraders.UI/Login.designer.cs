@@ -41,12 +41,13 @@ namespace CarTraders
             this.label6 = new System.Windows.Forms.Label();
             this.registerLink = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.homeBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.title.Font = new System.Drawing.Font("Segoe UI", 30F);
             this.title.Location = new System.Drawing.Point(110, 42);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(122, 54);
@@ -55,7 +56,7 @@ namespace CarTraders
             // 
             // loginBtn
             // 
-            this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.loginBtn.Location = new System.Drawing.Point(290, 279);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(126, 43);
@@ -67,7 +68,7 @@ namespace CarTraders
             // cancelBtn
             // 
             this.cancelBtn.AutoSize = true;
-            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.cancelBtn.Location = new System.Drawing.Point(432, 285);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(77, 30);
@@ -77,7 +78,7 @@ namespace CarTraders
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.label2.Location = new System.Drawing.Point(209, 171);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 30);
@@ -87,7 +88,7 @@ namespace CarTraders
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.label3.Location = new System.Drawing.Point(209, 220);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 30);
@@ -111,7 +112,7 @@ namespace CarTraders
             // exitBtn
             // 
             this.exitBtn.BackColor = System.Drawing.Color.Red;
-            this.exitBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exitBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.exitBtn.ForeColor = System.Drawing.Color.White;
             this.exitBtn.Location = new System.Drawing.Point(749, 12);
             this.exitBtn.Name = "exitBtn";
@@ -135,7 +136,7 @@ namespace CarTraders
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.label6.Location = new System.Drawing.Point(209, 123);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 30);
@@ -146,7 +147,7 @@ namespace CarTraders
             // 
             this.registerLink.AutoSize = true;
             this.registerLink.Cursor = System.Windows.Forms.Cursors.Default;
-            this.registerLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.registerLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.registerLink.Location = new System.Drawing.Point(358, 368);
             this.registerLink.Name = "registerLink";
             this.registerLink.Size = new System.Drawing.Size(61, 17);
@@ -157,18 +158,30 @@ namespace CarTraders
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label7.Location = new System.Drawing.Point(327, 351);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(122, 13);
             this.label7.TabIndex = 31;
             this.label7.Text = "Don\'t have an account?";
             // 
+            // homeBtn
+            // 
+            this.homeBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.homeBtn.Location = new System.Drawing.Point(638, 14);
+            this.homeBtn.Name = "homeBtn";
+            this.homeBtn.Size = new System.Drawing.Size(105, 29);
+            this.homeBtn.TabIndex = 37;
+            this.homeBtn.Text = "Go to home";
+            this.homeBtn.UseVisualStyleBackColor = true;
+            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.homeBtn);
             this.Controls.Add(this.registerLink);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.user_type);
@@ -181,7 +194,7 @@ namespace CarTraders
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.title);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -205,5 +218,6 @@ namespace CarTraders
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label registerLink;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button homeBtn;
     }
 }

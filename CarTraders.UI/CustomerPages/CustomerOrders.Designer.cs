@@ -36,22 +36,22 @@ namespace CarTraders.UI.CustomerPages
             this.completedBtn = new System.Windows.Forms.Button();
             this.pendingBtn = new System.Windows.Forms.Button();
             this.orders_listing = new System.Windows.Forms.FlowLayoutPanel();
-            this.orderItems_listing = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // title
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.title.Location = new System.Drawing.Point(24, 20);
+            this.title.Location = new System.Drawing.Point(278, 16);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(200, 37);
+            this.title.Size = new System.Drawing.Size(238, 37);
             this.title.TabIndex = 31;
-            this.title.Text = "Manage Orders";
+            this.title.Text = "View Order Details";
             // 
             // exitBtn
             // 
@@ -80,9 +80,9 @@ namespace CarTraders.UI.CustomerPages
             // allBtn
             // 
             this.allBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.allBtn.Location = new System.Drawing.Point(31, 97);
+            this.allBtn.Location = new System.Drawing.Point(92, 157);
             this.allBtn.Name = "allBtn";
-            this.allBtn.Size = new System.Drawing.Size(105, 29);
+            this.allBtn.Size = new System.Drawing.Size(90, 29);
             this.allBtn.TabIndex = 36;
             this.allBtn.Text = "All";
             this.allBtn.UseVisualStyleBackColor = true;
@@ -91,9 +91,9 @@ namespace CarTraders.UI.CustomerPages
             // completedBtn
             // 
             this.completedBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.completedBtn.Location = new System.Drawing.Point(253, 97);
+            this.completedBtn.Location = new System.Drawing.Point(92, 227);
             this.completedBtn.Name = "completedBtn";
-            this.completedBtn.Size = new System.Drawing.Size(105, 29);
+            this.completedBtn.Size = new System.Drawing.Size(90, 29);
             this.completedBtn.TabIndex = 37;
             this.completedBtn.Text = "Completed";
             this.completedBtn.UseVisualStyleBackColor = true;
@@ -102,9 +102,9 @@ namespace CarTraders.UI.CustomerPages
             // pendingBtn
             // 
             this.pendingBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.pendingBtn.Location = new System.Drawing.Point(142, 97);
+            this.pendingBtn.Location = new System.Drawing.Point(92, 192);
             this.pendingBtn.Name = "pendingBtn";
-            this.pendingBtn.Size = new System.Drawing.Size(105, 29);
+            this.pendingBtn.Size = new System.Drawing.Size(90, 29);
             this.pendingBtn.TabIndex = 38;
             this.pendingBtn.Text = "Pending";
             this.pendingBtn.UseVisualStyleBackColor = true;
@@ -112,23 +112,15 @@ namespace CarTraders.UI.CustomerPages
             // 
             // orders_listing
             // 
-            this.orders_listing.Location = new System.Drawing.Point(27, 169);
+            this.orders_listing.Location = new System.Drawing.Point(198, 154);
             this.orders_listing.Name = "orders_listing";
             this.orders_listing.Size = new System.Drawing.Size(450, 261);
             this.orders_listing.TabIndex = 39;
             // 
-            // orderItems_listing
-            // 
-            this.orderItems_listing.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.orderItems_listing.Location = new System.Drawing.Point(495, 141);
-            this.orderItems_listing.Name = "orderItems_listing";
-            this.orderItems_listing.Size = new System.Drawing.Size(282, 289);
-            this.orderItems_listing.TabIndex = 40;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 151);
+            this.label1.Location = new System.Drawing.Point(214, 136);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 13);
             this.label1.TabIndex = 41;
@@ -137,7 +129,7 @@ namespace CarTraders.UI.CustomerPages
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(117, 151);
+            this.label2.Location = new System.Drawing.Point(288, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 42;
@@ -146,7 +138,7 @@ namespace CarTraders.UI.CustomerPages
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(393, 151);
+            this.label3.Location = new System.Drawing.Point(564, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 43;
@@ -155,22 +147,32 @@ namespace CarTraders.UI.CustomerPages
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(282, 151);
+            this.label4.Location = new System.Drawing.Point(453, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 44;
             this.label4.Text = "Price (LKR)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(198, 104);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 20);
+            this.label8.TabIndex = 48;
+            this.label8.Text = "Orders";
             // 
             // CustomerOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.orderItems_listing);
             this.Controls.Add(this.orders_listing);
             this.Controls.Add(this.pendingBtn);
             this.Controls.Add(this.completedBtn);
@@ -197,10 +199,10 @@ namespace CarTraders.UI.CustomerPages
         private System.Windows.Forms.Button completedBtn;
         private System.Windows.Forms.Button pendingBtn;
         private System.Windows.Forms.FlowLayoutPanel orders_listing;
-        private System.Windows.Forms.FlowLayoutPanel orderItems_listing;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label8;
     }
 }
