@@ -112,6 +112,7 @@ namespace CarTraders.UI.CustomerPages
             // 
             // orders_listing
             // 
+            this.orders_listing.AutoScroll = true;
             this.orders_listing.Location = new System.Drawing.Point(198, 154);
             this.orders_listing.Name = "orders_listing";
             this.orders_listing.Size = new System.Drawing.Size(450, 261);

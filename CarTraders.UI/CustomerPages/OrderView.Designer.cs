@@ -77,6 +77,7 @@ namespace CarTraders.UI.CustomerPages
             // 
             // orderItems_listing
             // 
+            this.orderItems_listing.AutoScroll = true;
             this.orderItems_listing.BackColor = System.Drawing.Color.Transparent;
             this.orderItems_listing.Location = new System.Drawing.Point(36, 120);
             this.orderItems_listing.Name = "orderItems_listing";
