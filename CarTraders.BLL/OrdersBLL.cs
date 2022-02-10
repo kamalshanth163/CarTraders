@@ -71,5 +71,10 @@ namespace CarTraders.BLL
         {
             return OrdersDAO.UpdateOrderStatus(id, status);
         }
+
+        public static bool DeleteOrder(Guid id)
+        {
+            return OrdersDAO.DeleteOrder(id);
+        }
     }
 }

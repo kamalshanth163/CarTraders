@@ -136,11 +136,31 @@ namespace CarTraders.UI.AdminPages
             else
             {
                 MessageBox.Show($"Order status updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                orderList = OrdersBLL.GetOrders();
-                filterOrders(customer, orderStatus);
-                setStatusBtn.Visible = false;
-                deleteBtn.Visible = false;
+                ResetPageData();
             }
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            var isDeleted = OrdersBLL.DeleteOrder(selectedOrderId);
+
+            if (!isDeleted)
+            {
+                MessageBox.Show($"Failed to update order status", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show($"Order status updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ResetPageData();
+            }
+        }
+
+        private void ResetPageData()
+        {
+            orderList = OrdersBLL.GetOrders();
+            filterOrders(customer, orderStatus);
+            setStatusBtn.Visible = false;
+            deleteBtn.Visible = false;
         }
     }
 }
