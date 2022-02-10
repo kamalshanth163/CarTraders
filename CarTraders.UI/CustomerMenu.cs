@@ -16,17 +16,27 @@ namespace CarTraders
         public CustomerMenu()
         {
             InitializeComponent();
+        }            
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
-        private void loginBtn_Click(object sender, EventArgs e)
+        private void storeBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             new CarStore().ShowDialog();
         }
 
-        private void exitBtn_Click(object sender, EventArgs e)
+        private void ordersBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            
+        }
+
+        private void profileBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

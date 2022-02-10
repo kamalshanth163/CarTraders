@@ -18,7 +18,7 @@ namespace CarTraders.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManageOrders());
+            Application.Run(new CustomerOrders());
         }
     }
 }
