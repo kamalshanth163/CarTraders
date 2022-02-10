@@ -42,7 +42,7 @@ namespace CarTraders.UI.AdminPages
             this.label3 = new System.Windows.Forms.Label();
             this.order_status = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.allBtn = new System.Windows.Forms.Button();
+            this.viewAllBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderItemsDataView)).BeginInit();
             this.SuspendLayout();
@@ -185,23 +185,23 @@ namespace CarTraders.UI.AdminPages
             this.label4.TabIndex = 43;
             this.label4.Text = "Order Status";
             // 
-            // allBtn
+            // viewAllBtn
             // 
-            this.allBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.allBtn.Location = new System.Drawing.Point(100, 163);
-            this.allBtn.Name = "allBtn";
-            this.allBtn.Size = new System.Drawing.Size(65, 29);
-            this.allBtn.TabIndex = 44;
-            this.allBtn.Text = "View all";
-            this.allBtn.UseVisualStyleBackColor = true;
-            this.allBtn.Click += new System.EventHandler(this.allBtn_Click);
+            this.viewAllBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.viewAllBtn.Location = new System.Drawing.Point(100, 163);
+            this.viewAllBtn.Name = "viewAllBtn";
+            this.viewAllBtn.Size = new System.Drawing.Size(65, 29);
+            this.viewAllBtn.TabIndex = 44;
+            this.viewAllBtn.Text = "View all";
+            this.viewAllBtn.UseVisualStyleBackColor = true;
+            this.viewAllBtn.Click += new System.EventHandler(this.viewAllBtn_Click);
             // 
             // ManageOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.allBtn);
+            this.Controls.Add(this.viewAllBtn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.order_status);
             this.Controls.Add(this.label3);
@@ -242,6 +242,6 @@ namespace CarTraders.UI.AdminPages
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox order_status;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button allBtn;
+        private System.Windows.Forms.Button viewAllBtn;
     }
 }

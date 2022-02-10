@@ -16,6 +16,7 @@ namespace CarTraders.UI.AdminPages
     {
         List<User> customerList = new List<User>();
         List<Order> orderList = new List<Order>();
+        List<OrderItem> orderItemList = new List<OrderItem>();
         User customer = null;
         string orderStatus = null;
         Guid selectedOrderId;
@@ -24,8 +25,7 @@ namespace CarTraders.UI.AdminPages
         public ManageOrders()
         {
             InitializeComponent();
-            setStatusBtn.Visible = false;
-            deleteBtn.Visible = false;
+            ShowActions(false);
         }
 
         private void ManageOrders_Load(object sender, EventArgs e)
@@ -54,19 +54,31 @@ namespace CarTraders.UI.AdminPages
             Application.Exit();
         }
 
-        private void LoadOrdersData(List<Order> orderList)
+        private void LoadOrdersData(List<Order> orders)
         {
-            ordersDataView.DataSource = orderList;
+            ordersDataView.DataSource = orders;
+        }
+
+        private void LoadOrderItemsData(List<OrderItem> orderItems)
+        {
+            orderItemList = orderItems;            
+            orderItemsDataView.DataSource = orderItemList;
         }
 
         private void customer_name_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ShowActions(false);
+            ResetPageData();
+
             customer = (User)customer_name.SelectedItem;
             filterOrders(customer, orderStatus);
         }
 
         private void order_status_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ShowActions(false);
+            ResetPageData();
+
             orderStatus = order_status.SelectedItem != null ? order_status.SelectedItem.ToString() : null;
             filterOrders(customer, orderStatus);
         }
@@ -95,17 +107,23 @@ namespace CarTraders.UI.AdminPages
             LoadOrdersData(orders);
         }
 
-        private void allBtn_Click(object sender, EventArgs e)
+        private void viewAllBtn_Click(object sender, EventArgs e)
         {
-            LoadOrdersData(orderList);
+            ShowActions(false);
+            ResetPageData();
             customer_name.SelectedItem = null;
             order_status.SelectedItem = null;
         }
 
+        private void ShowActions(bool display)
+        {
+            setStatusBtn.Visible = display;
+            deleteBtn.Visible = display;
+        }
+
         private void carsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            setStatusBtn.Visible = true;
-            deleteBtn.Visible = true;
+            ShowActions(true);
 
             DataGridViewRow row = ordersDataView.Rows[e.RowIndex];
             selectedOrderId = Guid.Parse(row.Cells[0].Value.ToString());            
@@ -123,6 +141,9 @@ namespace CarTraders.UI.AdminPages
                 default:
                     break;
             }
+
+            List<OrderItem> orderItemList = OrdersBLL.GetOrderItemsByOrderId(selectedOrderId);
+            LoadOrderItemsData(orderItemList);
         }
 
         private void setStatusBtn_Click(object sender, EventArgs e)
@@ -159,8 +180,10 @@ namespace CarTraders.UI.AdminPages
         {
             orderList = OrdersBLL.GetOrders();
             filterOrders(customer, orderStatus);
-            setStatusBtn.Visible = false;
-            deleteBtn.Visible = false;
+            ShowActions(false);
+
+            orderItemList = null;
+            LoadOrderItemsData(orderItemList);
         }
     }
 }

@@ -105,6 +105,19 @@ namespace OrderTraders.DAL.DAO
             }
         }
 
+        public static List<OrderItem> GetOrderItemsByOrderId(Guid id)
+        {
+            try
+            {
+                return db.OrderItems.Where(i => i.OrderId == id).OrderBy(x => x.CreatedAt).ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+                throw ex;
+            }
+        }
+
         public static bool UpdateOrderStatus(Guid id, string status)
         {
             try
