@@ -72,6 +72,12 @@
     <Compile Include="AdminPages\ManageCustomers.Designer.cs">
       <DependentUpon>ManageCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\ManageOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageOrders.Designer.cs">
+      <DependentUpon>ManageOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="CarTradersDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPages\ManageCustomers.resx">
       <DependentUpon>ManageCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPages\ManageOrders.resx">
+      <DependentUpon>ManageOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerMenu.resx">
       <DependentUpon>CustomerMenu.cs</DependentUpon>

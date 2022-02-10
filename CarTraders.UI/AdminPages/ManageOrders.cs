@@ -17,14 +17,9 @@ namespace CarTraders.UI.AdminPages
             InitializeComponent();
         }
 
-        private void menuBtn_Click(object sender, EventArgs e)
+        private void carsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-        private void exitBtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
