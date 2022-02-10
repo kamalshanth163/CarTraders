@@ -22,5 +22,10 @@ namespace CarTraders
             this.Hide();
             new Login().ShowDialog();
         }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
