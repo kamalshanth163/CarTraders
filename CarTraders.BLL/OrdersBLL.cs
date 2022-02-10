@@ -47,6 +47,11 @@ namespace CarTraders.BLL
             return orderItemsDtos;
         }
 
+        public static List<Order> GetOrders()
+        {
+            return OrdersDAO.GetOrders();
+        }
+
         public static bool DeleteOrderItem(Guid id)
         {
             return OrdersDAO.DeleteOrderItem(id);

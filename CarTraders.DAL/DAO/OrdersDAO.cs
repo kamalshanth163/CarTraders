@@ -57,6 +57,19 @@ namespace OrderTraders.DAL.DAO
             }
         }
 
+        public static List<Order> GetOrders()
+        {
+            try
+            {
+                return db.Orders.OrderBy(x => x.CreatedAt).ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+                throw ex;
+            }
+        }
+
         public static Order AddOrder(Order order)
         {
             try

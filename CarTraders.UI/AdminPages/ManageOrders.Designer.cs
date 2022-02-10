@@ -34,14 +34,15 @@ namespace CarTraders.UI.AdminPages
             this.ordersDataView = new System.Windows.Forms.DataGridView();
             this.title = new System.Windows.Forms.Label();
             this.orderItemsDataView = new System.Windows.Forms.DataGridView();
-            this.order_status = new System.Windows.Forms.ComboBox();
+            this.customer_name = new System.Windows.Forms.ComboBox();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.setStatusBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.order_status = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.allBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderItemsDataView)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +58,7 @@ namespace CarTraders.UI.AdminPages
             this.exitBtn.TabIndex = 33;
             this.exitBtn.Text = "X";
             this.exitBtn.UseVisualStyleBackColor = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // menuBtn
             // 
@@ -67,6 +69,7 @@ namespace CarTraders.UI.AdminPages
             this.menuBtn.TabIndex = 32;
             this.menuBtn.Text = "Go to menu";
             this.menuBtn.UseVisualStyleBackColor = true;
+            this.menuBtn.Click += new System.EventHandler(this.menuBtn_Click);
             // 
             // ordersDataView
             // 
@@ -97,17 +100,15 @@ namespace CarTraders.UI.AdminPages
             this.orderItemsDataView.Size = new System.Drawing.Size(369, 305);
             this.orderItemsDataView.TabIndex = 34;
             // 
-            // order_status
+            // customer_name
             // 
-            this.order_status.FormattingEnabled = true;
-            this.order_status.ItemHeight = 13;
-            this.order_status.Items.AddRange(new object[] {
-            "Pending",
-            "Completed"});
-            this.order_status.Location = new System.Drawing.Point(28, 117);
-            this.order_status.Name = "order_status";
-            this.order_status.Size = new System.Drawing.Size(215, 21);
-            this.order_status.TabIndex = 35;
+            this.customer_name.FormattingEnabled = true;
+            this.customer_name.ItemHeight = 13;
+            this.customer_name.Location = new System.Drawing.Point(28, 117);
+            this.customer_name.Name = "customer_name";
+            this.customer_name.Size = new System.Drawing.Size(215, 21);
+            this.customer_name.TabIndex = 35;
+            this.customer_name.SelectedIndexChanged += new System.EventHandler(this.customer_name_SelectedIndexChanged);
             // 
             // deleteBtn
             // 
@@ -159,17 +160,18 @@ namespace CarTraders.UI.AdminPages
             this.label3.TabIndex = 40;
             this.label3.Text = "Customer";
             // 
-            // comboBox1
+            // order_status
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 13;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.order_status.FormattingEnabled = true;
+            this.order_status.ItemHeight = 13;
+            this.order_status.Items.AddRange(new object[] {
             "Pending",
             "Completed"});
-            this.comboBox1.Location = new System.Drawing.Point(251, 117);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(122, 21);
-            this.comboBox1.TabIndex = 41;
+            this.order_status.Location = new System.Drawing.Point(251, 117);
+            this.order_status.Name = "order_status";
+            this.order_status.Size = new System.Drawing.Size(122, 21);
+            this.order_status.TabIndex = 41;
+            this.order_status.SelectedIndexChanged += new System.EventHandler(this.order_status_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -181,19 +183,31 @@ namespace CarTraders.UI.AdminPages
             this.label4.TabIndex = 43;
             this.label4.Text = "Order Status";
             // 
+            // allBtn
+            // 
+            this.allBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.allBtn.Location = new System.Drawing.Point(115, 176);
+            this.allBtn.Name = "allBtn";
+            this.allBtn.Size = new System.Drawing.Size(39, 29);
+            this.allBtn.TabIndex = 44;
+            this.allBtn.Text = "All";
+            this.allBtn.UseVisualStyleBackColor = true;
+            this.allBtn.Click += new System.EventHandler(this.allBtn_Click);
+            // 
             // ManageOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.allBtn);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.order_status);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.setStatusBtn);
-            this.Controls.Add(this.order_status);
+            this.Controls.Add(this.customer_name);
             this.Controls.Add(this.orderItemsDataView);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.menuBtn);
@@ -203,6 +217,7 @@ namespace CarTraders.UI.AdminPages
             this.Name = "ManageOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageOrders";
+            this.Load += new System.EventHandler(this.ManageOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderItemsDataView)).EndInit();
             this.ResumeLayout(false);
@@ -217,13 +232,14 @@ namespace CarTraders.UI.AdminPages
         private System.Windows.Forms.DataGridView ordersDataView;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.DataGridView orderItemsDataView;
-        private System.Windows.Forms.ComboBox order_status;
+        private System.Windows.Forms.ComboBox customer_name;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button setStatusBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox order_status;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button allBtn;
     }
 }
