@@ -74,10 +74,10 @@ namespace CarTraders.UI.AdminPages
             // ordersDataView
             // 
             this.ordersDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ordersDataView.Location = new System.Drawing.Point(29, 211);
+            this.ordersDataView.Location = new System.Drawing.Point(29, 194);
             this.ordersDataView.Name = "ordersDataView";
             this.ordersDataView.RowTemplate.Height = 60;
-            this.ordersDataView.Size = new System.Drawing.Size(345, 211);
+            this.ordersDataView.Size = new System.Drawing.Size(345, 228);
             this.ordersDataView.TabIndex = 31;
             this.ordersDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.carsDataView_CellContentClick);
             // 
@@ -113,7 +113,7 @@ namespace CarTraders.UI.AdminPages
             // deleteBtn
             // 
             this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.deleteBtn.Location = new System.Drawing.Point(302, 176);
+            this.deleteBtn.Location = new System.Drawing.Point(166, 163);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(72, 29);
             this.deleteBtn.TabIndex = 37;
@@ -123,18 +123,19 @@ namespace CarTraders.UI.AdminPages
             // setStatusBtn
             // 
             this.setStatusBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.setStatusBtn.Location = new System.Drawing.Point(159, 176);
+            this.setStatusBtn.Location = new System.Drawing.Point(239, 163);
             this.setStatusBtn.Name = "setStatusBtn";
-            this.setStatusBtn.Size = new System.Drawing.Size(138, 29);
+            this.setStatusBtn.Size = new System.Drawing.Size(135, 29);
             this.setStatusBtn.TabIndex = 36;
             this.setStatusBtn.Text = "Set as Completed";
             this.setStatusBtn.UseVisualStyleBackColor = true;
+            this.setStatusBtn.Click += new System.EventHandler(this.setStatusBtn_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label1.Location = new System.Drawing.Point(25, 178);
+            this.label1.Location = new System.Drawing.Point(25, 162);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 25);
             this.label1.TabIndex = 38;
@@ -186,11 +187,11 @@ namespace CarTraders.UI.AdminPages
             // allBtn
             // 
             this.allBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.allBtn.Location = new System.Drawing.Point(115, 176);
+            this.allBtn.Location = new System.Drawing.Point(100, 163);
             this.allBtn.Name = "allBtn";
-            this.allBtn.Size = new System.Drawing.Size(39, 29);
+            this.allBtn.Size = new System.Drawing.Size(65, 29);
             this.allBtn.TabIndex = 44;
-            this.allBtn.Text = "All";
+            this.allBtn.Text = "View all";
             this.allBtn.UseVisualStyleBackColor = true;
             this.allBtn.Click += new System.EventHandler(this.allBtn_Click);
             // 

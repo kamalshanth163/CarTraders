@@ -86,6 +86,23 @@ namespace OrderTraders.DAL.DAO
             }
         }
 
+        public static bool UpdateOrderStatus(Guid id, string status)
+        {
+            try
+            {
+                Order orderFromDb = db.Orders.FirstOrDefault(i => i.Id == id);
+                orderFromDb.Status = status;
+                orderFromDb.UpdatedAt = DateTime.Now;
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+        }
+
         public static bool UpdateOrderItemsOrderId(List<Guid> orderItemIds, Guid orderId)
         {
             try

@@ -18,10 +18,14 @@ namespace CarTraders.UI.AdminPages
         List<Order> orderList = new List<Order>();
         User customer = null;
         string orderStatus = null;
+        Guid selectedOrderId;
+        string orderStatusToUpdate;
 
         public ManageOrders()
         {
             InitializeComponent();
+            setStatusBtn.Visible = false;
+            deleteBtn.Visible = false;
         }
 
         private void ManageOrders_Load(object sender, EventArgs e)
@@ -48,11 +52,6 @@ namespace CarTraders.UI.AdminPages
         private void exitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void carsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void LoadOrdersData(List<Order> orderList)
@@ -101,6 +100,47 @@ namespace CarTraders.UI.AdminPages
             LoadOrdersData(orderList);
             customer_name.SelectedItem = null;
             order_status.SelectedItem = null;
+        }
+
+        private void carsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            setStatusBtn.Visible = true;
+            deleteBtn.Visible = true;
+
+            DataGridViewRow row = ordersDataView.Rows[e.RowIndex];
+            selectedOrderId = Guid.Parse(row.Cells[0].Value.ToString());            
+
+            switch (row.Cells[5].Value.ToString())
+            {
+                case "Pending":
+                    setStatusBtn.Text = "Set as Completed";
+                    orderStatusToUpdate = "Completed";
+                    break;
+                case "Completed":
+                    setStatusBtn.Text = "Set as Pending";
+                    orderStatusToUpdate = "Pending";
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void setStatusBtn_Click(object sender, EventArgs e)
+        {
+            var isUpdated = OrdersBLL.UpdateOrderStatus(selectedOrderId, orderStatusToUpdate);
+
+            if(!isUpdated)
+            {
+                MessageBox.Show($"Failed to update order status", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show($"Order status updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                orderList = OrdersBLL.GetOrders();
+                filterOrders(customer, orderStatus);
+                setStatusBtn.Visible = false;
+                deleteBtn.Visible = false;
+            }
         }
     }
 }

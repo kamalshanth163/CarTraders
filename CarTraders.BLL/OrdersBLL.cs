@@ -66,5 +66,10 @@ namespace CarTraders.BLL
         {
             OrdersDAO.UpdateOrderItemsOrderId(orderItemIds, orderId);
         }
+
+        public static bool UpdateOrderStatus(Guid id, string status)
+        {
+            return OrdersDAO.UpdateOrderStatus(id, status);
+        }
     }
 }
