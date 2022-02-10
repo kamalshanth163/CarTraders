@@ -32,6 +32,7 @@ namespace CarTraders
             this.carsPart_btn = new System.Windows.Forms.Button();
             this.cars_btn = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // carsPart_btn
@@ -65,11 +66,25 @@ namespace CarTraders
             this.title.TabIndex = 14;
             this.title.Text = "Customer Menu";
             // 
+            // exitBtn
+            // 
+            this.exitBtn.BackColor = System.Drawing.Color.Red;
+            this.exitBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.exitBtn.ForeColor = System.Drawing.Color.White;
+            this.exitBtn.Location = new System.Drawing.Point(635, 12);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(39, 31);
+            this.exitBtn.TabIndex = 34;
+            this.exitBtn.Text = "X";
+            this.exitBtn.UseVisualStyleBackColor = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
             // CustomerMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.carsPart_btn);
             this.Controls.Add(this.cars_btn);
             this.Controls.Add(this.title);
@@ -87,5 +102,6 @@ namespace CarTraders
         private System.Windows.Forms.Button carsPart_btn;
         private System.Windows.Forms.Button cars_btn;
         private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Button exitBtn;
     }
 }

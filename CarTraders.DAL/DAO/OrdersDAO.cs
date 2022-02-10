@@ -57,6 +57,19 @@ namespace OrderTraders.DAL.DAO
             }
         }
 
+        public static List<Order> GetOrders()
+        {
+            try
+            {
+                return db.Orders.OrderBy(x => x.CreatedAt).ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+                throw ex;
+            }
+        }
+
         public static Order AddOrder(Order order)
         {
             try
@@ -69,6 +82,55 @@ namespace OrderTraders.DAL.DAO
             catch (Exception ex)
             {
                 return null;
+                throw ex;
+            }
+        }
+
+        public static bool DeleteOrder(Guid id)
+        {
+            try
+            {
+                Order orderFromDb = db.Orders.FirstOrDefault(i => i.Id == id);
+                db.Orders.DeleteOnSubmit(orderFromDb);
+                db.SubmitChanges();
+
+                Car orderFromDbAfterDelete = db.Cars.FirstOrDefault(c => c.Id == id);
+                var isDeleted = orderFromDbAfterDelete == null;
+                return isDeleted;
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
+            }
+        }
+
+        public static List<OrderItem> GetOrderItemsByOrderId(Guid id)
+        {
+            try
+            {
+                return db.OrderItems.Where(i => i.OrderId == id).OrderBy(x => x.CreatedAt).ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+                throw ex;
+            }
+        }
+
+        public static bool UpdateOrderStatus(Guid id, string status)
+        {
+            try
+            {
+                Order orderFromDb = db.Orders.FirstOrDefault(i => i.Id == id);
+                orderFromDb.Status = status;
+                orderFromDb.UpdatedAt = DateTime.Now;
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
                 throw ex;
             }
         }

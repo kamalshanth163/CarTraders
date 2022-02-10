@@ -23,5 +23,10 @@ namespace CarTraders
             this.Hide();
             new CarStore().ShowDialog();
         }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

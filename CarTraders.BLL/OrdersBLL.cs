@@ -47,6 +47,11 @@ namespace CarTraders.BLL
             return orderItemsDtos;
         }
 
+        public static List<Order> GetOrders()
+        {
+            return OrdersDAO.GetOrders();
+        }
+
         public static bool DeleteOrderItem(Guid id)
         {
             return OrdersDAO.DeleteOrderItem(id);
@@ -60,6 +65,21 @@ namespace CarTraders.BLL
         public static void UpdateOrderItemsOrderId(List<Guid> orderItemIds, Guid orderId)
         {
             OrdersDAO.UpdateOrderItemsOrderId(orderItemIds, orderId);
+        }
+
+        public static bool UpdateOrderStatus(Guid id, string status)
+        {
+            return OrdersDAO.UpdateOrderStatus(id, status);
+        }
+
+        public static bool DeleteOrder(Guid id)
+        {
+            return OrdersDAO.DeleteOrder(id);
+        }
+
+        public static List<OrderItem> GetOrderItemsByOrderId(Guid id)
+        {
+            return OrdersDAO.GetOrderItemsByOrderId(id);
         }
     }
 }

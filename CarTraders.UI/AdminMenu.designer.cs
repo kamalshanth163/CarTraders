@@ -36,6 +36,7 @@ namespace CarTraders
             this.btn_reports = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
             this.btn_orders = new System.Windows.Forms.Button();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_dashboard
@@ -110,11 +111,25 @@ namespace CarTraders
             this.btn_orders.Text = "Manage Orders";
             this.btn_orders.UseVisualStyleBackColor = true;
             // 
+            // exitBtn
+            // 
+            this.exitBtn.BackColor = System.Drawing.Color.Red;
+            this.exitBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.exitBtn.ForeColor = System.Drawing.Color.White;
+            this.exitBtn.Location = new System.Drawing.Point(635, 12);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(39, 31);
+            this.exitBtn.TabIndex = 34;
+            this.exitBtn.Text = "X";
+            this.exitBtn.UseVisualStyleBackColor = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.btn_orders);
             this.Controls.Add(this.title);
             this.Controls.Add(this.btn_reports);
@@ -140,5 +155,6 @@ namespace CarTraders
         private System.Windows.Forms.Button btn_reports;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Button btn_orders;
+        private System.Windows.Forms.Button exitBtn;
     }
 }
