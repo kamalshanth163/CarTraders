@@ -37,6 +37,7 @@ namespace CarTraders
             this.title = new System.Windows.Forms.Label();
             this.btn_orders = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_dashboard
@@ -69,6 +70,7 @@ namespace CarTraders
             this.btn_customers.TabIndex = 10;
             this.btn_customers.Text = "Manage Customers";
             this.btn_customers.UseVisualStyleBackColor = true;
+            this.btn_customers.Click += new System.EventHandler(this.btn_customers_Click);
             // 
             // btn_carParts
             // 
@@ -110,6 +112,7 @@ namespace CarTraders
             this.btn_orders.TabIndex = 16;
             this.btn_orders.Text = "Manage Orders";
             this.btn_orders.UseVisualStyleBackColor = true;
+            this.btn_orders.Click += new System.EventHandler(this.btn_orders_Click);
             // 
             // exitBtn
             // 
@@ -124,11 +127,23 @@ namespace CarTraders
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
+            // logoutBtn
+            // 
+            this.logoutBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.logoutBtn.Location = new System.Drawing.Point(524, 14);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(105, 29);
+            this.logoutBtn.TabIndex = 37;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.btn_orders);
             this.Controls.Add(this.title);
@@ -156,5 +171,6 @@ namespace CarTraders
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Button btn_orders;
         private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Button logoutBtn;
     }
 }

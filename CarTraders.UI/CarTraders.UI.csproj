@@ -107,6 +107,30 @@
     <Compile Include="CustomerPages\CartPage.Designer.cs">
       <DependentUpon>CartPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerPages\CustomerOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\CustomerOrders.Designer.cs">
+      <DependentUpon>CustomerOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPages\OrderCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\OrderCard.Designer.cs">
+      <DependentUpon>OrderCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPages\OrderItemCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\OrderItemCard.Designer.cs">
+      <DependentUpon>OrderItemCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPages\OrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\OrderView.Designer.cs">
+      <DependentUpon>OrderView.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerPages\ProductCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,6 +189,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\CartPage.resx">
       <DependentUpon>CartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\CustomerOrders.resx">
+      <DependentUpon>CustomerOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\OrderCard.resx">
+      <DependentUpon>OrderCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\OrderItemCard.resx">
+      <DependentUpon>OrderItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPages\OrderView.resx">
+      <DependentUpon>OrderView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerPages\ProductCard.resx">
       <DependentUpon>ProductCard.cs</DependentUpon>

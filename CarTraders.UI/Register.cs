@@ -44,6 +44,11 @@ namespace CarTraders
                     MessageBox.Show($"User registered successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Hide();
+                    UserData.UserId = createdObj.Id;
+                    UserData.Name = createdObj.Name;
+                    UserData.Email = createdObj.Email;
+                    UserData.Type = createdObj.Type;
+
                     switch (createdObj.Type)
                     {
                         case "Admin":
@@ -83,6 +88,12 @@ namespace CarTraders
         {
             this.Hide();
             new Login().ShowDialog();
+        }
+
+        private void homeBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Home().ShowDialog();
         }
     }
 }

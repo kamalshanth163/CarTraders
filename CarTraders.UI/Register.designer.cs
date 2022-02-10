@@ -47,6 +47,7 @@ namespace CarTraders
             this.exitBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.loginLink = new System.Windows.Forms.Label();
+            this.homeBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // user_phone
@@ -194,7 +195,7 @@ namespace CarTraders
             this.exitBtn.ForeColor = System.Drawing.Color.White;
             this.exitBtn.Location = new System.Drawing.Point(642, 10);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(33, 27);
+            this.exitBtn.Size = new System.Drawing.Size(32, 28);
             this.exitBtn.TabIndex = 28;
             this.exitBtn.Text = "X";
             this.exitBtn.UseVisualStyleBackColor = false;
@@ -222,11 +223,23 @@ namespace CarTraders
             this.loginLink.Text = "Login";
             this.loginLink.Click += new System.EventHandler(this.loginLink_Click);
             // 
+            // homeBtn
+            // 
+            this.homeBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.homeBtn.Location = new System.Drawing.Point(531, 9);
+            this.homeBtn.Name = "homeBtn";
+            this.homeBtn.Size = new System.Drawing.Size(105, 29);
+            this.homeBtn.TabIndex = 38;
+            this.homeBtn.Text = "Go to home";
+            this.homeBtn.UseVisualStyleBackColor = true;
+            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.homeBtn);
             this.Controls.Add(this.loginLink);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.exitBtn);
@@ -275,5 +288,6 @@ namespace CarTraders
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label loginLink;
+        private System.Windows.Forms.Button homeBtn;
     }
 }

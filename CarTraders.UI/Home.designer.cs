@@ -39,7 +39,7 @@ namespace CarTraders
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Segoe UI", 30F);
-            this.title.Location = new System.Drawing.Point(254, 59);
+            this.title.Location = new System.Drawing.Point(217, 63);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(233, 54);
             this.title.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace CarTraders
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 40F);
-            this.label1.Location = new System.Drawing.Point(161, 106);
+            this.label1.Location = new System.Drawing.Point(124, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(463, 72);
             this.label1.TabIndex = 1;

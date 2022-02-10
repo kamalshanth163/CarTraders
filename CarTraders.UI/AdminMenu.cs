@@ -1,4 +1,5 @@
-﻿using CarTraders.UI.AdminPages;
+﻿using CarTraders.DAL.Data;
+using CarTraders.UI.AdminPages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,18 @@ namespace CarTraders
         private void exitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_orders_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ManageOrders().ShowDialog();
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            UserData.UserId = Guid.Empty;
+            new Home().ShowDialog();
         }
     }
 }

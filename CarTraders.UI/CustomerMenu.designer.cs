@@ -29,38 +29,41 @@ namespace CarTraders
         /// </summary>
         private void InitializeComponent()
         {
-            this.carsPart_btn = new System.Windows.Forms.Button();
-            this.cars_btn = new System.Windows.Forms.Button();
+            this.ordersBtn = new System.Windows.Forms.Button();
+            this.storeBtn = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.profileBtn = new System.Windows.Forms.Button();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // carsPart_btn
+            // ordersBtn
             // 
-            this.carsPart_btn.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.carsPart_btn.Location = new System.Drawing.Point(243, 206);
-            this.carsPart_btn.Name = "carsPart_btn";
-            this.carsPart_btn.Size = new System.Drawing.Size(191, 40);
-            this.carsPart_btn.TabIndex = 16;
-            this.carsPart_btn.Text = "Buy Car Parts";
-            this.carsPart_btn.UseVisualStyleBackColor = true;
+            this.ordersBtn.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.ordersBtn.Location = new System.Drawing.Point(203, 206);
+            this.ordersBtn.Name = "ordersBtn";
+            this.ordersBtn.Size = new System.Drawing.Size(283, 40);
+            this.ordersBtn.TabIndex = 16;
+            this.ordersBtn.Text = "View Order Details";
+            this.ordersBtn.UseVisualStyleBackColor = true;
+            this.ordersBtn.Click += new System.EventHandler(this.ordersBtn_Click);
             // 
-            // cars_btn
+            // storeBtn
             // 
-            this.cars_btn.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.cars_btn.Location = new System.Drawing.Point(271, 151);
-            this.cars_btn.Name = "cars_btn";
-            this.cars_btn.Size = new System.Drawing.Size(147, 40);
-            this.cars_btn.TabIndex = 15;
-            this.cars_btn.Text = "Buy Cars";
-            this.cars_btn.UseVisualStyleBackColor = true;
-            this.cars_btn.Click += new System.EventHandler(this.loginBtn_Click);
+            this.storeBtn.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.storeBtn.Location = new System.Drawing.Point(206, 148);
+            this.storeBtn.Name = "storeBtn";
+            this.storeBtn.Size = new System.Drawing.Size(283, 40);
+            this.storeBtn.TabIndex = 15;
+            this.storeBtn.Text = "Purchase Cars and Car Parts";
+            this.storeBtn.UseVisualStyleBackColor = true;
+            this.storeBtn.Click += new System.EventHandler(this.storeBtn_Click);
             // 
             // title
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Segoe UI", 30F);
-            this.title.Location = new System.Drawing.Point(211, 44);
+            this.title.Location = new System.Drawing.Point(197, 44);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(308, 54);
             this.title.TabIndex = 14;
@@ -79,14 +82,38 @@ namespace CarTraders
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
+            // profileBtn
+            // 
+            this.profileBtn.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.profileBtn.Location = new System.Drawing.Point(206, 264);
+            this.profileBtn.Name = "profileBtn";
+            this.profileBtn.Size = new System.Drawing.Size(283, 40);
+            this.profileBtn.TabIndex = 35;
+            this.profileBtn.Text = "Manage Profile";
+            this.profileBtn.UseVisualStyleBackColor = true;
+            this.profileBtn.Click += new System.EventHandler(this.profileBtn_Click);
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.logoutBtn.Location = new System.Drawing.Point(524, 13);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(105, 29);
+            this.logoutBtn.TabIndex = 36;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
             // CustomerMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.logoutBtn);
+            this.Controls.Add(this.profileBtn);
             this.Controls.Add(this.exitBtn);
-            this.Controls.Add(this.carsPart_btn);
-            this.Controls.Add(this.cars_btn);
+            this.Controls.Add(this.ordersBtn);
+            this.Controls.Add(this.storeBtn);
             this.Controls.Add(this.title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerMenu";
@@ -99,9 +126,11 @@ namespace CarTraders
 
         #endregion
 
-        private System.Windows.Forms.Button carsPart_btn;
-        private System.Windows.Forms.Button cars_btn;
+        private System.Windows.Forms.Button ordersBtn;
+        private System.Windows.Forms.Button storeBtn;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Button profileBtn;
+        private System.Windows.Forms.Button logoutBtn;
     }
 }
