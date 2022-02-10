@@ -1,5 +1,6 @@
 ﻿using CarTraders.BLL;
 using CarTraders.DAL;
+using CarTraders.DAL.Data;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -11,7 +12,7 @@ namespace CarTraders
         public Register()
         {
             InitializeComponent();
-            user_type.SelectedIndex = 0;
+            user_type.SelectedIndex = 1;
         }
 
         private void registerBtn_Click(object sender, EventArgs e)
@@ -54,6 +55,11 @@ namespace CarTraders
                         default:
                             break;
                     }
+
+                    UserData.UserId = user.Id;
+                    UserData.Name = user.Name;
+                    UserData.Email = user.Email;
+                    UserData.Type = user.Type;
                 }
             }
         }

@@ -77,5 +77,18 @@ namespace CarTraders.DAL.DAO
                 throw ex;
             }
         }
+
+        public static CarPart GetCarPartById(Guid id)
+        {
+            try
+            {
+                return db.CarParts.FirstOrDefault(c => c.Id == id);
+            }
+            catch (Exception ex)
+            {
+                return null;
+                throw ex;
+            }
+        }
     }
 }

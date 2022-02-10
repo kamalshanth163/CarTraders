@@ -29,37 +29,37 @@ namespace CarTraders
         /// </summary>
         private void InitializeComponent()
         {
-            this.customerMenuBtn2 = new System.Windows.Forms.Button();
-            this.customerMenuBtn1 = new System.Windows.Forms.Button();
+            this.carsPart_btn = new System.Windows.Forms.Button();
+            this.cars_btn = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // customerMenuBtn2
+            // carsPart_btn
             // 
-            this.customerMenuBtn2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerMenuBtn2.Location = new System.Drawing.Point(283, 238);
-            this.customerMenuBtn2.Name = "customerMenuBtn2";
-            this.customerMenuBtn2.Size = new System.Drawing.Size(223, 46);
-            this.customerMenuBtn2.TabIndex = 16;
-            this.customerMenuBtn2.Text = "Rent Car Parts";
-            this.customerMenuBtn2.UseVisualStyleBackColor = true;
+            this.carsPart_btn.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.carsPart_btn.Location = new System.Drawing.Point(243, 206);
+            this.carsPart_btn.Name = "carsPart_btn";
+            this.carsPart_btn.Size = new System.Drawing.Size(191, 40);
+            this.carsPart_btn.TabIndex = 16;
+            this.carsPart_btn.Text = "Buy Car Parts";
+            this.carsPart_btn.UseVisualStyleBackColor = true;
             // 
-            // customerMenuBtn1
+            // cars_btn
             // 
-            this.customerMenuBtn1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerMenuBtn1.Location = new System.Drawing.Point(316, 174);
-            this.customerMenuBtn1.Name = "customerMenuBtn1";
-            this.customerMenuBtn1.Size = new System.Drawing.Size(171, 46);
-            this.customerMenuBtn1.TabIndex = 15;
-            this.customerMenuBtn1.Text = "Rent Cars";
-            this.customerMenuBtn1.UseVisualStyleBackColor = true;
-            this.customerMenuBtn1.Click += new System.EventHandler(this.loginBtn_Click);
+            this.cars_btn.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.cars_btn.Location = new System.Drawing.Point(271, 151);
+            this.cars_btn.Name = "cars_btn";
+            this.cars_btn.Size = new System.Drawing.Size(147, 40);
+            this.cars_btn.TabIndex = 15;
+            this.cars_btn.Text = "Buy Cars";
+            this.cars_btn.UseVisualStyleBackColor = true;
+            this.cars_btn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.title.Location = new System.Drawing.Point(246, 51);
+            this.title.Font = new System.Drawing.Font("Segoe UI", 30F);
+            this.title.Location = new System.Drawing.Point(211, 44);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(308, 54);
             this.title.TabIndex = 14;
@@ -67,11 +67,11 @@ namespace CarTraders
             // 
             // CustomerMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.customerMenuBtn2);
-            this.Controls.Add(this.customerMenuBtn1);
+            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.carsPart_btn);
+            this.Controls.Add(this.cars_btn);
             this.Controls.Add(this.title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerMenu";
@@ -84,8 +84,8 @@ namespace CarTraders
 
         #endregion
 
-        private System.Windows.Forms.Button customerMenuBtn2;
-        private System.Windows.Forms.Button customerMenuBtn1;
+        private System.Windows.Forms.Button carsPart_btn;
+        private System.Windows.Forms.Button cars_btn;
         private System.Windows.Forms.Label title;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CarTraders.BLL;
 using CarTraders.DAL;
+using CarTraders.DAL.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace CarTraders
         public Login()
         {
             InitializeComponent();
-            user_type.SelectedIndex = 0;
+            user_type.SelectedIndex = 1;
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -41,6 +42,13 @@ namespace CarTraders
                 else
                 {
                     this.Hide();
+                    UserData.UserId = loggedUser.Id;
+                    UserData.Name = loggedUser.Name;
+                    UserData.Email = loggedUser.Email;
+                    UserData.Type = loggedUser.Type;
+
+                    var email = UserData.Email;
+
                     switch (loggedUser.Type)
                     {
                         case "Admin":
@@ -52,6 +60,7 @@ namespace CarTraders
                         default:
                             break;
                     }
+
                 }
             }
         }
