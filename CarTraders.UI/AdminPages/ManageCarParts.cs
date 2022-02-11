@@ -1,5 +1,6 @@
 ﻿using CarTraders.BLL;
 using CarTraders.DAL;
+using CarTraders.UI.Reports;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -59,7 +60,7 @@ namespace CarTraders.UI.AdminPages
                 var newGuid = Guid.NewGuid();
 
                 CarPart carPart = new CarPart();
-                carPart.Id = carPart_id.Text == "" ? newGuid : Guid.Parse(carPart_id.Text);
+                carPart.Id = carPart_id.Text == "" || carPart_id.Text == null ? newGuid : Guid.Parse(carPart_id.Text);
                 carPart.Name = carPart_name.Text;
                 carPart.Brand = carPart_brand.Text;
                 carPart.Price = decimal.Parse(carPart_price.Text);
@@ -82,7 +83,7 @@ namespace CarTraders.UI.AdminPages
                 else
                 {
                     carPart.Image = ConvertImageToBytes(carPart_image.Image);
-                    carPart.ImageName = SaveImage(carPart_id.Text == "" ? newGuid.ToString() : carPart_id.Text);
+                    carPart.ImageName = SaveImage(carPart_id.Text == "" || carPart_id.Text == null ? newGuid.ToString() : carPart_id.Text);
                 }
 
                 if (operation == "Add")
@@ -202,6 +203,12 @@ namespace CarTraders.UI.AdminPages
         {
             carPart_image.Image = Image.FromFile($"{path}\\Images\\CarParts\\empty.jpg");
             currentImageName = "empty.jpg";
+        }
+
+        private void reportBtn_Click(object sender, EventArgs e)
+        {
+            var reportModel = new ReportModel(carPartsDataView, "Car Parts Report");
+            new Report().GenerateExcel(reportModel);
         }
     }
 }

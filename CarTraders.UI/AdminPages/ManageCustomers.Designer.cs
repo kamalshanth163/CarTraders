@@ -47,6 +47,7 @@ namespace CarTraders.UI.AdminPages
             this.customer_password = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.customer_email = new System.Windows.Forms.TextBox();
+            this.reportBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,7 +98,7 @@ namespace CarTraders.UI.AdminPages
             this.customersDataView.Location = new System.Drawing.Point(293, 82);
             this.customersDataView.Name = "customersDataView";
             this.customersDataView.RowTemplate.Height = 60;
-            this.customersDataView.Size = new System.Drawing.Size(461, 343);
+            this.customersDataView.Size = new System.Drawing.Size(461, 293);
             this.customersDataView.TabIndex = 48;
             this.customersDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customersDataView_CellContentClick);
             // 
@@ -218,11 +219,23 @@ namespace CarTraders.UI.AdminPages
             this.customer_email.Size = new System.Drawing.Size(227, 20);
             this.customer_email.TabIndex = 53;
             // 
+            // reportBtn
+            // 
+            this.reportBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.reportBtn.Location = new System.Drawing.Point(293, 396);
+            this.reportBtn.Name = "reportBtn";
+            this.reportBtn.Size = new System.Drawing.Size(155, 30);
+            this.reportBtn.TabIndex = 57;
+            this.reportBtn.Text = "Generate Report";
+            this.reportBtn.UseVisualStyleBackColor = true;
+            this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
+            // 
             // ManageCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.reportBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.customer_password);
             this.Controls.Add(this.label5);
@@ -272,5 +285,6 @@ namespace CarTraders.UI.AdminPages
         private System.Windows.Forms.TextBox customer_password;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox customer_email;
+        private System.Windows.Forms.Button reportBtn;
     }
 }

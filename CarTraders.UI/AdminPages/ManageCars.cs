@@ -1,9 +1,12 @@
 ﻿using CarTraders.BLL;
 using CarTraders.DAL;
+using CarTraders.UI.Reports;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CarTraders.UI.AdminPages
@@ -26,18 +29,20 @@ namespace CarTraders.UI.AdminPages
             car_image.Image = null;
             updateBtn.Enabled = false;
             deleteBtn.Enabled = false;
+
         }
         private void ManageCars_Load(object sender, EventArgs e)
         {
             carList = CarsBLL.GetCars();
             carsDataView.DataSource = carList;
+
             carsDataView.Columns[7].Visible = false;
             carsDataView.Columns[8].Visible = false;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            ManageOperation("Add");
+            ManageOperation("Add");            
         }
         private void updateBtn_Click(object sender, EventArgs e)
         {
@@ -59,7 +64,7 @@ namespace CarTraders.UI.AdminPages
                 var newGuid = Guid.NewGuid();
 
                 Car car = new Car();
-                car.Id = car_id.Text == "" ? newGuid : Guid.Parse(car_id.Text);
+                car.Id = car_id.Text == "" || car_id.Text == null || car_id.Text == null ? newGuid : Guid.Parse(car_id.Text);
                 car.Name = car_name.Text;
                 car.Brand = car_brand.Text;
                 car.Price = decimal.Parse(car_price.Text);
@@ -82,7 +87,7 @@ namespace CarTraders.UI.AdminPages
                 else
                 {
                     car.Image = ConvertImageToBytes(car_image.Image);
-                    car.ImageName = SaveImage(car_id.Text == "" ? newGuid.ToString() : car_id.Text);
+                    car.ImageName = SaveImage(car_id.Text == "" || car_id.Text == null ? newGuid.ToString() : car_id.Text);
                 }
 
                 if (operation == "Add")
@@ -202,6 +207,12 @@ namespace CarTraders.UI.AdminPages
         {
             car_image.Image = Image.FromFile($"{path}\\Images\\Cars\\empty.jpg");
             currentImageName = "empty.jpg";
+        }
+
+        private void reportBtn_Click(object sender, EventArgs e)
+        {
+            var reportModel = new ReportModel(carsDataView, "Cars Report");
+            new Report().GenerateExcel(reportModel);
         }
     }
 }

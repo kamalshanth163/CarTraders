@@ -43,6 +43,7 @@ namespace CarTraders.UI.AdminPages
             this.order_status = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.viewAllBtn = new System.Windows.Forms.Button();
+            this.reportBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderItemsDataView)).BeginInit();
             this.SuspendLayout();
@@ -74,10 +75,10 @@ namespace CarTraders.UI.AdminPages
             // ordersDataView
             // 
             this.ordersDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ordersDataView.Location = new System.Drawing.Point(29, 194);
+            this.ordersDataView.Location = new System.Drawing.Point(29, 179);
             this.ordersDataView.Name = "ordersDataView";
             this.ordersDataView.RowTemplate.Height = 60;
-            this.ordersDataView.Size = new System.Drawing.Size(345, 228);
+            this.ordersDataView.Size = new System.Drawing.Size(345, 202);
             this.ordersDataView.TabIndex = 31;
             this.ordersDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.carsDataView_CellContentClick);
             // 
@@ -85,7 +86,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.title.Location = new System.Drawing.Point(23, 24);
+            this.title.Location = new System.Drawing.Point(23, 17);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(200, 37);
             this.title.TabIndex = 30;
@@ -94,17 +95,17 @@ namespace CarTraders.UI.AdminPages
             // orderItemsDataView
             // 
             this.orderItemsDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.orderItemsDataView.Location = new System.Drawing.Point(405, 117);
+            this.orderItemsDataView.Location = new System.Drawing.Point(405, 102);
             this.orderItemsDataView.Name = "orderItemsDataView";
             this.orderItemsDataView.RowTemplate.Height = 60;
-            this.orderItemsDataView.Size = new System.Drawing.Size(369, 305);
+            this.orderItemsDataView.Size = new System.Drawing.Size(369, 279);
             this.orderItemsDataView.TabIndex = 34;
             // 
             // customer_name
             // 
             this.customer_name.FormattingEnabled = true;
             this.customer_name.ItemHeight = 13;
-            this.customer_name.Location = new System.Drawing.Point(28, 117);
+            this.customer_name.Location = new System.Drawing.Point(28, 102);
             this.customer_name.Name = "customer_name";
             this.customer_name.Size = new System.Drawing.Size(215, 21);
             this.customer_name.TabIndex = 35;
@@ -113,7 +114,7 @@ namespace CarTraders.UI.AdminPages
             // deleteBtn
             // 
             this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.deleteBtn.Location = new System.Drawing.Point(166, 163);
+            this.deleteBtn.Location = new System.Drawing.Point(166, 148);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(72, 29);
             this.deleteBtn.TabIndex = 37;
@@ -124,7 +125,7 @@ namespace CarTraders.UI.AdminPages
             // setStatusBtn
             // 
             this.setStatusBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.setStatusBtn.Location = new System.Drawing.Point(239, 163);
+            this.setStatusBtn.Location = new System.Drawing.Point(239, 148);
             this.setStatusBtn.Name = "setStatusBtn";
             this.setStatusBtn.Size = new System.Drawing.Size(135, 29);
             this.setStatusBtn.TabIndex = 36;
@@ -136,7 +137,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label1.Location = new System.Drawing.Point(25, 162);
+            this.label1.Location = new System.Drawing.Point(25, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 25);
             this.label1.TabIndex = 38;
@@ -146,7 +147,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label2.Location = new System.Drawing.Point(400, 85);
+            this.label2.Location = new System.Drawing.Point(400, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 25);
             this.label2.TabIndex = 39;
@@ -156,7 +157,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.Location = new System.Drawing.Point(25, 91);
+            this.label3.Location = new System.Drawing.Point(25, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 19);
             this.label3.TabIndex = 40;
@@ -169,7 +170,7 @@ namespace CarTraders.UI.AdminPages
             this.order_status.Items.AddRange(new object[] {
             "Pending",
             "Completed"});
-            this.order_status.Location = new System.Drawing.Point(251, 117);
+            this.order_status.Location = new System.Drawing.Point(251, 102);
             this.order_status.Name = "order_status";
             this.order_status.Size = new System.Drawing.Size(122, 21);
             this.order_status.TabIndex = 41;
@@ -179,7 +180,7 @@ namespace CarTraders.UI.AdminPages
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label4.Location = new System.Drawing.Point(247, 91);
+            this.label4.Location = new System.Drawing.Point(247, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 19);
             this.label4.TabIndex = 43;
@@ -188,7 +189,7 @@ namespace CarTraders.UI.AdminPages
             // viewAllBtn
             // 
             this.viewAllBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.viewAllBtn.Location = new System.Drawing.Point(100, 163);
+            this.viewAllBtn.Location = new System.Drawing.Point(100, 148);
             this.viewAllBtn.Name = "viewAllBtn";
             this.viewAllBtn.Size = new System.Drawing.Size(65, 29);
             this.viewAllBtn.TabIndex = 44;
@@ -196,11 +197,23 @@ namespace CarTraders.UI.AdminPages
             this.viewAllBtn.UseVisualStyleBackColor = true;
             this.viewAllBtn.Click += new System.EventHandler(this.viewAllBtn_Click);
             // 
+            // reportBtn
+            // 
+            this.reportBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.reportBtn.Location = new System.Drawing.Point(28, 387);
+            this.reportBtn.Name = "reportBtn";
+            this.reportBtn.Size = new System.Drawing.Size(253, 30);
+            this.reportBtn.TabIndex = 59;
+            this.reportBtn.Text = "Generate Order and Item Reports";
+            this.reportBtn.UseVisualStyleBackColor = true;
+            this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
+            // 
             // ManageOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.reportBtn);
             this.Controls.Add(this.viewAllBtn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.order_status);
@@ -243,5 +256,6 @@ namespace CarTraders.UI.AdminPages
         private System.Windows.Forms.ComboBox order_status;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button viewAllBtn;
+        private System.Windows.Forms.Button reportBtn;
     }
 }

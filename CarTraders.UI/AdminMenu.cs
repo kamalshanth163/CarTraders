@@ -50,6 +50,7 @@ namespace CarTraders
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             UserData.UserId = Guid.Empty;
+            this.Hide();
             new Home().ShowDialog();
         }
     }
