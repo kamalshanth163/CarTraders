@@ -126,6 +126,7 @@ namespace CarTraders
             this.btn_dashboard.TabIndex = 8;
             this.btn_dashboard.Text = "View Dashboard";
             this.btn_dashboard.UseVisualStyleBackColor = true;
+            this.btn_dashboard.Click += new System.EventHandler(this.btn_dashboard_Click);
             // 
             // AdminMenu
             // 

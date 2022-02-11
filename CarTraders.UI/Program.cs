@@ -1,5 +1,4 @@
-﻿using CarTraders.UI.CustomerPages;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CarTraders.UI
