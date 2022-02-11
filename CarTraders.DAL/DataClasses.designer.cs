@@ -142,8 +142,6 @@ namespace CarTraders.DAL
 		
 		private string _ImageName;
 		
-		private EntitySet<OrderItem> _OrderItems;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -170,7 +168,6 @@ namespace CarTraders.DAL
 		
 		public CarPart()
 		{
-			this._OrderItems = new EntitySet<OrderItem>(new Action<OrderItem>(this.attach_OrderItems), new Action<OrderItem>(this.detach_OrderItems));
 			OnCreated();
 		}
 		
@@ -314,7 +311,7 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -354,19 +351,6 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CarPart_OrderItem", Storage="_OrderItems", ThisKey="Id", OtherKey="ProductId")]
-		public EntitySet<OrderItem> OrderItems
-		{
-			get
-			{
-				return this._OrderItems;
-			}
-			set
-			{
-				this._OrderItems.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -385,18 +369,6 @@ namespace CarTraders.DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_OrderItems(OrderItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.CarPart = this;
-		}
-		
-		private void detach_OrderItems(OrderItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.CarPart = null;
 		}
 	}
 	
@@ -734,8 +706,6 @@ namespace CarTraders.DAL
 		
 		private string _ImageName;
 		
-		private EntitySet<OrderItem> _OrderItems;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -762,7 +732,6 @@ namespace CarTraders.DAL
 		
 		public Car()
 		{
-			this._OrderItems = new EntitySet<OrderItem>(new Action<OrderItem>(this.attach_OrderItems), new Action<OrderItem>(this.detach_OrderItems));
 			OnCreated();
 		}
 		
@@ -906,7 +875,7 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -946,19 +915,6 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Car_OrderItem", Storage="_OrderItems", ThisKey="Id", OtherKey="ProductId")]
-		public EntitySet<OrderItem> OrderItems
-		{
-			get
-			{
-				return this._OrderItems;
-			}
-			set
-			{
-				this._OrderItems.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -977,18 +933,6 @@ namespace CarTraders.DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_OrderItems(OrderItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.Car = this;
-		}
-		
-		private void detach_OrderItems(OrderItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.Car = null;
 		}
 	}
 	
@@ -1012,15 +956,13 @@ namespace CarTraders.DAL
 		
 		private System.Nullable<System.Guid> _OrderId;
 		
-		private System.Nullable<System.DateTime> _CreatedAt;
+		private System.DateTime _CreatedAt;
 		
 		private System.Nullable<System.DateTime> _UpdatedAt;
 		
-		private EntityRef<CarPart> _CarPart;
-		
-		private EntityRef<Car> _Car;
-		
 		private EntityRef<User> _User;
+		
+		private EntityRef<Order> _Order;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1040,7 +982,7 @@ namespace CarTraders.DAL
     partial void OnUserIdChanged();
     partial void OnOrderIdChanging(System.Nullable<System.Guid> value);
     partial void OnOrderIdChanged();
-    partial void OnCreatedAtChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedAtChanging(System.DateTime value);
     partial void OnCreatedAtChanged();
     partial void OnUpdatedAtChanging(System.Nullable<System.DateTime> value);
     partial void OnUpdatedAtChanged();
@@ -1048,9 +990,8 @@ namespace CarTraders.DAL
 		
 		public OrderItem()
 		{
-			this._CarPart = default(EntityRef<CarPart>);
-			this._Car = default(EntityRef<Car>);
 			this._User = default(EntityRef<User>);
+			this._Order = default(EntityRef<Order>);
 			OnCreated();
 		}
 		
@@ -1085,10 +1026,6 @@ namespace CarTraders.DAL
 			{
 				if ((this._ProductId != value))
 				{
-					if ((this._CarPart.HasLoadedOrAssignedValue || this._Car.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnProductIdChanging(value);
 					this.SendPropertyChanging();
 					this._ProductId = value;
@@ -1193,6 +1130,10 @@ namespace CarTraders.DAL
 			{
 				if ((this._OrderId != value))
 				{
+					if (this._Order.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnOrderIdChanging(value);
 					this.SendPropertyChanging();
 					this._OrderId = value;
@@ -1202,8 +1143,8 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> CreatedAt
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTime2 NOT NULL")]
+		public System.DateTime CreatedAt
 		{
 			get
 			{
@@ -1242,75 +1183,7 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CarPart_OrderItem", Storage="_CarPart", ThisKey="ProductId", OtherKey="Id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public CarPart CarPart
-		{
-			get
-			{
-				return this._CarPart.Entity;
-			}
-			set
-			{
-				CarPart previousValue = this._CarPart.Entity;
-				if (((previousValue != value) 
-							|| (this._CarPart.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CarPart.Entity = null;
-						previousValue.OrderItems.Remove(this);
-					}
-					this._CarPart.Entity = value;
-					if ((value != null))
-					{
-						value.OrderItems.Add(this);
-						this._ProductId = value.Id;
-					}
-					else
-					{
-						this._ProductId = default(System.Guid);
-					}
-					this.SendPropertyChanged("CarPart");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Car_OrderItem", Storage="_Car", ThisKey="ProductId", OtherKey="Id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Car Car
-		{
-			get
-			{
-				return this._Car.Entity;
-			}
-			set
-			{
-				Car previousValue = this._Car.Entity;
-				if (((previousValue != value) 
-							|| (this._Car.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Car.Entity = null;
-						previousValue.OrderItems.Remove(this);
-					}
-					this._Car.Entity = value;
-					if ((value != null))
-					{
-						value.OrderItems.Add(this);
-						this._ProductId = value.Id;
-					}
-					else
-					{
-						this._ProductId = default(System.Guid);
-					}
-					this.SendPropertyChanged("Car");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_OrderItem", Storage="_User", ThisKey="UserId", OtherKey="Id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_OrderItem", Storage="_User", ThisKey="UserId", OtherKey="Id", IsForeignKey=true)]
 		public User User
 		{
 			get
@@ -1340,6 +1213,40 @@ namespace CarTraders.DAL
 						this._UserId = default(System.Guid);
 					}
 					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_OrderItem", Storage="_Order", ThisKey="OrderId", OtherKey="Id", IsForeignKey=true)]
+		public Order Order
+		{
+			get
+			{
+				return this._Order.Entity;
+			}
+			set
+			{
+				Order previousValue = this._Order.Entity;
+				if (((previousValue != value) 
+							|| (this._Order.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Order.Entity = null;
+						previousValue.OrderItems.Remove(this);
+					}
+					this._Order.Entity = value;
+					if ((value != null))
+					{
+						value.OrderItems.Add(this);
+						this._OrderId = value.Id;
+					}
+					else
+					{
+						this._OrderId = default(Nullable<System.Guid>);
+					}
+					this.SendPropertyChanged("Order");
 				}
 			}
 		}
@@ -1383,6 +1290,8 @@ namespace CarTraders.DAL
 		
 		private string _Status;
 		
+		private EntitySet<OrderItem> _OrderItems;
+		
 		private EntityRef<User> _User;
 		
     #region Extensibility Method Definitions
@@ -1405,6 +1314,7 @@ namespace CarTraders.DAL
 		
 		public Order()
 		{
+			this._OrderItems = new EntitySet<OrderItem>(new Action<OrderItem>(this.attach_OrderItems), new Action<OrderItem>(this.detach_OrderItems));
 			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
@@ -1533,7 +1443,20 @@ namespace CarTraders.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Order", Storage="_User", ThisKey="UserId", OtherKey="Id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_OrderItem", Storage="_OrderItems", ThisKey="Id", OtherKey="OrderId")]
+		public EntitySet<OrderItem> OrderItems
+		{
+			get
+			{
+				return this._OrderItems;
+			}
+			set
+			{
+				this._OrderItems.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Order", Storage="_User", ThisKey="UserId", OtherKey="Id", IsForeignKey=true)]
 		public User User
 		{
 			get
@@ -1585,6 +1508,18 @@ namespace CarTraders.DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_OrderItems(OrderItem entity)
+		{
+			this.SendPropertyChanging();
+			entity.Order = this;
+		}
+		
+		private void detach_OrderItems(OrderItem entity)
+		{
+			this.SendPropertyChanging();
+			entity.Order = null;
 		}
 	}
 }
