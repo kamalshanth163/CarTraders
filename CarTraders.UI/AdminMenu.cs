@@ -53,5 +53,11 @@ namespace CarTraders
             this.Hide();
             new Home().ShowDialog();
         }
+
+        private void btn_dashboard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Dashboard().ShowDialog();
+        }
     }
 }
