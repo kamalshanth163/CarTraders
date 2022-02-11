@@ -36,11 +36,6 @@ namespace CarTraders
             new CustomerOrders().ShowDialog();
         }
 
-        private void profileBtn_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             UserData.UserId = Guid.Empty;

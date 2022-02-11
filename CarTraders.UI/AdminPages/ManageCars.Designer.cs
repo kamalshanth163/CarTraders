@@ -50,6 +50,7 @@ namespace CarTraders.UI.AdminPages
             this.imageUploadBtn = new System.Windows.Forms.Button();
             this.imageRemoveBtn = new System.Windows.Forms.Button();
             this.car_price = new System.Windows.Forms.NumericUpDown();
+            this.reportBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.carsDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.car_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.car_price)).BeginInit();
@@ -163,10 +164,10 @@ namespace CarTraders.UI.AdminPages
             // carsDataView
             // 
             this.carsDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.carsDataView.Location = new System.Drawing.Point(293, 77);
+            this.carsDataView.Location = new System.Drawing.Point(293, 87);
             this.carsDataView.Name = "carsDataView";
             this.carsDataView.RowTemplate.Height = 60;
-            this.carsDataView.Size = new System.Drawing.Size(461, 343);
+            this.carsDataView.Size = new System.Drawing.Size(461, 279);
             this.carsDataView.TabIndex = 27;
             this.carsDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.carsDataView_CellContentClick);
             // 
@@ -260,11 +261,23 @@ namespace CarTraders.UI.AdminPages
             this.car_price.Size = new System.Drawing.Size(227, 20);
             this.car_price.TabIndex = 3;
             // 
+            // reportBtn
+            // 
+            this.reportBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.reportBtn.Location = new System.Drawing.Point(293, 390);
+            this.reportBtn.Name = "reportBtn";
+            this.reportBtn.Size = new System.Drawing.Size(155, 30);
+            this.reportBtn.TabIndex = 36;
+            this.reportBtn.Text = "Generate Report";
+            this.reportBtn.UseVisualStyleBackColor = true;
+            this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
+            // 
             // ManageCars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.reportBtn);
             this.Controls.Add(this.car_price);
             this.Controls.Add(this.imageRemoveBtn);
             this.Controls.Add(this.imageUploadBtn);
@@ -322,5 +335,6 @@ namespace CarTraders.UI.AdminPages
         private System.Windows.Forms.Button imageUploadBtn;
         private System.Windows.Forms.Button imageRemoveBtn;
         private System.Windows.Forms.NumericUpDown car_price;
+        private System.Windows.Forms.Button reportBtn;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CarTraders.BLL;
 using CarTraders.DAL;
+using CarTraders.UI.Reports;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -202,6 +203,12 @@ namespace CarTraders.UI.AdminPages
         {
             carPart_image.Image = Image.FromFile($"{path}\\Images\\CarParts\\empty.jpg");
             currentImageName = "empty.jpg";
+        }
+
+        private void reportBtn_Click(object sender, EventArgs e)
+        {
+            var reportModel = new ReportModel(carPartsDataView, "Car Parts Report");
+            new Report().GenerateExcel(reportModel);
         }
     }
 }

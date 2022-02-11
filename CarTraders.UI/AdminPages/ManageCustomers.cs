@@ -1,5 +1,6 @@
 ﻿using CarTraders.BLL;
 using CarTraders.DAL;
+using CarTraders.UI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,6 +120,12 @@ namespace CarTraders.UI.AdminPages
                 customer_password.Clear();
                 customer_name.Focus();
             }
+        }
+
+        private void reportBtn_Click(object sender, EventArgs e)
+        {
+            var reportModel = new ReportModel(customersDataView, "Customers Report");
+            new Report().GenerateExcel(reportModel);
         }
     }
 }

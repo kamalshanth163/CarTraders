@@ -50,6 +50,7 @@ namespace CarTraders.UI.AdminPages
             this.title = new System.Windows.Forms.Label();
             this.carPart_name = new System.Windows.Forms.TextBox();
             this.carPart_price = new System.Windows.Forms.NumericUpDown();
+            this.reportBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.carPart_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carPartsDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carPart_price)).BeginInit();
@@ -141,10 +142,10 @@ namespace CarTraders.UI.AdminPages
             // carPartsDataView
             // 
             this.carPartsDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.carPartsDataView.Location = new System.Drawing.Point(293, 82);
+            this.carPartsDataView.Location = new System.Drawing.Point(293, 86);
             this.carPartsDataView.Name = "carPartsDataView";
             this.carPartsDataView.RowTemplate.Height = 60;
-            this.carPartsDataView.Size = new System.Drawing.Size(461, 343);
+            this.carPartsDataView.Size = new System.Drawing.Size(461, 289);
             this.carPartsDataView.TabIndex = 48;
             this.carPartsDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.carPartsDataView_CellContentClick);
             // 
@@ -260,11 +261,23 @@ namespace CarTraders.UI.AdminPages
             this.carPart_price.Size = new System.Drawing.Size(227, 20);
             this.carPart_price.TabIndex = 3;
             // 
+            // reportBtn
+            // 
+            this.reportBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.reportBtn.Location = new System.Drawing.Point(293, 395);
+            this.reportBtn.Name = "reportBtn";
+            this.reportBtn.Size = new System.Drawing.Size(155, 30);
+            this.reportBtn.TabIndex = 58;
+            this.reportBtn.Text = "Generate Report";
+            this.reportBtn.UseVisualStyleBackColor = true;
+            this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
+            // 
             // ManageCarParts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.reportBtn);
             this.Controls.Add(this.carPart_price);
             this.Controls.Add(this.imageRemoveBtn);
             this.Controls.Add(this.imageUploadBtn);
@@ -322,5 +335,6 @@ namespace CarTraders.UI.AdminPages
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.TextBox carPart_name;
         private System.Windows.Forms.NumericUpDown carPart_price;
+        private System.Windows.Forms.Button reportBtn;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CarTraders.BLL;
 using CarTraders.DAL;
+using CarTraders.UI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -184,6 +185,15 @@ namespace CarTraders.UI.AdminPages
 
             orderItemList = null;
             LoadOrderItemsData(orderItemList);
+        }
+
+        private void reportBtn_Click(object sender, EventArgs e)
+        {
+            var reportModels = new List<ReportModel>();
+            reportModels.Add(new ReportModel(ordersDataView, "Orders Report"));
+            reportModels.Add(new ReportModel(orderItemsDataView, "Order Items Report"));
+
+            new Report().GenerateMultipleExcels(reportModels);
         }
     }
 }
