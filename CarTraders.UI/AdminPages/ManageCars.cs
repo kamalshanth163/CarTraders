@@ -64,7 +64,7 @@ namespace CarTraders.UI.AdminPages
                 var newGuid = Guid.NewGuid();
 
                 Car car = new Car();
-                car.Id = car_id.Text == "" ? newGuid : Guid.Parse(car_id.Text);
+                car.Id = car_id.Text == "" || car_id.Text == null || car_id.Text == null ? newGuid : Guid.Parse(car_id.Text);
                 car.Name = car_name.Text;
                 car.Brand = car_brand.Text;
                 car.Price = decimal.Parse(car_price.Text);
@@ -87,7 +87,7 @@ namespace CarTraders.UI.AdminPages
                 else
                 {
                     car.Image = ConvertImageToBytes(car_image.Image);
-                    car.ImageName = SaveImage(car_id.Text == "" ? newGuid.ToString() : car_id.Text);
+                    car.ImageName = SaveImage(car_id.Text == "" || car_id.Text == null ? newGuid.ToString() : car_id.Text);
                 }
 
                 if (operation == "Add")

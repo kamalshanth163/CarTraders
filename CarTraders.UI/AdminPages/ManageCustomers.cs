@@ -80,7 +80,7 @@ namespace CarTraders.UI.AdminPages
                 var newGuid = Guid.NewGuid();
 
                 User customer = new User();
-                customer.Id = customer_id.Text == "" ? newGuid : Guid.Parse(customer_id.Text);
+                customer.Id = customer_id.Text == "" || customer_id.Text == null ? newGuid : Guid.Parse(customer_id.Text);
                 customer.Name = customer_name.Text;
                 customer.Address = customer_address.Text;
                 customer.Phone = customer_phone.Text;

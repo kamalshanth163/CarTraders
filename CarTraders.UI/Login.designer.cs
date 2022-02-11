@@ -106,6 +106,7 @@ namespace CarTraders
             // 
             this.user_password.Location = new System.Drawing.Point(352, 227);
             this.user_password.Name = "user_password";
+            this.user_password.PasswordChar = '*';
             this.user_password.Size = new System.Drawing.Size(198, 23);
             this.user_password.TabIndex = 3;
             // 
