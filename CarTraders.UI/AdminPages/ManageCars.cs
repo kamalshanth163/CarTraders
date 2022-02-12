@@ -27,8 +27,8 @@ namespace CarTraders.UI.AdminPages
             car_price.Value = 0;
             car_price.Maximum = decimal.MaxValue;
             car_image.Image = null;
-            updateBtn.Enabled = false;
-            deleteBtn.Enabled = false;
+            update1Btn.Enabled = false;
+            delete1Btn.Enabled = false;
 
         }
         private void ManageCars_Load(object sender, EventArgs e)
@@ -151,8 +151,8 @@ namespace CarTraders.UI.AdminPages
 
         private void carsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            updateBtn.Enabled = true;
-            deleteBtn.Enabled = true;
+            update1Btn.Enabled = true;
+            delete1Btn.Enabled = true;
 
             rowIndex = e.RowIndex;
             DataGridViewRow row = carsDataView.Rows[rowIndex];
