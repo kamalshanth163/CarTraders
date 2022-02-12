@@ -44,20 +44,20 @@ namespace CarTraders
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Segoe UI", 24F);
-            this.title.Location = new System.Drawing.Point(433, 171);
+            this.title.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.title.Location = new System.Drawing.Point(492, 125);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(192, 45);
+            this.title.Size = new System.Drawing.Size(159, 37);
             this.title.TabIndex = 0;
             this.title.Text = "Welcome to";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(430, 215);
+            this.label1.Font = new System.Drawing.Font("Calibri", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(481, 167);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 64);
+            this.label1.Size = new System.Drawing.Size(177, 97);
             this.label1.TabIndex = 1;
             this.label1.Text = "ABC";
             // 
@@ -67,10 +67,10 @@ namespace CarTraders
             this.btn_getStarted.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_getStarted.FlatAppearance.BorderSize = 0;
             this.btn_getStarted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_getStarted.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.btn_getStarted.Location = new System.Drawing.Point(441, 293);
+            this.btn_getStarted.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.btn_getStarted.Location = new System.Drawing.Point(498, 332);
             this.btn_getStarted.Name = "btn_getStarted";
-            this.btn_getStarted.Size = new System.Drawing.Size(153, 49);
+            this.btn_getStarted.Size = new System.Drawing.Size(174, 53);
             this.btn_getStarted.TabIndex = 3;
             this.btn_getStarted.Text = "Get Started";
             this.btn_getStarted.UseVisualStyleBackColor = false;
@@ -79,9 +79,9 @@ namespace CarTraders
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(165, 130);
+            this.pictureBox1.Location = new System.Drawing.Point(151, 105);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 245);
+            this.pictureBox1.Size = new System.Drawing.Size(300, 300);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
@@ -90,7 +90,7 @@ namespace CarTraders
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(535, 215);
+            this.label2.Location = new System.Drawing.Point(487, 247);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(274, 64);
             this.label2.TabIndex = 36;
@@ -111,7 +111,7 @@ namespace CarTraders
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.Location = new System.Drawing.Point(346, 499);
+            this.label3.Location = new System.Drawing.Point(648, 501);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(264, 19);
             this.label3.TabIndex = 39;
@@ -123,13 +123,13 @@ namespace CarTraders
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(934, 544);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btn_getStarted);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.title);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.exitBtn);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btn_getStarted);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

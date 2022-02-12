@@ -130,10 +130,10 @@ namespace CarTraders.UI.AdminPages
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(92, 200);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 25);
+            this.label1.Size = new System.Drawing.Size(72, 25);
             this.label1.TabIndex = 38;
             this.label1.Text = "Orders";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -141,10 +141,10 @@ namespace CarTraders.UI.AdminPages
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(467, 125);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 25);
+            this.label2.Size = new System.Drawing.Size(117, 25);
             this.label2.TabIndex = 39;
             this.label2.Text = "Order Items";
             this.label2.Click += new System.EventHandler(this.label2_Click);

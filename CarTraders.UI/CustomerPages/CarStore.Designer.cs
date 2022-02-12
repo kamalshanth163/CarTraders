@@ -147,7 +147,7 @@ namespace CarTraders.UI.CustomerPages
             this.cartBtn.BackColor = System.Drawing.Color.Gold;
             this.cartBtn.FlatAppearance.BorderSize = 0;
             this.cartBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cartBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cartBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.cartBtn.Location = new System.Drawing.Point(661, 35);
             this.cartBtn.Name = "cartBtn";
             this.cartBtn.Size = new System.Drawing.Size(88, 29);

@@ -57,7 +57,7 @@ namespace CarTraders
             this.btn_cars.BackColor = System.Drawing.Color.White;
             this.btn_cars.FlatAppearance.BorderSize = 0;
             this.btn_cars.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cars.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn_cars.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btn_cars.Location = new System.Drawing.Point(587, 154);
             this.btn_cars.Name = "btn_cars";
             this.btn_cars.Size = new System.Drawing.Size(217, 97);
@@ -71,7 +71,7 @@ namespace CarTraders
             this.btn_customers.BackColor = System.Drawing.Color.White;
             this.btn_customers.FlatAppearance.BorderSize = 0;
             this.btn_customers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_customers.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn_customers.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btn_customers.Location = new System.Drawing.Point(245, 261);
             this.btn_customers.Name = "btn_customers";
             this.btn_customers.Size = new System.Drawing.Size(217, 97);
@@ -85,7 +85,7 @@ namespace CarTraders
             this.btn_carParts.BackColor = System.Drawing.Color.White;
             this.btn_carParts.FlatAppearance.BorderSize = 0;
             this.btn_carParts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_carParts.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn_carParts.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btn_carParts.Location = new System.Drawing.Point(587, 261);
             this.btn_carParts.Name = "btn_carParts";
             this.btn_carParts.Size = new System.Drawing.Size(217, 97);
@@ -109,7 +109,7 @@ namespace CarTraders
             this.btn_orders.BackColor = System.Drawing.Color.White;
             this.btn_orders.FlatAppearance.BorderSize = 0;
             this.btn_orders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_orders.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn_orders.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btn_orders.Location = new System.Drawing.Point(245, 368);
             this.btn_orders.Name = "btn_orders";
             this.btn_orders.Size = new System.Drawing.Size(217, 97);
@@ -152,7 +152,7 @@ namespace CarTraders
             this.btn_dashboard.BackColor = System.Drawing.Color.White;
             this.btn_dashboard.FlatAppearance.BorderSize = 0;
             this.btn_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_dashboard.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn_dashboard.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btn_dashboard.Location = new System.Drawing.Point(245, 154);
             this.btn_dashboard.Name = "btn_dashboard";
             this.btn_dashboard.Size = new System.Drawing.Size(217, 97);
