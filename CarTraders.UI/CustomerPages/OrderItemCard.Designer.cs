@@ -39,7 +39,7 @@ namespace CarTraders.UI.CustomerPages
             // 
             this.item_name.AutoSize = true;
             this.item_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.item_name.Location = new System.Drawing.Point(18, 13);
+            this.item_name.Location = new System.Drawing.Point(21, 12);
             this.item_name.Name = "item_name";
             this.item_name.Size = new System.Drawing.Size(51, 20);
             this.item_name.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace CarTraders.UI.CustomerPages
             // 
             this.item_quantity.AutoSize = true;
             this.item_quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.item_quantity.Location = new System.Drawing.Point(196, 13);
+            this.item_quantity.Location = new System.Drawing.Point(188, 13);
             this.item_quantity.Name = "item_quantity";
             this.item_quantity.Size = new System.Drawing.Size(18, 20);
             this.item_quantity.TabIndex = 1;
@@ -69,7 +69,7 @@ namespace CarTraders.UI.CustomerPages
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(183, 13);
+            this.label1.Location = new System.Drawing.Point(176, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(16, 20);
             this.label1.TabIndex = 3;
@@ -86,7 +86,7 @@ namespace CarTraders.UI.CustomerPages
             this.Controls.Add(this.item_quantity);
             this.Controls.Add(this.item_name);
             this.Name = "OrderItemCard";
-            this.Size = new System.Drawing.Size(367, 47);
+            this.Size = new System.Drawing.Size(342, 46);
             this.ResumeLayout(false);
             this.PerformLayout();
 

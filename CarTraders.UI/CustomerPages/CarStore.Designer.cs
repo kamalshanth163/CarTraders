@@ -148,7 +148,7 @@ namespace CarTraders.UI.CustomerPages
             this.cartBtn.FlatAppearance.BorderSize = 0;
             this.cartBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cartBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cartBtn.Location = new System.Drawing.Point(245, 44);
+            this.cartBtn.Location = new System.Drawing.Point(661, 35);
             this.cartBtn.Name = "cartBtn";
             this.cartBtn.Size = new System.Drawing.Size(88, 29);
             this.cartBtn.TabIndex = 44;
@@ -172,7 +172,7 @@ namespace CarTraders.UI.CustomerPages
             this.menuBtn.FlatAppearance.BorderSize = 0;
             this.menuBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menuBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.menuBtn.Location = new System.Drawing.Point(760, 35);
+            this.menuBtn.Location = new System.Drawing.Point(758, 35);
             this.menuBtn.Name = "menuBtn";
             this.menuBtn.Size = new System.Drawing.Size(105, 29);
             this.menuBtn.TabIndex = 65;
