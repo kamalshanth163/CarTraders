@@ -75,7 +75,7 @@ namespace CarTraders
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Segoe UI", 30F);
-            this.title.Location = new System.Drawing.Point(330, 75);
+            this.title.Location = new System.Drawing.Point(113, 24);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(308, 54);
             this.title.TabIndex = 14;
@@ -98,7 +98,7 @@ namespace CarTraders
             // 
             // logoutBtn
             // 
-            this.logoutBtn.BackColor = System.Drawing.Color.White;
+            this.logoutBtn.BackColor = System.Drawing.Color.WhiteSmoke;
             this.logoutBtn.FlatAppearance.BorderSize = 0;
             this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -144,6 +144,7 @@ namespace CarTraders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(944, 553);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
