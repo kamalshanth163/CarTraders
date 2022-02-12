@@ -27,9 +27,6 @@ namespace CarTraders.UI.AdminPages
             car_price.Value = 0;
             car_price.Maximum = decimal.MaxValue;
             car_image.Image = null;
-            update1Btn.Enabled = false;
-            delete1Btn.Enabled = false;
-
         }
         private void ManageCars_Load(object sender, EventArgs e)
         {
@@ -64,7 +61,7 @@ namespace CarTraders.UI.AdminPages
                 var newGuid = Guid.NewGuid();
 
                 Car car = new Car();
-                car.Id = car_id.Text == "" || car_id.Text == null || car_id.Text == null ? newGuid : Guid.Parse(car_id.Text);
+                car.Id = car_id.Text == "" || car_id.Text == null ? newGuid : Guid.Parse(car_id.Text);
                 car.Name = car_name.Text;
                 car.Brand = car_brand.Text;
                 car.Price = decimal.Parse(car_price.Text);
@@ -128,6 +125,7 @@ namespace CarTraders.UI.AdminPages
                 }
                 carList = CarsBLL.GetCars();
                 carsDataView.DataSource = carList;
+                car_id.Text = null;
                 car_name.Clear();
                 car_brand.Clear();
                 car_price.Value = 0;
@@ -151,9 +149,6 @@ namespace CarTraders.UI.AdminPages
 
         private void carsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            update1Btn.Enabled = true;
-            delete1Btn.Enabled = true;
-
             rowIndex = e.RowIndex;
             DataGridViewRow row = carsDataView.Rows[rowIndex];
             car_id.Text = row.Cells[0].Value.ToString();
