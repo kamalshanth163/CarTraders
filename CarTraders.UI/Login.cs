@@ -76,5 +76,12 @@ namespace CarTraders
             this.Hide();
             new Home().ShowDialog();
         }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            user_type.SelectedIndex = 1;
+            user_email.Text = "";
+            user_password.Text = "";
+        }
     }
 }

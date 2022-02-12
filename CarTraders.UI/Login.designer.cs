@@ -29,6 +29,7 @@ namespace CarTraders
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.title = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Label();
@@ -42,13 +43,15 @@ namespace CarTraders
             this.registerLink = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.homeBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // title
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Segoe UI", 30F);
-            this.title.Location = new System.Drawing.Point(110, 42);
+            this.title.Location = new System.Drawing.Point(253, 91);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(122, 54);
             this.title.TabIndex = 1;
@@ -56,30 +59,35 @@ namespace CarTraders
             // 
             // loginBtn
             // 
+            this.loginBtn.BackColor = System.Drawing.Color.Gold;
+            this.loginBtn.FlatAppearance.BorderSize = 0;
+            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.loginBtn.Location = new System.Drawing.Point(290, 279);
+            this.loginBtn.ForeColor = System.Drawing.Color.Black;
+            this.loginBtn.Location = new System.Drawing.Point(370, 381);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(126, 43);
             this.loginBtn.TabIndex = 4;
             this.loginBtn.Text = "Login";
-            this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.UseVisualStyleBackColor = false;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // cancelBtn
             // 
             this.cancelBtn.AutoSize = true;
             this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.cancelBtn.Location = new System.Drawing.Point(432, 285);
+            this.cancelBtn.Location = new System.Drawing.Point(512, 387);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(77, 30);
             this.cancelBtn.TabIndex = 5;
             this.cancelBtn.Text = "Cancel";
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.label2.Location = new System.Drawing.Point(209, 171);
+            this.label2.Location = new System.Drawing.Point(272, 233);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 30);
             this.label2.TabIndex = 6;
@@ -89,7 +97,7 @@ namespace CarTraders
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.label3.Location = new System.Drawing.Point(209, 220);
+            this.label3.Location = new System.Drawing.Point(272, 282);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 30);
             this.label3.TabIndex = 7;
@@ -97,48 +105,57 @@ namespace CarTraders
             // 
             // user_email
             // 
-            this.user_email.Location = new System.Drawing.Point(352, 178);
+            this.user_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.user_email.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.user_email.Location = new System.Drawing.Point(415, 237);
             this.user_email.Name = "user_email";
-            this.user_email.Size = new System.Drawing.Size(198, 23);
+            this.user_email.Size = new System.Drawing.Size(278, 25);
             this.user_email.TabIndex = 2;
             // 
             // user_password
             // 
-            this.user_password.Location = new System.Drawing.Point(352, 227);
+            this.user_password.BackColor = System.Drawing.Color.White;
+            this.user_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.user_password.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.user_password.Location = new System.Drawing.Point(415, 286);
             this.user_password.Name = "user_password";
             this.user_password.PasswordChar = '*';
-            this.user_password.Size = new System.Drawing.Size(198, 23);
+            this.user_password.Size = new System.Drawing.Size(278, 25);
             this.user_password.TabIndex = 3;
             // 
             // exitBtn
             // 
-            this.exitBtn.BackColor = System.Drawing.Color.Red;
+            this.exitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.exitBtn.FlatAppearance.BorderSize = 0;
+            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.exitBtn.ForeColor = System.Drawing.Color.White;
-            this.exitBtn.Location = new System.Drawing.Point(749, 12);
+            this.exitBtn.Image = ((System.Drawing.Image)(resources.GetObject("exitBtn.Image")));
+            this.exitBtn.Location = new System.Drawing.Point(881, 24);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(39, 31);
+            this.exitBtn.Size = new System.Drawing.Size(35, 35);
             this.exitBtn.TabIndex = 27;
-            this.exitBtn.Text = "X";
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // user_type
             // 
+            this.user_type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.user_type.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.user_type.FormattingEnabled = true;
             this.user_type.Items.AddRange(new object[] {
             "Admin",
             "Customer"});
-            this.user_type.Location = new System.Drawing.Point(352, 129);
+            this.user_type.Location = new System.Drawing.Point(415, 180);
             this.user_type.Name = "user_type";
-            this.user_type.Size = new System.Drawing.Size(198, 23);
+            this.user_type.Size = new System.Drawing.Size(278, 33);
             this.user_type.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.label6.Location = new System.Drawing.Point(209, 123);
+            this.label6.Location = new System.Drawing.Point(272, 179);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 30);
             this.label6.TabIndex = 29;
@@ -148,10 +165,10 @@ namespace CarTraders
             // 
             this.registerLink.AutoSize = true;
             this.registerLink.Cursor = System.Windows.Forms.Cursors.Default;
-            this.registerLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.registerLink.Location = new System.Drawing.Point(358, 368);
+            this.registerLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.registerLink.Location = new System.Drawing.Point(515, 461);
             this.registerLink.Name = "registerLink";
-            this.registerLink.Size = new System.Drawing.Size(61, 17);
+            this.registerLink.Size = new System.Drawing.Size(83, 25);
             this.registerLink.TabIndex = 32;
             this.registerLink.Text = "Register";
             this.registerLink.Click += new System.EventHandler(this.registerLink_Click);
@@ -159,29 +176,43 @@ namespace CarTraders
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label7.Location = new System.Drawing.Point(327, 351);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label7.Location = new System.Drawing.Point(350, 465);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 13);
+            this.label7.Size = new System.Drawing.Size(163, 18);
             this.label7.TabIndex = 31;
             this.label7.Text = "Don\'t have an account?";
             // 
             // homeBtn
             // 
+            this.homeBtn.BackColor = System.Drawing.Color.White;
+            this.homeBtn.FlatAppearance.BorderSize = 0;
+            this.homeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homeBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.homeBtn.Location = new System.Drawing.Point(638, 14);
+            this.homeBtn.Location = new System.Drawing.Point(758, 27);
             this.homeBtn.Name = "homeBtn";
-            this.homeBtn.Size = new System.Drawing.Size(105, 29);
+            this.homeBtn.Size = new System.Drawing.Size(117, 32);
             this.homeBtn.TabIndex = 37;
             this.homeBtn.Text = "Go to home";
-            this.homeBtn.UseVisualStyleBackColor = true;
+            this.homeBtn.UseVisualStyleBackColor = false;
             this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(35, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 39;
+            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(940, 549);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.homeBtn);
             this.Controls.Add(this.registerLink);
             this.Controls.Add(this.label7);
@@ -200,6 +231,7 @@ namespace CarTraders
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +252,6 @@ namespace CarTraders
         private System.Windows.Forms.Label registerLink;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button homeBtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
