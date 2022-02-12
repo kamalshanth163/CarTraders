@@ -4,9 +4,7 @@ using CarTraders.UI.Reports;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace CarTraders.UI.AdminPages

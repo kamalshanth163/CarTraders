@@ -1,5 +1,4 @@
-﻿using CarTraders.UI.CustomerPages;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CarTraders.UI
@@ -14,7 +13,7 @@ namespace CarTraders.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CarStore());
+            Application.Run(new Home());
         }
     }
 }
