@@ -2,7 +2,6 @@
 using CarTraders.DAL;
 using CarTraders.DAL.Data;
 using System;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace CarTraders

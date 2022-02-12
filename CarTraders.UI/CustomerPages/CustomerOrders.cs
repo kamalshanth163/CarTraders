@@ -1,7 +1,6 @@
 ﻿using CarTraders.BLL;
 using CarTraders.DAL;
 using CarTraders.DAL.Data;
-using CarTraders.DAL.DTO;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -33,13 +32,10 @@ namespace CarTraders.UI.CustomerPages
         private void CustomerOrders_Load(object sender, EventArgs e)
         {
             LoadOrdersData(orderList);
-            //LoadOrderItemsData(orderItemList);
         }
 
         public void LoadOrdersData(List<Order> orders)
         {
-            //LoadOrderItemsData(new List<OrderItemDto>());
-
             orders_listing.Controls.Clear();
 
             for (var i=0; i<orders.Count; i++)

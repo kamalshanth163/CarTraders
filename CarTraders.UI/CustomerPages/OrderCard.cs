@@ -1,6 +1,5 @@
 ﻿using CarTraders.DAL.Data;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace CarTraders.UI.CustomerPages

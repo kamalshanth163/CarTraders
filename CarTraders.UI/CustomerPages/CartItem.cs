@@ -1,5 +1,4 @@
 ﻿using CarTraders.BLL;
-using CarTraders.DAL.Data;
 using CarTraders.DAL.DTO;
 using System;
 using System.Linq;
