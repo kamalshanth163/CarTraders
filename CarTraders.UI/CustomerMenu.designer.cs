@@ -29,40 +29,53 @@ namespace CarTraders
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerMenu));
             this.ordersBtn = new System.Windows.Forms.Button();
             this.storeBtn = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
             this.exitBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // ordersBtn
             // 
-            this.ordersBtn.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.ordersBtn.Location = new System.Drawing.Point(203, 206);
+            this.ordersBtn.BackColor = System.Drawing.Color.Gold;
+            this.ordersBtn.FlatAppearance.BorderSize = 0;
+            this.ordersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ordersBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.ordersBtn.Location = new System.Drawing.Point(383, 299);
             this.ordersBtn.Name = "ordersBtn";
-            this.ordersBtn.Size = new System.Drawing.Size(283, 40);
+            this.ordersBtn.Size = new System.Drawing.Size(328, 97);
             this.ordersBtn.TabIndex = 16;
             this.ordersBtn.Text = "View Order Details";
-            this.ordersBtn.UseVisualStyleBackColor = true;
+            this.ordersBtn.UseVisualStyleBackColor = false;
             this.ordersBtn.Click += new System.EventHandler(this.ordersBtn_Click);
             // 
             // storeBtn
             // 
-            this.storeBtn.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.storeBtn.Location = new System.Drawing.Point(206, 148);
+            this.storeBtn.BackColor = System.Drawing.Color.Gold;
+            this.storeBtn.FlatAppearance.BorderSize = 0;
+            this.storeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.storeBtn.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.storeBtn.Location = new System.Drawing.Point(383, 177);
             this.storeBtn.Name = "storeBtn";
-            this.storeBtn.Size = new System.Drawing.Size(283, 40);
+            this.storeBtn.Size = new System.Drawing.Size(328, 97);
             this.storeBtn.TabIndex = 15;
             this.storeBtn.Text = "Purchase Cars and Car Parts";
-            this.storeBtn.UseVisualStyleBackColor = true;
+            this.storeBtn.UseVisualStyleBackColor = false;
             this.storeBtn.Click += new System.EventHandler(this.storeBtn_Click);
             // 
             // title
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Segoe UI", 30F);
-            this.title.Location = new System.Drawing.Point(197, 44);
+            this.title.Location = new System.Drawing.Point(113, 24);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(308, 54);
             this.title.TabIndex = 14;
@@ -70,33 +83,72 @@ namespace CarTraders
             // 
             // exitBtn
             // 
-            this.exitBtn.BackColor = System.Drawing.Color.Red;
+            this.exitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.exitBtn.FlatAppearance.BorderSize = 0;
+            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.exitBtn.ForeColor = System.Drawing.Color.White;
-            this.exitBtn.Location = new System.Drawing.Point(635, 12);
+            this.exitBtn.Image = ((System.Drawing.Image)(resources.GetObject("exitBtn.Image")));
+            this.exitBtn.Location = new System.Drawing.Point(869, 30);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(39, 31);
             this.exitBtn.TabIndex = 34;
-            this.exitBtn.Text = "X";
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // logoutBtn
             // 
+            this.logoutBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.logoutBtn.FlatAppearance.BorderSize = 0;
+            this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.logoutBtn.Location = new System.Drawing.Point(524, 13);
+            this.logoutBtn.Location = new System.Drawing.Point(759, 31);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(105, 29);
             this.logoutBtn.TabIndex = 36;
             this.logoutBtn.Text = "Logout";
-            this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(38, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(264, 177);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(97, 97);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 42;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(264, 299);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(97, 97);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 43;
+            this.pictureBox3.TabStop = false;
             // 
             // CustomerMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(944, 553);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.ordersBtn);
@@ -106,6 +158,9 @@ namespace CarTraders
             this.Name = "CustomerMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerMenu";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,5 +173,8 @@ namespace CarTraders
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button logoutBtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

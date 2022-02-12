@@ -3,12 +3,6 @@ using CarTraders.DAL;
 using CarTraders.UI.Reports;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarTraders.UI.AdminPages
@@ -23,8 +17,6 @@ namespace CarTraders.UI.AdminPages
             InitializeComponent();
             label_id.Visible = false;
             customer_id.Visible = false;
-            updateBtn.Enabled = false;
-            deleteBtn.Enabled = false;
         }
 
         private void ManageCustomers_Load(object sender, EventArgs e)
@@ -46,9 +38,6 @@ namespace CarTraders.UI.AdminPages
 
         private void customersDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            updateBtn.Enabled = true;
-            deleteBtn.Enabled = true;
-
             rowIndex = e.RowIndex;
             DataGridViewRow row = customersDataView.Rows[rowIndex];
             customer_id.Text = row.Cells[0].Value.ToString();
@@ -113,6 +102,7 @@ namespace CarTraders.UI.AdminPages
                 }
                 customerList = UsersBLL.GetUsersByType("Customer");
                 customersDataView.DataSource = customerList;
+                customer_id.Text = null;
                 customer_name.Clear();
                 customer_address.Clear();
                 customer_phone.Clear();

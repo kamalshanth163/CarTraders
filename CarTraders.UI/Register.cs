@@ -76,7 +76,7 @@ namespace CarTraders
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            user_type.SelectedIndex = 0;
+            user_type.SelectedIndex = 1;
             user_name.Text = "";
             user_address.Text = "";
             user_phone.Text = "";

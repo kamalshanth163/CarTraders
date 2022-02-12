@@ -25,8 +25,6 @@ namespace CarTraders.UI.AdminPages
             carPart_price.Value = 0;
             carPart_price.Maximum = decimal.MaxValue;
             carPart_image.Image = null;
-            updateBtn.Enabled = false;
-            deleteBtn.Enabled = false;
         }
         private void ManageCarParts_Load(object sender, EventArgs e)
         {
@@ -124,6 +122,7 @@ namespace CarTraders.UI.AdminPages
                 }
                 carPartList = CarPartsBLL.GetCarParts();
                 carPartsDataView.DataSource = carPartList;
+                carPart_id.Text = null;
                 carPart_name.Clear();
                 carPart_brand.Clear();
                 carPart_price.Value = 0;
@@ -147,9 +146,6 @@ namespace CarTraders.UI.AdminPages
 
         private void carPartsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            updateBtn.Enabled = true;
-            deleteBtn.Enabled = true;
-
             rowIndex = e.RowIndex;
             DataGridViewRow row = carPartsDataView.Rows[rowIndex];
             carPart_id.Text = row.Cells[0].Value.ToString();

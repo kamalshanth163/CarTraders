@@ -50,19 +50,22 @@ namespace CarTraders.UI.CustomerPages
             // product_name
             // 
             this.product_name.AutoSize = true;
-            this.product_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product_name.ForeColor = System.Drawing.Color.White;
             this.product_name.Location = new System.Drawing.Point(12, 112);
             this.product_name.Name = "product_name";
-            this.product_name.Size = new System.Drawing.Size(110, 17);
+            this.product_name.Size = new System.Drawing.Size(122, 20);
             this.product_name.TabIndex = 1;
             this.product_name.Text = "Product Name";
             // 
             // product_brand
             // 
             this.product_brand.AutoSize = true;
-            this.product_brand.Location = new System.Drawing.Point(12, 138);
+            this.product_brand.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product_brand.ForeColor = System.Drawing.Color.White;
+            this.product_brand.Location = new System.Drawing.Point(14, 139);
             this.product_brand.Name = "product_brand";
-            this.product_brand.Size = new System.Drawing.Size(75, 13);
+            this.product_brand.Size = new System.Drawing.Size(99, 17);
             this.product_brand.TabIndex = 2;
             this.product_brand.Text = "Product Brand";
             // 
@@ -70,11 +73,11 @@ namespace CarTraders.UI.CustomerPages
             // 
             this.product_price.AutoSize = true;
             this.product_price.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.product_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product_price.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.product_price.Location = new System.Drawing.Point(44, 189);
+            this.product_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.product_price.ForeColor = System.Drawing.Color.Gold;
+            this.product_price.Location = new System.Drawing.Point(48, 183);
             this.product_price.Name = "product_price";
-            this.product_price.Size = new System.Drawing.Size(56, 17);
+            this.product_price.Size = new System.Drawing.Size(84, 25);
             this.product_price.TabIndex = 4;
             this.product_price.Text = "100000";
             // 
@@ -82,11 +85,11 @@ namespace CarTraders.UI.CustomerPages
             // 
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label1.Location = new System.Drawing.Point(12, 189);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Location = new System.Drawing.Point(14, 189);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 17);
+            this.label1.Size = new System.Drawing.Size(38, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "LKR";
             // 
@@ -94,7 +97,7 @@ namespace CarTraders.UI.CustomerPages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.Black;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.product_price);
             this.Controls.Add(this.product_brand);
